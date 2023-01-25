@@ -1,20 +1,126 @@
 const Sequelize = require('sequelize')
+const { STRING, ENUM, BOOLEAN, DATE, DECIMAL, TEXT } = Sequelize
 const db = require('../db')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 5;
 
+const states = [
+  "AL",
+  "AK",
+  "AZ",
+  "AR",
+  "AS",
+  "CA",
+  "CO",
+  "CT",
+  "DE",
+  "DC",
+  "FL",
+  "GA",
+  "GU",
+  "HI",
+  "ID",
+  "IL",
+  "IN",
+  "IA",
+  "KS",
+  "KY",
+  "LA",
+  "ME",
+  "MD",
+  "MA",
+  "MI",
+  "MN",
+  "MS",
+  "MO",
+  "MT",
+  "NE",
+  "NV",
+  "NH",
+  "NJ",
+  "NM",
+  "NY",
+  "NC",
+  "ND",
+  "CM",
+  "OH",
+  "OK",
+  "OR",
+  "PA",
+  "PR",
+  "RI",
+  "SC",
+  "SD",
+  "TN",
+  "TX",
+  "TT",
+  "UT",
+  "VT",
+  "VA",
+  "VI",
+  "WA",
+  "WV",
+  "WI",
+  "WY",
+];
+
 const User = db.define('user', {
   username: {
-    type: Sequelize.STRING,
+    type: STRING,
     unique: true,
     allowNull: false
   },
   password: {
-    type: Sequelize.STRING,
+    type: STRING,
+    allowNull: false
+  },
+  email: {
+    type: STRING,
+    allowNull: false,
+    unique: true,
+    validate: {
+      isEmail: true
+    }
+    },
+  firstName: {
+    type: STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: STRING,
+    allowNull: false
+  },
+  birthday: {
+    type: DATE,
+    validate: {
+       isDate: true
   }
-})
+  },
+  rating: {
+    type: DECIMAL
+  },
+  gender: {
+    type: STRING,
+  },
+  city: {
+    type: STRING,
+  },
+  state: {
+    type: ENUM(states)
+  },
+  isAdmin: {
+    type: BOOLEAN,
+    defaultValue: false
+  },
+  profilePic: {
+    type: TEXT,
+    allowNull: false,
+    defaultValue: 'https://t3.ftcdn.net/jpg/01/65/63/94/360_F_165639425_kRh61s497pV7IOPAjwjme1btB8ICkV0L.jpg',
+    comment: 'null',
+  }
+  })
 
 module.exports = User
 
