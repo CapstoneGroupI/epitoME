@@ -101,7 +101,7 @@ const User = db.define('user', {
   rating: {
     type: DECIMAL
   },
-  gender: {
+  pronouns: {
     type: STRING,
   },
   city: {
