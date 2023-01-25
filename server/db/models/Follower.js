@@ -10,28 +10,28 @@ const Follower = db.define('Follower', {
         comment: 'null',
         autoIncrement: true,
       },
-      userId: {
-        type: INTEGER(11),
-        allowNull: false,
-        comment: "null",
-        references: {
-          model: 'User',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
-      followerId: {
-        type: INTEGER(11),
-        allowNull: false,
-        comment: "null",
-        references: {
-          model: 'User',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      }
+      // userId: {
+      //   type: INTEGER(11),
+      //   allowNull: false,
+      //   comment: "null",
+      //   references: {
+      //     model: 'User',
+      //     key: 'id'
+      //   },
+      //   onUpdate: 'CASCADE',
+      //   onDelete: 'CASCADE',
+      // },
+      // followerId: {
+      //   type: INTEGER(11),
+      //   allowNull: false,
+      //   comment: "null",
+      //   references: {
+      //     model: 'User',
+      //     key: 'id'
+      //   },
+      //   onUpdate: 'CASCADE',
+      //   onDelete: 'CASCADE',
+      // }
     })
 
     module.exports = Follower

@@ -35,6 +35,16 @@ async function seed() {
          }),
   ])
 
+  const post = await Promise.all([
+    Post.create({ 
+      text: 'I love posting',
+      n_likes: 3,
+      n_comments: 2
+         }),
+  ])
+    
+
+
   // const createUserDatabase = (num) => {
   //   const arr = [];
   //   for(let i = 0; i < num; i++){
