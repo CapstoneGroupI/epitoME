@@ -38,6 +38,8 @@ async function seed() {
     username: 'cupofjoey',
     password: '321',
     email: "sightower@gmail.com",
+    birthday: "11-15-1999",
+    profilePic: "https://i.ibb.co/9hDHL1W/IMG-3839.jpg",
     firstName: "Sarah",
       lastName: "Hightower",
       pronouns: "she/her",

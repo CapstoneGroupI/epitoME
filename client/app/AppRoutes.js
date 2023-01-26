@@ -7,6 +7,7 @@ import Home from '../features/home/Home';
 import { me } from './store';
 import UserProfile from '../features/userProfile/userProfile';
 import RegisterForm from '../features/auth/RegisterForm';
+import Dashboard from '../features/dashboard/Dashboard';
 
 /**
  * COMPONENT
@@ -24,8 +25,8 @@ const AppRoutes = () => {
     <div>
       {isLoggedIn ? (
         <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route to="/home" element={<Home />} />
+          <Route path="/*" element={<Dashboard />} />
+          <Route to="/home" element={<Dashboard />} />
           <Route path="/profile" element={<UserProfile />} />
         </Routes>
       ) : (
