@@ -7,10 +7,11 @@ import { useSelector } from 'react-redux';
  */
 const Home = (props) => {
   const username = useSelector((state) => state.auth.me.username);
+  const firstName = useSelector((state) => state.auth.me.firstName);
 
   return (
     <div>
-      <h3>Welcome, {username}</h3>
+      <h3 className="text-[#E68584] text-3xl font-bold font-serif">Welcome {firstName} !</h3>
     </div>
   );
 };
