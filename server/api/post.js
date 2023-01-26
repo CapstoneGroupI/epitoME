@@ -10,6 +10,7 @@ router.get("/", async (req, res, next) => {
             "text",
             "n_likes",
             "n_comments",
+
         ],
       });
       res.status(200).send(post);
@@ -22,17 +23,12 @@ router.get("/", async (req, res, next) => {
   router.get("/:id", async (req, res, next) => {
     try {
 
-      const post = await Post.findByPk(req.params.id, {
-        // include: {
-        //   model: Post,
-        //   include: { Comment,
-        //     model: Follower,
-        //     include: {
-        //       model: Message,
-
-        //     },
-        //   },
-        // },
+      const post = await Post.findAll({
+        where: {userId: req.params.id},
+        include: {
+          model: Comment,
+                model: User,
+        },
       });
       res.send(post);
     } catch (err) {
