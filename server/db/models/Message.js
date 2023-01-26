@@ -4,7 +4,7 @@ const db = require('../db');
 
 const Message = db.define('Message', {
         id: {
-          type: INTEGER(11),
+          type: INTEGER,
           allowNull: false,
           primaryKey: true,
           comment: 'null',
