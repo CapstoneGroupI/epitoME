@@ -23,7 +23,8 @@ async function seed() {
            state: "NY",
            isAdmin: false,
             }),
-    User.create({ username: 'Murphy',
+    User.create({ 
+      username: 'Murphy',
      password: '123',
      email: "Murphy@gmail.com",
       firstName: "Murphy",
@@ -33,6 +34,17 @@ async function seed() {
           state: "NY",
           isAdmin: false
          }),
+    User.create({ 
+    username: 'cupofjoey',
+    password: '321',
+    email: "sightower@gmail.com",
+    firstName: "Sarah",
+      lastName: "Hightower",
+      pronouns: "she/her",
+        city: "Bakersfield",
+        state: "CA",
+        isAdmin: true
+        }),
   ])
 
   const post = await Promise.all([
