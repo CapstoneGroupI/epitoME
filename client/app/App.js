@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../features/navbar/Navbar.jsx';
 import Sidebar from '../features/sidebar/Sidebar.jsx';
 import AppRoutes from './AppRoutes.js';
-import AuthForm from '../features/auth/AuthForm.js';
+import LoginForm from '../features/auth/LoginForm.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { me } from './store';
 
@@ -24,7 +24,9 @@ const App = () => {
         <AppRoutes />
         </>
       ) : (
-        <AuthForm />
+        <>
+        <AppRoutes />
+        </>
       )}
     </div>
   );
