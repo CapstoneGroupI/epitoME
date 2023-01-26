@@ -2,27 +2,21 @@ const router = require('express').Router()
 module.exports = router
 const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 
-//GET route /api/post
+//GET route /api/message
 router.get("/", async (req, res, next) => {
     try {
-      const post = await Post.findAll({
-        attributes: [
-            "text",
-            "n_likes",
-            "n_comments",
-        ],
-      });
-      res.status(200).send(post);
+      const message = await Message.findAll();
+      res.status(200).send(message);
     } catch (err) {
       next(err);
     }
   });
 
-  //GET route /api/post/:id
+  //GET route /api/message/:id
   router.get("/:id", async (req, res, next) => {
     try {
 
-      const post = await Post.findByPk(req.params.id, {
+      const message = await Message.findByPk(req.params.id, {
         // include: {
         //   model: Post,
         //   include: { Comment,
@@ -34,45 +28,44 @@ router.get("/", async (req, res, next) => {
         //   },
         // },
       });
-      res.send(post);
+      res.send(message);
     } catch (err) {
       next(err);
     }
   });
 
-   //POST route /api/post
+   //POST route /api/message
   router.post("/", async (req, res, next) => {
     try{
-        const myPost = await Post.create(req.body)
-        res.send(myPost)
+        const myMessage = await Message.create(req.body)
+        res.send(myMessage)
     } catch(err){
         next(err)
     }
 
   })
 
-  //PUT route /api/post/:id
+  //PUT route /api/message/:id
   router.put("/:id", async (req, res, next) => {
     try{
-        const myPost = await Post.findByPk(req.params.id)
-        res.status(200).send(await myPost.update(req.body));
+        const myMessage = await Message.findByPk(req.params.id)
+        res.status(200).send(await myMessage.update(req.body));
     } catch(err){
         next(err)
     }
 
   })
 
-  // DELETE route/api/post/:id
+  // DELETE route/api/message/:id
   router.delete("/:id", async (req, res, next) => {
     try {
       const id = req.params.id;
-      const post = await Post.findByPk(id);
+      const message = await Message.findByPk(id);
 
-      await post.destroy()
-      res.status(200).send(post)
+      await message.destroy()
+      res.status(200).send(message)
       
     } catch (error){
       next(error)
     }
   })
-
