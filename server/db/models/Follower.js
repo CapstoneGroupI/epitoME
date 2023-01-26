@@ -4,7 +4,7 @@ const db = require('../db')
 
 const Follower = db.define('Follower', {
     id: {
-        type: INTEGER(11),
+        type: INTEGER,
         allowNull: false,
         primaryKey: true,
         comment: 'null',
