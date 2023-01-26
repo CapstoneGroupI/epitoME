@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const { STRING, ENUM, BOOLEAN, DATE, DECIMAL, TEXT } = Sequelize
+const { STRING, ENUM, BOOLEAN, DATEONLY, DECIMAL, TEXT } = Sequelize
 const db = require('../db')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
@@ -93,7 +93,7 @@ const User = db.define('user', {
     allowNull: false
   },
   birthday: {
-    type: DATE,
+    type: DATEONLY,
     validate: {
        isDate: true
   }

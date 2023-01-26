@@ -17,7 +17,7 @@ const LoginForm = ({ name }) => {
   };
 
   return (
-    <div className="flex flex-row flex-wrap w-full justify-between items-center mt m:flex-col bg-[#E68485] h-screen">
+    <div className="flex flex-row flex-wrap w-full justify-between items-center mt m:flex-col bg-[#E68584] h-screen">
       <img src="https://i.ibb.co/fFMPkH6/epitomewhite.png" className="w-auto h-auto"></img>
       <form onSubmit={handleSubmit} name={name} className="flex flex-col items-center border-2 border-stone-50 h-96 bg-stone-50 shadow-md shadow-stone-200 rounded-md m-8 p-7">
         <div>
