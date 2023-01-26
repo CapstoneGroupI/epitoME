@@ -16,17 +16,11 @@ router.get("/", async (req, res, next) => {
   router.get("/:id", async (req, res, next) => {
     try {
 
-      const follower = await Follower.findByPk(req.params.id, {
-        // include: {
-        //   model: Post,
-        //   include: { Comment,
-        //     model: Follower,
-        //     include: {
-        //       model: follower,
-
-        //     },
-        //   },
-        // },
+      const follower = await Follower.findAll({
+        where: {userId: req.params.id},
+        include: {
+                model: User,
+        },
       });
       res.send(follower);
     } catch (err) {

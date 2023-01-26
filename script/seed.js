@@ -54,7 +54,32 @@ async function seed() {
       n_comments: 2
          }),
   ])
+
+  const comment = await Promise.all([
+    Comment.create({
+      text: "this is such a good post"
+    }),
+    Comment.create({
+      text: "great job"
+    })
+  ])
+
+  const message = await Promise.all([
+    Message.create({
+      text: "How are you"
+    }),
+    Message.create({
+      text: "Whats up"
+    })
+  ])
     
+  const follower = await Promise.all([
+    Follower.create({
+    }),
+  
+  ])
+    
+
 
 
   // const createUserDatabase = (num) => {
