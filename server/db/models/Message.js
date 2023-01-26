@@ -15,24 +15,24 @@ const Message = db.define('Message', {
           allowNull: false,
           comment: 'null',
         },
-        userId: {
-          type: INTEGER(11),
-          allowNull: false,
-          comment: 'null',
-          references: {
-            model: 'User',
-            key: 'id',
-          },
-        },
-        receiverId: {
-          type: INTEGER(11),
-          allowNull: false,
-          comment: 'null',
-          references: {
-            model: 'User',
-            key: 'id',
-          },
-        }
+        // userId: {
+        //   type: INTEGER(11),
+        //   allowNull: false,
+        //   comment: 'null',
+        //   references: {
+        //     model: 'User',
+        //     key: 'id',
+        //   },
+        // },
+        // receiverId: {
+        //   type: INTEGER(11),
+        //   allowNull: false,
+        //   comment: 'null',
+        //   references: {
+        //     model: 'User',
+        //     key: 'id',
+        //   },
+        // }
     })
 
 module.exports = Message

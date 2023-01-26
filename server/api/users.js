@@ -17,7 +17,9 @@ router.get("/", async (req, res, next) => {
           "city",
           "state",
           "profilePic",
-          "isAdmin"
+          "isAdmin",
+          "rating",
+          "pronouns"
         ],
       });
       res.status(200).send(users);
