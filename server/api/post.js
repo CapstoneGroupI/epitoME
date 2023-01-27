@@ -6,12 +6,10 @@ const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 router.get("/", async (req, res, next) => {
     try {
       const post = await Post.findAll({
-        attributes: [
-            "text",
-            "n_likes",
-            "n_comments",
-
-        ],
+        include: {
+            model: User,
+            model: Comment,
+        }
       });
       res.status(200).send(post);
     } catch (err) {
