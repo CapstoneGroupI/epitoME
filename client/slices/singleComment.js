@@ -6,7 +6,7 @@ export const getSingleCommentAsync = createAsyncThunk(
     "comment/SingleComment",
     async (id) => {
         try{
-            const { data } = await axios.get(`/api/Comment/${id}`);
+            const { data } = await axios.get(`/api/comment/${id}`);
             return data;
         } catch (err) {
             console.log(err)
