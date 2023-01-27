@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 //GET - retrieve all user data
 export const getAllUsersAsync = createAsyncThunk(
-    "users/all",
+    "users/allUsers",
     async () => {
         try{
             const {data} = await axios.get(`/api/users`)
