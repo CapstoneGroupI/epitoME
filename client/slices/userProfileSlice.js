@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { useSelector, useDispatch } from 'react-redux';
 
 const initialState = {};
 
@@ -53,7 +54,7 @@ const singleProfileSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getSingleUser.fulfilled, (state, action) => {
+        builder.addCase(getSingleProfile.fulfilled, (state, action) => {
             return action.payload;
         });
         builder.addCase(editSingleUser.fulfilled, (state, action) => {
