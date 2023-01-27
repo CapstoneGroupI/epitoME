@@ -44,7 +44,7 @@ export const deleteCommentAsync = createAsyncThunk(
 );
 
 const allCommentsSlice = createSlice({
-    name: "Comments",
+    name: "comments",
     initialState: [],
     reducers: {},
     extraReducers: (builder) => {
