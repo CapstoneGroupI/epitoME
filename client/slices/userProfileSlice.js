@@ -25,8 +25,7 @@ export const editSingleUser = createAsyncThunk(
         birthday,
         city,
         state,
-        profilePic,
-        isAdmin
+        profilePic
     }) => {
         try {
             const { data } = await axios.put(`/api/users/${id}`, {
@@ -38,8 +37,7 @@ export const editSingleUser = createAsyncThunk(
                 birthday,
                 city,
                 state,
-                profilePic,
-                isAdmin
+                profilePic
             });
             return data;
         } catch (err) {
@@ -53,7 +51,7 @@ const singleProfileSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getSingleUser.fulfilled, (state, action) => {
+        builder.addCase(getSingleProfile.fulfilled, (state, action) => {
             return action.payload;
         });
         builder.addCase(editSingleUser.fulfilled, (state, action) => {
