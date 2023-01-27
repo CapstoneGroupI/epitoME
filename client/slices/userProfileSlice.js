@@ -25,7 +25,8 @@ export const editSingleUser = createAsyncThunk(
         birthday,
         city,
         state,
-        profilePic
+        profilePic,
+        isAdmin
     }) => {
         try {
             const { data } = await axios.put(`/api/users/${id}`, {
@@ -37,7 +38,8 @@ export const editSingleUser = createAsyncThunk(
                 birthday,
                 city,
                 state,
-                profilePic
+                profilePic,
+                isAdmin
             });
             return data;
         } catch (err) {
