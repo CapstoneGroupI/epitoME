@@ -7,14 +7,14 @@ export const getAllPostsAsync = createAsyncThunk(
     "post/allPosts",
     async () => {
         try{
-            const { data } = await axios.get(`api/post/`);
+            const { data } = await axios.get(`/api/post/`);
             return data;
         } catch (err) {
             console.log(err)
     }
 })
 
-//POST - create a post
+//POST - create a message
 export const createPostAsync = createAsyncThunk(
     "post/createPost",
     async ({ text, image }) => {
@@ -34,7 +34,7 @@ export const deletePostAsync = createAsyncThunk(
   "post/deletePost",
   async (id) => {
     try {
-      const { data } = await axios.delete(`/api/products/${id}`, {
+      const { data } = await axios.delete(`/api/post/${id}`, {
       });
       return data;
     } catch (err) {
@@ -55,7 +55,7 @@ const allPostSlice = createSlice({
         state.push(action.payload);
       });
       builder.addCase(deletePostAsync.fulfilled, (state, action) => {
-        return state.filter((product) => product.id !== action.payload.id);
+        return state.filter((post) => post.id !== action.payload.id);
       });
   }
   });

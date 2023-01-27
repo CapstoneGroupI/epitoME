@@ -6,7 +6,7 @@ export const getSinglePostAsync = createAsyncThunk(
     "post/SinglePost",
     async (id) => {
         try{
-            const { data } = await axios.get(`api/post/${id}`);
+            const { data } = await axios.get(`/api/post/${id}`);
             return data;
         } catch (err) {
             console.log(err)
@@ -18,7 +18,7 @@ export const updatePostAsync = createAsyncThunk(
     "post/updatePost",
     async({text, image}) => {
         try{
-            const { data } = await axios.put(`api/post/${id}`, {text, image})
+            const { data } = await axios.put(`/api/post/${id}`, {text, image})
             return data
          } catch (err) {
             console.log(err)
