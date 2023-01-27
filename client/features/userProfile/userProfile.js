@@ -20,21 +20,23 @@ export const UserProfile = (props) => {
 
   return (
     <div id="userProfile">
-          <div id="profileContainer" className="flex flex-row border-2 border-[#FB928E] bg-[white] w-3/5 m-10 rounded-md shadow-lg shadow-stone p-4">
-            <img src={profilePic} className="h-72 w-72 rounded-full border-2 border-[#E68485] shadow-lg shadow-stone" />
+          <div id="profileContainer" className="flex flex-row bg-[white] w-3/5 m-10 rounded-md shadow-lg shadow-[#EBAF4C] p-4">
+            <img src={profilePic} className="h-72 w-72 rounded-full border-2 border-[#EBAF4C] shadow-lg shadow-stone" />
             <div id="detailsContainer" className="flex flex-col ml-5">
-                <h1 className="text-[#E68584] text-3xl font-bold">{firstName} {lastName} <span className="text-[#E68584] text-sm"> {pronouns}</span></h1>
-                <h2 className="text-[#E68584]"> {birthday}</h2>
-                  <div id="userInfoContainer">
-                    <h3 className="text-[#E68584]">{city}, {state}</h3>
-                  </div>
-                  <p>{bio}</p>
-                <button id="messageFriend" className="text-[#E68584] border-2 border-[#E68485] p-2 hover:bg-[#E68584] hover:text-white m-2">Message</button> 
-                <button id="addFriend" className="text-[#E68584] border-2 border-[#E68485] p-2 hover:bg-[#E68584] hover:text-white m-2">Add Fellow</button>
-                <h2 id="rating" className="text-[#E68584]">Rating: {rating} </h2>
-                <h3 className="text-[#E68584]">Status:</h3>
+                <h1 className="text-[#EBAF4C] text-3xl font-bold">{firstName} {lastName} <span className="text-[#EBAF4C] text-sm"> {pronouns}</span></h1>
+          <div id="userInfoContainer">
+            <h3 className="text-[#EBAF4C] text-2xl">{city}, {state}</h3>
+            <h2 className="text-[#EBAF4C] text-2xl"> {birthday}</h2>
+            <p>{bio}</p>
+            <h2 id="rating" className="text-[#EBAF4C] text-2xl">Rating: {rating} </h2>
+            <h3 className="text-[#EBAF4C] text-2xl">Status:</h3>
+            <div className="flex flex-row">
+              <button id="messageFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2">Message</button> 
+              <button id="addFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2">Add Fellow</button>
+            </div>
               </div>
               <div id="statusContainer">
+              </div>
               </div>
           </div>
           {/* )}
