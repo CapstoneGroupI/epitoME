@@ -13,6 +13,7 @@ return (
         <div className="flex flex-col items-center md:p-4">
          <h2 className="text-xl text-[#E68584] font-bold font-serif">YOUR RATING:</h2>
          <p className="text-amber-400">★ ★ ★ ★ ★</p>
+         <h2 className="text-xl text-[#E68584] font-bold font-serif mt-10">Notifications:</h2>
          <Link className="text-[#E68584] mt-10">Fellows (0)</Link>
         </div>
        </div>

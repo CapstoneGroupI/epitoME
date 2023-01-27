@@ -3,11 +3,13 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import LoginForm from '../features/auth/LoginForm';
-import Home from '../features/home/Home';
 import { me } from './store';
 import UserProfile from '../features/userProfile/userProfile';
 import RegisterForm from '../features/auth/RegisterForm';
 import Dashboard from '../features/dashboard/Dashboard';
+import VIP from '../features/VIP/VIP.jsx';
+import Boost from '../features/boost/Boost.jsx';
+import Inbox from '../features/messages/Inbox.jsx';
 
 /**
  * COMPONENT
@@ -28,6 +30,9 @@ const AppRoutes = () => {
           <Route path="/*" element={<Dashboard />} />
           <Route to="/home" element={<Dashboard />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/VIP" element={<VIP />} />
+          <Route path="/boost" element={<Boost />} />
+          <Route path="/messages" element={<Inbox />} />
         </Routes>
       ) : (
         <Routes>
