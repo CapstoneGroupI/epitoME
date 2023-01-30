@@ -1,7 +1,23 @@
 import React from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllMessagesAsync } from "../../slices/allMessageSlice";
+import { selectMessages } from "../../slices/allMessageSlice";
+import { getAllUsersAsync } from "../../slices/allUsersSlice";
+import { selectUsers } from "../../slices/allUsersSlice";
 
-const Inbox = () => {
-    return(
+const Inbox = (userId, isLoggedIn) => {
+
+    const messages = useSelector(selectMessages)
+    const users = useSelector(selectUsers)
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAllMessagesAsync())
+        console.log(userId)
+    }, [userId])
+
+    return (
         <div className="flex md:flex-row flex-col">
             <div id="all-messages-box" className="flex flex-col m-5 w-full md:w-2/5 h-4/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] mt-8 rounded-md">
                 <div className="flex flex-row justify-between">
@@ -13,17 +29,38 @@ const Inbox = () => {
                     <div id="single-message-preview" className="overflow-auto shadow-sm shadow-[#EBAF4C] ml-2 mr-2 rounded-md p-2">
                         <h1 className="text-[#a1a7b1] font-bold">Friend Name</h1>
                         <h3 className="text-[#a1a7b1]">Date</h3>
-                        <h2 className="text-[#a1a7b1]">Message...</h2>
+                        <h2 className="text-[#a1a7b1]"> {messages.map(message => {
+                    return (
+                        <div >
+                            <div >{message.text}</div>
+                        </div>
+                    )
+                }
+                )}</h2>
                     </div>
                     <div id="single-message-preview" className="overflow-auto shadow-sm shadow-[#EBAF4C] ml-2 mr-2 rounded-md p-2">
                         <h1 className="text-[#a1a7b1] font-bold">Friend Name</h1>
                         <h3 className="text-[#a1a7b1]">Date</h3>
-                        <h2 className="text-[#a1a7b1]">Message...</h2>
+                        <h2 className="text-[#a1a7b1]"> {messages.map(message => {
+                    return (
+                        <div >
+                            <div >{message.text}</div>
+                        </div>
+                    )
+                }
+                )}</h2>
                     </div>
                     <div id="single-message-preview" className="overflow-auto shadow-sm shadow-[#EBAF4C] ml-2 mr-2 rounded-md p-2">
                         <h1 className="text-[#a1a7b1] font-bold">Friend Name</h1>
                         <h3 className="text-[#a1a7b1]">Date</h3>
-                        <h2 className="text-[#a1a7b1]">Message...</h2>
+                        <h2 className="text-[#a1a7b1]"> {messages.map(message => {
+                    return (
+                        <div >
+                            <div >{message.text}</div>
+                        </div>
+                    )
+                }
+                )}</h2>
                     </div>
                 </div>
             </div>
@@ -33,6 +70,17 @@ const Inbox = () => {
                     <button className="self-end mr-4 mb-2 font-bold text-[#EBAF4C]">Send</button>
                 </div>
             </div>
+            {/* <section id="messages" >
+                {messages.map(message => {
+                    return (
+                        <div >
+                            <div >{message.text}</div>
+                        </div>
+                    )
+                }
+                )}
+            </section> */}
+            
         </div>
     );
 };
