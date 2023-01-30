@@ -20,7 +20,7 @@ export const UserProfile = (props) => {
 
   return (
     <div id="userProfile">
-          <div id="profileContainer" className="flex flex-row bg-[white] w-3/5 m-10 rounded-md shadow-lg shadow-[#EBAF4C] p-4">
+          <div id="profileContainer" className="flex flex-row bg-[white] w-3/5 m-10 rounded-md shadow-lg shadow-[#EBAF4C] p-4 relative">
             <img src={profilePic} className="h-72 w-72 rounded-full border-2 border-[#EBAF4C] shadow-lg shadow-stone" />
             <div id="detailsContainer" className="flex flex-col ml-5">
                 <h1 className="text-[#EBAF4C] text-3xl font-bold">{firstName} {lastName} <span className="text-[#EBAF4C] text-sm"> {pronouns}</span></h1>
@@ -29,10 +29,9 @@ export const UserProfile = (props) => {
             <h2 className="text-[#EBAF4C] text-2xl"> {birthday}</h2>
             <p>{bio}</p>
             <h2 id="rating" className="text-[#EBAF4C] text-2xl">Rating: {rating} </h2>
-            <h3 className="text-[#EBAF4C] text-2xl">Status:</h3>
-            <div className="flex flex-row">
-              <button id="messageFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2">Message</button> 
-              <button id="addFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2">Add Fellow</button>
+            <div className="flex flex-row absolute bottom-0">
+              <button id="messageFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2 mb-6">Message</button> 
+              <button id="addFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2 mb-6">Add Fellow</button>
             </div>
               </div>
               <div id="statusContainer">
