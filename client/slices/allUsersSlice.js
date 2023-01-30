@@ -49,7 +49,15 @@ export const deleteUserAsync = createAsyncThunk(
 const AllUsersSlice = createSlice({
     name: "users",
     initialState: [],
-    reducers: {},
+    reducers: {
+        sortBySearch(state, action) {
+            return state.filter((user)=> {
+                if (user.username.toLowerCase().includes(action.payload)) {
+                    return user
+                }
+            })
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(getAllUsersAsync.fulfilled, (state, action) => {
             state.push(action.payload)
@@ -67,4 +75,5 @@ export const selectUsers = (state) => {
     return state.users
 }
 
+export const {sortBySearch} = AllUsersSlice.actions
 export default AllUsersSlice.reducer;
