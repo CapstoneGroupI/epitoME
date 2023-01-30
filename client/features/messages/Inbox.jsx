@@ -57,7 +57,7 @@ const Inbox = (userId, isLoggedIn) => {
                     return (
                         <div >
                             <div >{message.text}</div>
-                        </div>
+                        </div>  
                     )
                 }
                 )}</h2>
@@ -70,16 +70,6 @@ const Inbox = (userId, isLoggedIn) => {
                     <button className="self-end mr-4 mb-2 font-bold text-[#EBAF4C]">Send</button>
                 </div>
             </div>
-            {/* <section id="messages" >
-                {messages.map(message => {
-                    return (
-                        <div >
-                            <div >{message.text}</div>
-                        </div>
-                    )
-                }
-                )}
-            </section> */}
             
         </div>
     );
