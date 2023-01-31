@@ -35,7 +35,7 @@ const Home = ({ userId, isLoggedIn }) => {
           let options = { year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" };
           let formattedDate = date.toLocaleDateString("en-US", options);
           return (
-            <div className="flex flex-col mx-auto w-3/5 m-10 bg-[#E68584] rounded-md shadow-lg shadow-[#EBAF4C]">
+            <div className="flex flex-col mx-auto w-3/5 max-w-xl m-10 bg-[#E68584] rounded-md shadow-lg shadow-[#EBAF4C]">
               <div className="flex flex-row items-center justify-around">
                 <div className="flex flex-row items-center flex-wrap">
                   <img
