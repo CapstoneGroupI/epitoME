@@ -20,7 +20,7 @@ function DropdownMenu() {
         <hr></hr>
         <Dropdown.Item href="/boost" className="text-[#E68584] hover:text-white hover:bg-[#EBAF4C] p-2">Boost Your Rating</Dropdown.Item>
         <hr></hr>
-        <Dropdown.Item href="/contact-us" className="text-[#E68584] hover:text-white hover:bg-[#EBAF4C] p-2">Contact Us</Dropdown.Item>
+        <Dropdown.Item href="/contact" className="text-[#E68584] hover:text-white hover:bg-[#EBAF4C] p-2">Contact Us</Dropdown.Item>
         <hr></hr>
         <Dropdown.Item href="/settings" className="text-[#E68584] hover:text-white hover:bg-[#EBAF4C] p-2">Settings</Dropdown.Item>
         <hr></hr>
