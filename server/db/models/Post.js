@@ -24,6 +24,14 @@ const Post = db.define('post', {
         type: STRING,
         allowNull: true,
     },
+    rating: {
+      type: INTEGER,
+      defaultValue: 0,
+      validate: {
+        max: 5,
+        min: 0,
+      }
+    }
 })
 
 module.exports = Post

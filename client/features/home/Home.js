@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useEffect , useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllPostsAsync } from "../../slices/allPostSlice";
 import { selectPosts } from "../../slices/allPostSlice";
+import { FaStar } from "react-icons/fa"
+import { updatePostAsync } from "../../slices/singlePostSlice";
 /**
  * COMPONENT
  */
@@ -18,6 +20,10 @@ const Home = ({ userId, isLoggedIn }) => {
     dispatch(getAllPostsAsync());
     console.log(userId);
   }, [userId]);
+
+  const handleUpdate = (id, rating) => {
+      dispatch(updatePostAsync(id, rating))
+  }
 
   //npx tailwindcss -i ./public/style.css -o ./public/output.css --watch
 
@@ -37,23 +43,28 @@ const Home = ({ userId, isLoggedIn }) => {
                     src={post.user.profilePic}
                   />
                   <div className=" m-2">
-                    <h1 className="font-bold font-serif text-amber-300">
+                    <h1 className="font-bold font-roboto text-amber-300">
                       {post.user.firstName} {post.user.lastName}
                     </h1>
-                    <h1 className="font-bold font-serif">@{post.user.username}</h1>
+                    <h1 className="font-bold  text-white text-sm">@{post.user.username}</h1>
                   </div>
                 </div>
                 <div>
-                  <p className="font-bold font-serif text-xs m-2">{formattedDate}</p>
+                  <p className="font-bold font-serif text-xs m-2 text-white">{formattedDate}</p>
                 </div>
               </div>
               <div className="w-10/12 h-0.5 mx-auto rounded-lg bg-amber-300" />
               <div className="mx-auto m-5 w-10/12">{post.text}</div>
               <img className="rounded mx-auto m-5 w-10/12" src={post.image}></img>
               <div className="h-10 bg-amber-300 flex items-center justify-around">
-                <div className="flex justify-around w-1/6">
-                    <button className=" bg-[#E68584] rounded-full w-5 h-5"></button>
-                    <button className=" bg-[#E68584] rounded-full w-5 h-5"></button>
+                <div className="flex justify-around w-2/12">
+                    {[...Array(5)].map((star, i) => {
+                      const ratingValue = i + 1;
+                      return(<label>
+                        <input className=" hidden " type="radio" name="rating" value={ratingValue} onClick={()=> handleUpdate(post.id, ratingValue) } />
+                        <FaStar color={ratingValue <= post.rating ? "#ffc107" : "#e4e5e9"} className=" cursor-pointer"/>
+                      </label>)
+                    })}
                 </div>
                 <button className="">Comments</button>
 
