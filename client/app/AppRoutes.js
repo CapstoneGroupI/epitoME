@@ -10,7 +10,7 @@ import Dashboard from '../features/dashboard/Dashboard';
 import VIP from '../features/VIP/VIP.jsx';
 import Boost from '../features/boost/Boost.jsx';
 import Inbox from '../features/messages/Inbox.jsx';
-import CreatePost from '../features/post/createPost';
+import ContactForm from '../features/contact/Contact.jsx';
 
 /**
  * COMPONENT
@@ -34,7 +34,7 @@ const AppRoutes = () => {
           <Route path="/VIP" element={<VIP />} />
           <Route path="/boost" element={<Boost />} />
           <Route path="/messages" element={<Inbox />} />
-          <Route path ="/create" element = {<CreatePost />} />
+          <Route path="/contact" element={<ContactForm />} />
         </Routes>
       ) : (
         <Routes>
