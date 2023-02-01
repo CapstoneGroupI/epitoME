@@ -25,6 +25,7 @@ async function seed() {
       city: "New York",
       state: "NY",
       isAdmin: false,
+      rating: 5.0,
     }),
     User.create({
       username: "Murphy",
@@ -36,19 +37,21 @@ async function seed() {
       city: "New York",
       state: "NY",
       isAdmin: false,
+      rating: 5.0,
     }),
     User.create({
       username: "cupofjoey",
       password: "321",
       email: "sightower@gmail.com",
       birthday: "11-15-1999",
-      profilePic: "https://i.ibb.co/9hDHL1W/IMG-3839.jpg",
+      profilePic: "https://photos.google.com/share/AF1QipMG_QwhMxuP7V0Ay0xmb8okjniGwx6ja6M6yQm2Of0LYZfnG8QdrPmr-Pp7F14V4g/photo/AF1QipP4CiyRPnkSI2iR9anrVDh_EmDElEiH84egaat9?key=RTdVNkpmOTVtMVJVNVNJRGdPSTE5ckUwZnJXdjN3",
       firstName: "Sarah",
       lastName: "Hightower",
       pronouns: "she/her",
       city: "Bakersfield",
       state: "CA",
       isAdmin: true,
+      rating: 5.0,
     }),
     User.create({
       username: "tomhanks",
@@ -62,6 +65,7 @@ async function seed() {
       isAdmin: false,
       profilePic:
         "https://www.denofgeek.com/wp-content/uploads/2022/05/Tom-Hanks-as-Forrest-Gump.jpeg?fit=1200%2C714",
+        rating: 5.0,
     }),
     User.create({
       username: "barack.obama",
@@ -75,6 +79,7 @@ async function seed() {
       isAdmin: false,
       profilePic:
         "https://brenebrown.com/wp-content/uploads/2021/10/DTL_PresidentBarackObama_Arapawa_Dark.jpg",
+        rating: 5.0,
     }),
     User.create({
       username: "selenagomez",
@@ -88,6 +93,7 @@ async function seed() {
       isAdmin: false,
       profilePic:
         "https://1159025897.rsc.cdn77.org/data/images/full/83167/selena-gomez.jpg",
+        rating: 5.0,
     }),
     User.create({
       username: "dwyaneWade",
@@ -100,6 +106,7 @@ async function seed() {
       state: "FL",
       isAdmin: false,
       profilePic: "https://cdn.nba.com/headshots/nba/latest/1040x760/2548.png",
+      rating: 5.0,
     }),
     User.create({
       username: "madonna",
@@ -113,6 +120,7 @@ async function seed() {
       isAdmin: false,
       profilePic:
         "https://resizing.flixster.com/N2cuekNI5Fxb85yQcbKxt0VjjJk=/218x280/v2/https://flxt.tmsimg.com/assets/69735_v9_bb.jpg",
+        rating: 5.0,
     }),
     User.create({
       username: "scarjo",
@@ -303,13 +311,12 @@ async function seed() {
       n_likes: 3,
       n_comments: 2,
       image: "https://www.livinginhawaii.com/wp-content/uploads/2019/01/ftp7/18509322244_ddf6e3213b_o.jpg",
-      userId: 3
+      userId: 6
     }),
     Post.create({
       text: "Hawaii is cool",
       n_likes: 20,
       n_comments: 100,
-      image: "https://www.livinginhawaii.com/wp-content/uploads/2019/01/ftp7/18509322244_ddf6e3213b_o.jpg",
       userId: 3
     }),
     Post.create({ 
@@ -317,8 +324,20 @@ async function seed() {
       n_likes: 9,
       n_comments: 10,
       image: "https://www.livinginhawaii.com/wp-content/uploads/2019/01/ftp7/18509322244_ddf6e3213b_o.jpg",
-      userId: 3
+      userId: 9
          }),
+         Post.create({
+          text: "Loving life",
+          n_likes: 20,
+          n_comments: 44,
+          userId: 3
+        }),
+        Post.create({
+          text: "Lets go on vacation",
+          n_likes: 20,
+          n_comments: 22,
+          userId: 5
+        }),
   ]);
 
   const comment = await Promise.all([

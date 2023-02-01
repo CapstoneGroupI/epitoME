@@ -6,11 +6,8 @@ const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 router.get("/", async (req, res, next) => {
     try {
       const post = await Post.findAll({
-        include: {
-            model: User,
-            model: Comment,
-        }
-      });
+        include: User, Comment 
+        });
       res.status(200).send(post);
     } catch (err) {
       next(err);
