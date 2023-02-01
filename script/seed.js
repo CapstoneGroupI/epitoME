@@ -44,7 +44,7 @@ async function seed() {
       password: "321",
       email: "sightower@gmail.com",
       birthday: "11-15-1999",
-      profilePic: "https://i.ibb.co/9hDHL1W/IMG-3839.jpg",
+      // profilePic: "https://i.ibb.co/9hDHL1W/IMG-3839.jpg",
       firstName: "Sarah",
       lastName: "Hightower",
       pronouns: "she/her",
@@ -91,8 +91,7 @@ async function seed() {
       city: "Hollywood",
       state: "CA",
       isAdmin: false,
-      profilePic:
-        "https://1159025897.rsc.cdn77.org/data/images/full/83167/selena-gomez.jpg",
+      profilePic: "https://1159025897.rsc.cdn77.org/data/images/full/83167/selena-gomez.jpg",
         rating: 5.0,
     }),
     User.create({

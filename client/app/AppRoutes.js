@@ -36,7 +36,7 @@ const AppRoutes = () => {
           <Route path="/boost" element={<Boost />} />
           <Route path="/messages" element={<Inbox />} />
           <Route path="/contact" element={<ContactForm />} />
-          <Route path="/create" element={<CreatePost />} />
+          <Route path="/create" element={<CreatePost user />} />
         </Routes>
       ) : (
         <Routes>
