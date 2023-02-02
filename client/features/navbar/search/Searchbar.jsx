@@ -3,7 +3,7 @@ import  React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sortBySearch } from '../../../slices/allUsersSlice';
 import { useDispatch } from 'react-redux';
-import Search from './search';
+// import Search from './search';
 
 const Searchbar = () => {
   const navigate = useNavigate();

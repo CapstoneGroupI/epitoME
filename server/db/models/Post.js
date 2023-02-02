@@ -1,3 +1,4 @@
+const { ARRAY } = require('sequelize');
 const Sequelize = require('sequelize');
 const { DATE, STRING, INTEGER , TEXT} = Sequelize
 const db = require('../db');
@@ -25,8 +26,8 @@ const Post = db.define('post', {
         allowNull: true,
     },
     rating: {
-      type: INTEGER,
-      defaultValue: 0,
+      type: ARRAY(INTEGER),
+      defaultValue: [],
       validate: {
         max: 5,
         min: 0,

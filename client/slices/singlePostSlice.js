@@ -6,7 +6,7 @@ export const getSinglePostAsync = createAsyncThunk(
     "post/SinglePost",
     async (id) => {
         try{
-            const { data } = await axios.get(`/api/post/${id}`);
+            const { data } = await axios.get(`api/post/${id}`);
             return data;
         } catch (err) {
             console.log(err)
@@ -16,9 +16,12 @@ export const getSinglePostAsync = createAsyncThunk(
 //PUT - update post
 export const updatePostAsync = createAsyncThunk(
     "post/updatePost",
-    async({id, rating}) => {
+    async (postObject) => {
+        const {id , rating} = postObject
         try{
-            const { data } = await axios.put(`/api/post/${id}`, {rating})
+            const { data } = await axios.put(`api/post/${id}`, rating)
+            console.log('this is data----------------',data)       
+            data.rating.push(rating)
             return data
          } catch (err) {
             console.log(err)
