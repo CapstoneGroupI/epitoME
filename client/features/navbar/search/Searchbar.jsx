@@ -14,7 +14,7 @@ const Searchbar = () => {
     e.preventDefault();
     // Search(searchTerm)
     // await dispatch(sortBySearch(value.toLowerCase()));
-    // navigate(`/search/${searchTerm}`);
+    navigate(`/search/${searchTerm}`);
   };
 
   return (

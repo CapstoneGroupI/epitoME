@@ -18,7 +18,7 @@ const Home = ({ userId, isLoggedIn, props}) => {
 
   useEffect(() => {
     dispatch(getAllPostsAsync());
-    console.log(userId);
+    // console.log(userId);
     // console.log("-------", posts)
     // console.log("these are the users from post", posts.map((post) => post.user))
   }, [userId]);
@@ -31,7 +31,6 @@ const Home = ({ userId, isLoggedIn, props}) => {
 
   return (
     <div className=""> 
-    {console.log("-------", posts.map(post => post.user.profilePic))}
       <div className="">
         {posts.map((post) => {
           let date = new Date(post.createdAt);
