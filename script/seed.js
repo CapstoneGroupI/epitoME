@@ -44,7 +44,7 @@ async function seed() {
       password: "321",
       email: "sightower@gmail.com",
       birthday: "11-15-1999",
-      profilePic: "https://photos.google.com/share/AF1QipMG_QwhMxuP7V0Ay0xmb8okjniGwx6ja6M6yQm2Of0LYZfnG8QdrPmr-Pp7F14V4g/photo/AF1QipP4CiyRPnkSI2iR9anrVDh_EmDElEiH84egaat9?key=RTdVNkpmOTVtMVJVNVNJRGdPSTE5ckUwZnJXdjN3",
+      profilePic: "https://www.linkpicture.com/q/IMG_3839.jpg",
       firstName: "Sarah",
       lastName: "Hightower",
       pronouns: "she/her",

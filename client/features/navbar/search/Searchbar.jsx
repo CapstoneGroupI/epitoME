@@ -2,6 +2,7 @@
 import  React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Search from './Search.jsx';
 // import Search from './search';
 
 const Searchbar = () => {
@@ -13,7 +14,7 @@ const Searchbar = () => {
     e.preventDefault();
     // Search(searchTerm)
     // await dispatch(sortBySearch(value.toLowerCase()));
-    // navigate(`/search/${searchTerm}`);
+    navigate(`/search/${searchTerm}`);
   };
 
   return (
