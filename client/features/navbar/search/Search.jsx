@@ -3,7 +3,8 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { Error, Loader } from '../../loader/Error.jsx';
+import Error from '../../loader/Error.jsx';
+import Loader from '../../loader/Loader.jsx';
 import { getAllUsersAsync } from '../../../slices/allUsersSlice';
 import { sortBySearch } from '../../../slices/allUsersSlice';
 import { selectUsers } from '../../../slices/allUsersSlice';

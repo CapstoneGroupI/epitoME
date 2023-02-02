@@ -91,8 +91,7 @@ async function seed() {
       city: "Hollywood",
       state: "CA",
       isAdmin: false,
-      profilePic:
-        "https://1159025897.rsc.cdn77.org/data/images/full/83167/selena-gomez.jpg",
+      profilePic: "https://1159025897.rsc.cdn77.org/data/images/full/83167/selena-gomez.jpg",
         rating: 5.0,
     }),
     User.create({
