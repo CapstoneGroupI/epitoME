@@ -12,6 +12,7 @@ const Home = ({ userId, isLoggedIn }) => {
   const username = useSelector((state) => state.auth.me.username);
   const firstName = useSelector((state) => state.auth.me.firstName);
 
+
   const posts = useSelector(selectPosts);
 
   const dispatch = useDispatch();

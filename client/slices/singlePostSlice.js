@@ -16,9 +16,9 @@ export const getSinglePostAsync = createAsyncThunk(
 //PUT - update post
 export const updatePostAsync = createAsyncThunk(
     "post/updatePost",
-    async({id, text, image, rating}) => {
+    async({id, rating}) => {
         try{
-            const { data } = await axios.put(`/api/post/${id}`, {text, image, rating})
+            const { data } = await axios.put(`/api/post/${id}`, {rating})
             return data
          } catch (err) {
             console.log(err)
