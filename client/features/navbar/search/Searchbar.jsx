@@ -1,14 +1,20 @@
 /* eslint-disable no-unused-vars */
 import  React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { sortBySearch } from '../../../slices/allUsersSlice';
+import { useDispatch } from 'react-redux';
+import Search from './search';
 
 const Searchbar = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/search/${searchTerm}`);
+    Search(searchTerm)
+    // await dispatch(sortBySearch(value.toLowerCase()));
+    // navigate(`/search/${searchTerm}`);
   };
 
   return (
@@ -25,8 +31,8 @@ const Searchbar = () => {
           className="border-b-2 border-[#E68584] w-96 m-6 flex-1 bg-transparent text-base text-gray-800 p-4"
           placeholder="Search..."
           type="search"
-          value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchTerm}
         ></input>
       </div>
     </form>
