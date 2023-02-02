@@ -17,10 +17,10 @@ export const getAllPostsAsync = createAsyncThunk(
 //POST - create a message
 export const createPostAsync = createAsyncThunk(
     "post/createPost",
-    async ({ text, image }) => {
+    async ({ text, image, userId }) => {
       try {
         const { data } = await axios.post(
-          `/api/post`, { text, image },
+          `/api/post`, { text, image , userId},
         );
         return data;
       } catch (err) {

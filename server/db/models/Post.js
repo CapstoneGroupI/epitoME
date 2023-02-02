@@ -21,8 +21,7 @@ const Post = db.define('post', {
         comment: 'null',
       },
     image: {
-        type: STRING,
-        allowNull: true,
+        type: TEXT
     },
     rating: {
       type: INTEGER,
