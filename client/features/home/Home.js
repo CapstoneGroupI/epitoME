@@ -8,9 +8,9 @@ import { updatePostAsync } from "../../slices/singlePostSlice";
 /**
  * COMPONENT
  */
-const Home = ({ userId, isLoggedIn }) => {
-  const username = useSelector((state) => state.auth.me.username);
-  const firstName = useSelector((state) => state.auth.me.firstName);
+const Home = ({ userId, isLoggedIn, props}) => {
+  // const username = useSelector((state) => state.auth.me.username);
+  // const firstName = useSelector((state) => state.auth.me.firstName);
 
   const posts = useSelector(selectPosts);
 
@@ -19,6 +19,8 @@ const Home = ({ userId, isLoggedIn }) => {
   useEffect(() => {
     dispatch(getAllPostsAsync());
     console.log(userId);
+    // console.log("-------", posts)
+    // console.log("these are the users from post", posts.map((post) => post.user))
   }, [userId]);
 
   const handleUpdate = (id, rating) => {
@@ -28,7 +30,8 @@ const Home = ({ userId, isLoggedIn }) => {
   //npx tailwindcss -i ./public/style.css -o ./public/output.css --watch
 
   return (
-    <div className="">
+    <div className=""> 
+    {console.log("-------", posts.map(post => post.user.profilePic))}
       <div className="">
         {posts.map((post) => {
           let date = new Date(post.createdAt);

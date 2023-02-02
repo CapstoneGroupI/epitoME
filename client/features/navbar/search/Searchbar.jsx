@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import  React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { sortBySearch } from '../../../slices/allUsersSlice';
 import { useDispatch } from 'react-redux';
-import Search from './search';
+// import Search from './search';
 
 const Searchbar = () => {
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ const Searchbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Search(searchTerm)
+    // Search(searchTerm)
     // await dispatch(sortBySearch(value.toLowerCase()));
     // navigate(`/search/${searchTerm}`);
   };
