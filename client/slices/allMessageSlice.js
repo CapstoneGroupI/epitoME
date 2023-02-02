@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 //GET - all messages
 
 export const getAllMessagesAsync = createAsyncThunk(
-    "post/allMessages",
+    "messages/allMessages",
     async () => {
         try{
             const { data } = await axios.get(`api/message/`);
@@ -16,11 +16,11 @@ export const getAllMessagesAsync = createAsyncThunk(
 
 //POST - create a Message
 export const createMessageAsync = createAsyncThunk(
-    "post/createMessage",
-    async ({ text }) => {
+    "messages/createMessages",
+    async ({ text, userId }) => {
       try {
         const { data } = await axios.post(
-          `/api/post`, { text },
+          `/api/message`, { text, userId },
         );
         return data;
       } catch (err) {
@@ -31,7 +31,7 @@ export const createMessageAsync = createAsyncThunk(
 
 //DELETE - delete message
 export const deleteMessageAsync = createAsyncThunk(
-  "post/deleteMessage",
+  "messages/deleteMessage",
   async (id) => {
     try {
       const { data } = await axios.delete(`/api/message/${id}`, {
