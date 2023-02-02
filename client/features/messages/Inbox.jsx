@@ -3,19 +3,34 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllMessagesAsync } from "../../slices/allMessageSlice";
 import { selectMessages } from "../../slices/allMessageSlice";
-import { getAllUsersAsync } from "../../slices/allUsersSlice";
-import { selectUsers } from "../../slices/allUsersSlice";
+import { createMessageAsync } from "../../slices/allMessageSlice";
+import { useState } from "react";
 
 const Inbox = (userId, isLoggedIn) => {
 
+    const [text, setText] = useState("")
+
+    const userId = useSelector((state) => state.auth.me.id)
+
     const messages = useSelector(selectMessages)
-    const users = useSelector(selectUsers)
+
+    let arr = []
 
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getAllMessagesAsync())
         console.log(userId)
     }, [userId])
+    
+    arr = messages.map(message => {return message.text});
+    console.log('these are the messages', arr)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createMessageAsync({text, userId}))
+        console.log("submitted")
+    }
 
     return (
         <div className="flex md:flex-row flex-col">
@@ -66,8 +81,8 @@ const Inbox = (userId, isLoggedIn) => {
             </div>
             <div id="single-message-box" className="m-5 mt-8 w-3/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] rounded-md relative">
                 <div id="send-message" className="flex flex-col absolute bottom-0 w-full">
-                    <input placeholder="Type message here..." className="m-2 p-2 border-t-2 border-[#EBAF4C]"></input>
-                    <button className="self-end mr-4 mb-2 font-bold text-[#EBAF4C]">Send</button>
+                    <input placeholder="Type message here..." className="m-2 p-2 border-t-2 border-[#EBAF4C]" onChange = {(e) =>setText(e.target.value)}></input>
+                    <button className="self-end mr-4 mb-2 font-bold text-[#EBAF4C]" onClick={handleSubmit}>Send</button>
                 </div>
             </div>
             
