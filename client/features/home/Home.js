@@ -54,7 +54,7 @@ const Home = ({ userId, isLoggedIn, props}) => {
               <div className="flex flex-row items-center justify-around">
                 <div className="flex flex-row items-center flex-wrap">
                   <img
-                    className=" object-cover p-5 rounded-full w-40 h-40"
+                    className="object-cover p-5 rounded-full w-40 h-40"
                     src={post.user.profilePic}
                   />
                   <div className=" m-2">
