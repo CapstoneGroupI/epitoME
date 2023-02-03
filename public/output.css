@@ -931,6 +931,10 @@ video {
   border-width: 2px;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -945,6 +949,10 @@ video {
 
 .border-r-2 {
   border-right-width: 2px;
+}
+
+.border-solid {
+  border-style: solid;
 }
 
 .border-\[\#E68584\] {
@@ -970,6 +978,11 @@ video {
 .border-honey {
   --tw-border-opacity: 1;
   border-color: rgb(235 175 76 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(25 22 36 / var(--tw-border-opacity));
 }
 
 .bg-\[pink\] {
