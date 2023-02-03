@@ -9,7 +9,6 @@ import { sortBySearch } from '../../../slices/allUsersSlice';
 import { selectUsers } from '../../../slices/allUsersSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import UserProfile from '../../userProfile/userProfile.js';
 
 
 const Search = () => {
