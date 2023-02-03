@@ -1039,6 +1039,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-solid {
+  border-style: solid;
+}
+
 .border-\[\#E68584\] {
   --tw-border-opacity: 1;
   border-color: rgb(230 133 132 / var(--tw-border-opacity));
@@ -1067,6 +1071,11 @@ video {
 .border-salmon {
   --tw-border-opacity: 1;
   border-color: rgb(230 133 132 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(25 22 36 / var(--tw-border-opacity));
 }
 
 .bg-\[pink\] {

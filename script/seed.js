@@ -354,18 +354,22 @@ async function seed() {
   const comment = await Promise.all([
     Comment.create({
       text: "this is such a good post",
+      userId:1
     }),
     Comment.create({
       text: "great job",
+      userId:2
     }),
   ]);
 
   const message = await Promise.all([
     Message.create({
       text: "How are you",
+      userId: 1
     }),
     Message.create({
       text: "Whats up",
+      userId: 2
     }),
   ]);
 
