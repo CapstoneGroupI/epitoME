@@ -20,7 +20,19 @@ async function seed() {
       password: "123",
       email: "cody@gmail.com",
       firstName: "Cody",
-      lastName: "Cody",
+      lastName: "Adams",
+      pronouns: "he/him",
+      city: "New York",
+      state: "NY",
+      isAdmin: false,
+      rating: 5.0,
+    }),
+    User.create({
+      username: "bettercody",
+      password: "123",
+      email: "bettercody@gmail.com",
+      firstName: "Cody",
+      lastName: "Smith",
       pronouns: "he/him",
       city: "New York",
       state: "NY",
@@ -32,7 +44,7 @@ async function seed() {
       password: "123",
       email: "Murphy@gmail.com",
       firstName: "Murphy",
-      lastName: "Murphy",
+      lastName: "Wells",
       pronouns: "he/him",
       city: "New York",
       state: "NY",
@@ -44,7 +56,7 @@ async function seed() {
       password: "321",
       email: "sightower@gmail.com",
       birthday: "11-15-1999",
-      profilePic: "https://photos.google.com/share/AF1QipMG_QwhMxuP7V0Ay0xmb8okjniGwx6ja6M6yQm2Of0LYZfnG8QdrPmr-Pp7F14V4g/photo/AF1QipP4CiyRPnkSI2iR9anrVDh_EmDElEiH84egaat9?key=RTdVNkpmOTVtMVJVNVNJRGdPSTE5ckUwZnJXdjN3",
+      profilePic: "https://www.linkpicture.com/q/IMG_3839.jpg",
       firstName: "Sarah",
       lastName: "Hightower",
       pronouns: "she/her",
@@ -342,18 +354,22 @@ async function seed() {
   const comment = await Promise.all([
     Comment.create({
       text: "this is such a good post",
+      userId:1
     }),
     Comment.create({
       text: "great job",
+      userId:2
     }),
   ]);
 
   const message = await Promise.all([
     Message.create({
       text: "How are you",
+      userId: 1
     }),
     Message.create({
       text: "Whats up",
+      userId: 2
     }),
   ]);
 

@@ -6,7 +6,7 @@ export const getSinglePostAsync = createAsyncThunk(
     "post/SinglePost",
     async (id) => {
         try{
-            const { data } = await axios.get(`/api/post/${id}`);
+            const { data } = await axios.get(`api/post/${id}`);
             return data;
         } catch (err) {
             console.log(err)
@@ -16,10 +16,15 @@ export const getSinglePostAsync = createAsyncThunk(
 //PUT - update post
 export const updatePostAsync = createAsyncThunk(
     "post/updatePost",
-    async({id, text, image, rating}) => {
+    async (postObject) => {
+        const {id , rating} = postObject
         try{
-            const { data } = await axios.put(`/api/post/${id}`, {text, image, rating})
-            return data
+            const  oldData = await axios.get(`api/post/${id}`)
+            const newArray = [...oldData.data.rating, rating]
+            const { data } = await axios.put(`api/post/${id}`, newArray)      
+            data.rating = newArray;
+            console.log('this is data.rating-----------',data.rating)
+            return newArray
          } catch (err) {
             console.log(err)
          }
@@ -35,7 +40,7 @@ const singlePostSlice = createSlice({
             return action.payload
         })
         builder.addCase(updatePostAsync.fulfilled, (state, action) => {
-            return action.payload
+           return action.payload
         })
     }
 })
