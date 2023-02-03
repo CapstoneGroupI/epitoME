@@ -6,7 +6,7 @@ import { selectMessages } from "../../slices/allMessageSlice";
 import { createMessageAsync } from "../../slices/allMessageSlice";
 import { useState } from "react";
 
-const Inbox =  () => {
+const Inbox = () => {
 
     const [text, setText] = useState("");
 
@@ -22,13 +22,13 @@ const Inbox =  () => {
         dispatch(getAllMessagesAsync())
         console.log(userId)
     }, [userId])
-    
-    arr = messages.map(message => {return message.text});
+
+    arr = messages.map(message => { return message.text });
     console.log('these are the messages', arr)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createMessageAsync({text, userId}))
+        dispatch(createMessageAsync({ text, userId }))
         console.log("submitted")
     }
 
@@ -45,47 +45,47 @@ const Inbox =  () => {
                         <h1 className="text-[#a1a7b1] font-bold">Friend Name</h1>
                         <h3 className="text-[#a1a7b1]">Date</h3>
                         <h2 className="text-[#a1a7b1]"> {messages.map(message => {
-                    return (
-                        <div >
-                            <div >{message.text}</div>
-                        </div>
-                    )
-                }
-                )}</h2>
+                            return (
+                                <div >
+                                    <div >{message.text}</div>
+                                </div>
+                            )
+                        }
+                        )}</h2>
                     </div>
                     <div id="single-message-preview" className="overflow-auto shadow-sm shadow-[#EBAF4C] ml-2 mr-2 rounded-md p-2">
                         <h1 className="text-[#a1a7b1] font-bold">Friend Name</h1>
                         <h3 className="text-[#a1a7b1]">Date</h3>
                         <h2 className="text-[#a1a7b1]"> {messages.map(message => {
-                    return (
-                        <div >
-                            <div >{message.text}</div>
-                        </div>
-                    )
-                }
-                )}</h2>
+                            return (
+                                <div >
+                                    <div >{message.text}</div>
+                                </div>
+                            )
+                        }
+                        )}</h2>
                     </div>
                     <div id="single-message-preview" className="overflow-auto shadow-sm shadow-[#EBAF4C] ml-2 mr-2 rounded-md p-2">
                         <h1 className="text-[#a1a7b1] font-bold">Friend Name</h1>
                         <h3 className="text-[#a1a7b1]">Date</h3>
                         <h2 className="text-[#a1a7b1]"> {messages.map(message => {
-                    return (
-                        <div >
-                            <div >{message.text}</div>
-                        </div>  
-                    )
-                }
-                )}</h2>
+                            return (
+                                <div >
+                                    <div >{message.text}</div>
+                                </div>
+                            )
+                        }
+                        )}</h2>
                     </div>
                 </div>
             </div>
             <div id="single-message-box" className="m-5 mt-8 w-3/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] rounded-md relative">
                 <div id="send-message" className="flex flex-col absolute bottom-0 w-full">
-                    <input placeholder="Type message here..." className="m-2 p-2 border-t-2 border-[#EBAF4C]" onChange = {(e) => setText(e.target.value)}></input>
+                    <input placeholder="Type message here..." className="m-2 p-2 border-t-2 border-[#EBAF4C]" onChange={(e) => setText(e.target.value)}></input>
                     <button className="self-end mr-4 mb-2 font-bold text-[#EBAF4C]" onClick={handleSubmit}>Send</button>
                 </div>
             </div>
-            
+
         </div>
     );
 };
