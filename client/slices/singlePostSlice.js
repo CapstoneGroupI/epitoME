@@ -21,10 +21,10 @@ export const updatePostAsync = createAsyncThunk(
         try{
             const  oldData = await axios.get(`api/post/${id}`)
             const newArray = [...oldData.data.rating, rating]
-            const { data } = await axios.put(`api/post/${id}`, rating)      
+            const { data } = await axios.put(`api/post/${id}`, newArray)      
             data.rating = newArray;
             console.log('this is data.rating-----------',data.rating)
-            return data
+            return newArray
          } catch (err) {
             console.log(err)
          }

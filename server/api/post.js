@@ -42,7 +42,7 @@ router.get("/", async (req, res, next) => {
   router.put("/:id", async (req, res, next) => {
     try{
         const myPost = await Post.findByPk(req.params.id)
-        res.status(200).send(await myPost.update(req.body));
+        res.status(200).send(await myPost.update({rating: req.body}));
     } catch(err){
         next(err)
     }

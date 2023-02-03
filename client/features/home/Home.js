@@ -9,8 +9,9 @@ import { updatePostAsync } from "../../slices/singlePostSlice";
  * COMPONENT
  */
 const Home = ({ userId, isLoggedIn, props}) => {
-  // const username = useSelector((state) => state.auth.me.username);
-  // const firstName = useSelector((state) => state.auth.me.firstName);
+  const username = useSelector((state) => state.auth.me.username);
+  const firstName = useSelector((state) => state.auth.me.firstName);
+
 
   const posts = useSelector(selectPosts);
 
@@ -18,10 +19,8 @@ const Home = ({ userId, isLoggedIn, props}) => {
 
   useEffect(() => {
     dispatch(getAllPostsAsync());
-    // console.log(userId);
-    // console.log("-------", posts)
-    // console.log("these are the users from post", posts.map((post) => post.user))
-  }, [userId]);
+    
+  }, [userId,]);
 
   const handleUpdate = (id,rating) => {
     console.log('this is rating --------------',id, rating)
@@ -42,6 +41,13 @@ const Home = ({ userId, isLoggedIn, props}) => {
             hour: "2-digit",
             minute: "2-digit",
           };
+          function getAvg(post) {
+            const total = post.rating.reduce((acc, c) => acc + c, 0);
+            return total / post.rating.length;
+          }
+          
+          const average = getAvg(post);
+          
           let formattedDate = date.toLocaleDateString("en-US", options);
           return (
             <div className="flex flex-col mx-auto w-3/5 max-w-xl m-10 bg-[#E68584] rounded-md shadow-lg shadow-[#EBAF4C]">
@@ -72,14 +78,18 @@ const Home = ({ userId, isLoggedIn, props}) => {
                 className="rounded mx-auto m-5 w-10/12"
                 src={post.image}
               ></img>
+              <div className="flex justify-end p-5">
+              <div className="">{average.toFixed(2)}</div>
+              </div>
+              
               <div className="h-10 bg-amber-300 flex items-center justify-around">
                 <div className="flex justify-around w-2/12">
                   
-                  <button onClick={() => handleUpdate(post.id, 1)}>1</button>
-                  <button onClick={() => handleUpdate(post.id, 2)}>2</button>
-                  <button onClick={() => handleUpdate(post.id, 3)}>3</button>
-                  <button onClick={() => handleUpdate(post.id, 4)}>4</button>
-                  <button onClick={() => handleUpdate(post.id, 5)}>5</button>
+                  <button onClick={() => handleUpdate(post.id, 1)}><FaStar className="hover:text-[#E68584]"/></button>
+                  <button onClick={() => handleUpdate(post.id, 2)}><FaStar className="hover:text-[#E68584]"/></button>
+                  <button onClick={() => handleUpdate(post.id, 3)}><FaStar className="hover:text-[#E68584]"/></button>
+                  <button onClick={() => handleUpdate(post.id, 4)}><FaStar className="hover:text-[#E68584]"/></button>
+                  <button onClick={() => handleUpdate(post.id, 5)}><FaStar className="hover:text-[#E68584]"/></button>
                   
                 </div>
                 <button className="">Comments</button>

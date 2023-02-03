@@ -26,7 +26,7 @@ const Post = db.define('post', {
     },
     rating: {
       type: ARRAY(INTEGER),
-      defaultValue: [],
+      defaultValue: [3],
       validate: {
         max: 5,
         min: 0,
