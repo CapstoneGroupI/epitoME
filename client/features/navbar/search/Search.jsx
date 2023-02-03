@@ -43,7 +43,19 @@ useEffect(() => {
       </h2>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {filterUser(users).map((user) =>
-          <h1>{user.firstName} {user.username}</h1>
+          <div className="border-2 border-honey rounded shadow-md p-2 m-2 ml-12 w-4/5">
+            <div className="flex justify-between flex-wrap w-full">
+            <img src={user.profilePic} className="h-20 w-20 rounded-full border-2 border-honey"></img>
+            <div className="flex flex-col flex-1">
+              <h1 className="font-bold text-3xl text-honey mt-2 ml-2">{user.firstName} {user.lastName}</h1>
+              <h3 className="text-stone-500 text-base font-bold ml-2"> @{user.username}</h3>
+              </div>
+              <div className="flex flex-col">
+            <h1 className="font-bold text-xl text-honey mr-2 mt-2">Rating: {user.rating}</h1>
+            <h3 className="text-stone-500 flex-1 mt-2 mr-4">{user.city}, {user.state}</h3>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
