@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useSelector, useDispatch } from 'react-redux';
 
 const initialState = []
 
@@ -8,7 +7,7 @@ export const addFellow = createAsyncThunk(
     "singleUser/addFellow",
     async ({ firstName, lastName, userId}) => {
         try {
-            let { data } = await axios.get(`http://localhost:8080/api/userId`, {
+            let { data } = await axios.get(`/api/users/${id}/users`, {
                 firstName,
                 lastName,
                 userId,

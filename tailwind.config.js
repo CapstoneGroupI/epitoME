@@ -42,6 +42,11 @@ module.exports = {
           '50%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(0)' },
         },
+        variants: {
+          extend: {
+              display: ["group-hover"],
+          },
+        },
       },
     },
   },

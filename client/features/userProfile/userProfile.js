@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleProfile } from "../../slices/userProfileSlice";
 import { addFellow } from "../../slices/fellowsSlice";
 // import PropTypes from 'prop-types'
-
 
 
 export const UserProfile = (props) => {
@@ -58,12 +57,10 @@ export const UserProfile = (props) => {
               </div>
               </div>
           </div>
-          {/* )}
-        </div> */}
     </div>
   )
 }
 
-// userProfile.propTypes = {}
+UserProfile.propTypes = {}
 
 export default UserProfile;
