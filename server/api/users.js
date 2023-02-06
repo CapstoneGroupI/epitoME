@@ -84,6 +84,12 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+// router.post(":id/users", async (req, res, next) => {
+//   try {
+//     const addFellow = await User.
+//   }
+// })
+
 // PUT route /api/users/:id
 router.put("/:id", async (req, res, next) => {
   try {

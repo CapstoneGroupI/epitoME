@@ -5,11 +5,9 @@ const initialState = []
 
 export const addFellow = createAsyncThunk(
     "singleUser/addFellow",
-    async ({ firstName, lastName, userId}) => {
+    async ({ userId }) => {
         try {
-            let { data } = await axios.get(`/api/users/${id}/users`, {
-                firstName,
-                lastName,
+            let { data } = await axios.post(`/api/users/${id}/users`, {
                 userId,
             });
             return data;
