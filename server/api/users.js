@@ -39,6 +39,7 @@ router.get("/", async (req, res, next) => {
           model: Comment,
             model: Follower,
               model: Message,
+                model: User, as: "fellows"
         },
       });
       res.send(user);
@@ -46,6 +47,22 @@ router.get("/", async (req, res, next) => {
       next(err);
     }
   });
+
+//GET route /api/users/:id/users
+router.get("/:id/users", async (req, res, next) => {
+  try {
+    // only users with token can view page
+    const users = await User.findAll({
+      where: {id: req.params.id},
+      include: {
+        model: User, as: "fellows",
+      },
+    });
+    res.send(users);
+  } catch (err) {
+    next(err);
+  }
+});
 
   // POST route /api/users
 router.post("/", async (req, res, next) => {

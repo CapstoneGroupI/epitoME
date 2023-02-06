@@ -5,7 +5,9 @@ const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 //GET route /api/message
 router.get("/", async (req, res, next) => {
     try {
-      const message = await Message.findAll();
+      const message = await Message.findAll({
+        include: User
+      });
       res.status(200).send(message);
     } catch (err) {
       next(err);
@@ -17,7 +19,7 @@ router.get("/", async (req, res, next) => {
     try {
 
       const message = await Message.findByPk(req.params.id,{
-        include: User
+        include: User,
       });
       res.send(message);
     } catch (err) {

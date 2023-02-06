@@ -27,6 +27,8 @@ const Message = require('./models/Message');
   Comment.belongsTo(Post);
   Comment.belongsTo(User);
 
+  User.hasMany(User, {as: "fellows"})
+  
 
 module.exports = {
   db,
