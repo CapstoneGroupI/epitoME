@@ -80,21 +80,21 @@ const Inbox = () => {
                     firstName lastName
                     <div id="icons">(camera)(friend)(more)</div> 
                 </div>
-                <div id= "message-relay" className="p-3 flex gap 5 mb-2.5">
+                <div id= "message owner" className="p-3 flex gap 5 mb-2.5">
                     <div id="messageInfo" className="flex flex-col color-grey ">
                         <img className ="h-10 w-10 rounded-3xl object-cover" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="" />
                         <span>just now</span>
                     </div>
-                    <div id="messagecontent" className= "flex felx-col max-w-[80%] gap-2.5" >
-                        <p id="text" className="bg-[pink] pt-2.5 pr-5">hello my name is x and i come from x and i like y</p>
+                    <div id="messagecontent" className="flex felx-col max-w-[80%] gap-2.5" >
+                        <p id="text" className="bg-[pink] pt-2.5 pb-2.5 pr-5 pl-5 rounded ">hello my name is x and i come from x and i like y</p>
                         {/* <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="" /> */}
                         </div>
 
                 </div>
                 <div id="send-message" className="flex absolute bottom-0 w-full">
                     <input placeholder="Type message here..." className="m-2 p-2 w-full border-t-2 border-[#EBAF4C] flex items-center justify-between" onChange={(e) => setText(e.target.value)}></input>
-                    <div id= "send" className = "flex items-center gap-2.5 cursor-pointer">
-                    <span id = "attach-image">(attach)</span>
+                    <div id="send" className="flex items-center gap-2.5 cursor-pointer">
+                    <span id="attach-image">(attach)</span>
                     <label>(image)</label>
                     <button className="self-end mr-4 mb-2 font-bold text-[#EBAF4C]" onClick={handleSubmit}>Send</button>
                     </div>
