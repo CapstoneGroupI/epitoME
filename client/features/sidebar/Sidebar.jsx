@@ -13,7 +13,7 @@ return (
          <h2 className="text-xl text-[#E68584] font-bold font-serif">YOUR RATING:</h2>
          <p className="text-amber-400">★ ★ ★ ★ ★</p>
          <h2 className="text-xl text-[#E68584] font-bold font-serif mt-10">Notifications:</h2>
-         <Link className="text-[#E68584] mt-10">Followers (0)</Link>
+         <div to="" className="text-[#E68584] mt-10">Followers (0)</div>
         </div>
        </div>
       </div>
