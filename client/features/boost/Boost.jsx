@@ -11,7 +11,7 @@ const Boost = () => {
                 <div id="AllProductSorting" className="p-6 m-10 text-honey text-5xl rounded-md p-2">
                     <label>Select the tier membership you would like to purchase:</label>
                     <select
-                        className="text-2xl"
+                        className="text-2xl w-2/5"
                         // onChange={handleTier}
                     >
                         <option value="select">-Select-</option>

@@ -7,6 +7,7 @@ const Post = require('./models/Post');
 const Comment = require('./models/Comment');
 const Follower = require('./models/Follower');
 const Message = require('./models/Message');
+const { useRevalidator } = require('react-router-dom');
 
 
 //associations could go here!
@@ -17,15 +18,17 @@ const Message = require('./models/Message');
   User.hasMany(Message)
   User.hasMany(Follower)
 
-  Follower.belongsTo(User);
-
   Message.belongsTo(User);
-
+  
   Post.hasMany(Comment);
   Post.belongsTo(User);
-
+  
   Comment.belongsTo(Post);
   Comment.belongsTo(User);
+  
+  Follower.belongsTo(User, {as: "following", foreignKey: 'followingId', sourceKey: 'userId'} );
+  // httplocalhost8080/api/follower/1/
+  // follower = followingID = followingId# = sourceKey
 
 
 module.exports = {
