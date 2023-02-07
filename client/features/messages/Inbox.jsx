@@ -11,12 +11,10 @@ import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
 
 const Inbox = () => {
-
-    const [text, setText] = useState("");
-
+    
     const userId = useSelector((state) => state.auth.me.id)
 
-    const users = useSelector(selectUsers)
+    const user = useSelector(selectUsers)
 
     const messages = useSelector(selectMessages)
 
@@ -84,19 +82,19 @@ const Inbox = () => {
                 </div>
                 <div id="scroll" className="overflow-scroll h-1/2"> 
     <Messaging/>
+    <Messaging id = "owner" className = "row-reverse" />
     <Messaging/>
+    <Messaging className= "row-reverse"/>
     <Messaging/>
+    <Messaging className= "row-reverse"/>
+    <Messaging />
+    <Messaging className= "row-reverse"/>
     <Messaging/>
+    <Messaging className= "row-reverse"/>
     <Messaging/>
+    <Messaging className= "row-reverse"/>
     <Messaging/>
-    <Messaging/>
-    <Messaging/>
-    <Messaging/>
-    <Messaging/>
-    <Messaging/>
-    <Messaging/>
-    <Messaging/>
-    <Messaging/>
+    <Messaging className= "row-reverse"/>
     <Messaging/>
     <Input/>
     </div>

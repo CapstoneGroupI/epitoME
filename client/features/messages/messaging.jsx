@@ -9,9 +9,11 @@ import { useState } from 'react';
 
 const Messaging = () => {
 
-    const [text, setText] = useState("");
+    const localMessages = localStorage.getItem("messages")
 
     const userId = useSelector((state) => state.auth.me.id)
+
+    const isLoggedIn = useSelector((state) => !!state.auth.me.id)
 
     const users = useSelector(selectUsers)
 
