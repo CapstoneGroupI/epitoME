@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,7 +10,6 @@ import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 
 const Inbox =  () => {
-
     const [text, setText] = useState("");
 
     const userId = useSelector((state) => state.auth.me.id)
