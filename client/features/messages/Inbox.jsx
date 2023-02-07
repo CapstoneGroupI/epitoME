@@ -77,12 +77,12 @@ const Inbox = () => {
                     </div>
                 </div>
             </div>
-            <div id="single-message-box" className="h-1/2 m-5 mt-8 w-3/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] rounded-md relative">
+            <div id="single-message-box" className="m-5 mt-8 w-3/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] rounded-md relative">
             <div id="talking-to" className= "flex border border-black bg-[#E68584] items-center justify-between p-2">
                     firstName lastName
                     <div id="icons">(camera)(friend)(more)</div> 
                 </div>
-                <div id="scroll" className="overflow-scroll h-[100% - 160px]"> 
+                <div id="scroll" className="overflow-scroll h-1/2"> 
     <Messaging/>
     <Messaging/>
     <Messaging/>
