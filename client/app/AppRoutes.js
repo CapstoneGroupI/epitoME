@@ -41,6 +41,7 @@ const AppRoutes = () => {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/create" element = {<CreatePost/>}/>
           <Route path="/settings" element={<Settings />}/>
+          <Route path="/profile/:id" element={<UserProfile />} />
         </Routes>
       ) : (
         <Routes>

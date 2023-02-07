@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,6 +10,7 @@ import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
+
 
 const Inbox = () => {
     
