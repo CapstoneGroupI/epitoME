@@ -34,11 +34,13 @@ router.get("/", async (req, res, next) => {
       // only users with token can view page
       const user = await User.findAll({
         where: {id: req.params.id},
+        // include: Post, Comment, Follower, Message, User
         include: {
           model: Post,
           model: Comment,
             model: Follower,
               model: Message,
+                model: User, as: "follower"
         },
       });
       res.send(user);
@@ -46,6 +48,20 @@ router.get("/", async (req, res, next) => {
       next(err);
     }
   });
+
+//GET route /api/users/:id/followers
+router.get("/:id/followers", async (req, res, next) => {
+  try {
+    // only users with token can view page
+    const users = await User.findAll({
+      where: {id: req.params.id},
+      include: { model: User, as: 'follower' }
+    });
+    res.send(users);
+  } catch (err) {
+    next(err);
+  }
+});
 
   // POST route /api/users
 router.post("/", async (req, res, next) => {
