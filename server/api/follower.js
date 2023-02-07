@@ -15,11 +15,10 @@ router.get("/", async (req, res, next) => {
   //GET route /api/follower/:id
   router.get("/:id", async (req, res, next) => {
     try {
-
       const follower = await Follower.findAll({
         where: {userId: req.params.id},
         include: {
-                model: User,
+                model: User, as:'following'
         },
       });
       res.send(follower);
@@ -28,8 +27,8 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-   //POST route /api/follower
-  router.post("/", async (req, res, next) => {
+   //POST route /api/follower/id
+  router.post("/:id", async (req, res, next) => {
     try{
         const myFollower = await Follower.create(req.body)
         res.send(myFollower)
