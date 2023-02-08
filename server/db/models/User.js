@@ -108,7 +108,8 @@ const User = db.define('user', {
     type: STRING,
   },
   state: {
-    type: ENUM(states)
+    // type: ENUM(states),
+    type: STRING,
   },
   isAdmin: {
     type: BOOLEAN,
