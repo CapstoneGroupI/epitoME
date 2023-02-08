@@ -10,7 +10,7 @@ import Dashboard from '../features/dashboard/Dashboard';
 import VIP from '../features/VIP/VIP.jsx';
 import Boost from '../features/boost/Boost.jsx';
 import Inbox from '../features/messages/Inbox.jsx';
-import ContactForm from '../features/contact/Contact.jsx';
+import ContactForm from '../features/contact/Contact';
 import Search from '../features/navbar/search/Search.jsx';
 import CreatePost from '../features/post/createPost';
 import Settings from '../features/settings/Settings';
