@@ -54,7 +54,7 @@ const Footer = () => {
            sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
           />
           <button
-            className="bg-amber-300 hover:bg-[#fff6f6] duration-300 px-5 py-2.5 font-[Poppins]
+            className="bg-[#fff6f6] hover:bg-amber-300 duration-300 px-5 py-2.5 font-[Poppins]
            rounded-md text-salmon md:w-auto w-full"
           >
             Subscribe
@@ -62,12 +62,13 @@ const Footer = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
-                <h1>Recommended Links</h1>
-                <div className='footerTextContent'>
-                <li><a href="/home">Home</a> </li>
-                <li><a href="/messages">Messages</a> </li>
-                <li><a href="/VIP">VIP</a> </li>
-                <li><a href="/profile">Profile</a> </li>
+                
+                <div className="footerText">
+                <h3>USEFUL LINKS</h3>
+                <ul><a href="/home">Home</a> </ul>
+                <ul><a href="/messages">Messages</a> </ul>
+                <ul><a href="/VIP">VIP</a> </ul>
+                <ul><a href="/profile">Profile</a> </ul>
                 </div>
             </div>
       <div
