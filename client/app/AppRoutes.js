@@ -15,6 +15,7 @@ import Search from '../features/navbar/search/Search.jsx';
 import CreatePost from '../features/post/createPost';
 import Settings from '../features/settings/Settings';
 
+
 /**
  * COMPONENT
  */
