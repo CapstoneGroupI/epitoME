@@ -4,10 +4,10 @@ import axios from "axios";
 const initialState = []
 
 export const addFellow = createAsyncThunk(
-    "singleUser/addFellow",
+    "/api/follower",
     async ({ userId }) => {
         try {
-            let { data } = await axios.post(`/api/users/${id}/users`, {
+            let { data } = await axios.post(`/api/users/${id}`, {
                 userId,
             });
             return data;
