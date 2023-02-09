@@ -34,14 +34,7 @@ router.get("/", async (req, res, next) => {
       // only users with token can view page
       const user = await User.findAll({
         where: {id: req.params.id},
-        // include: Post, Comment, Follower, Message, User
-        include: {
-          model: Post,
-          model: Comment,
-            model: Follower,
-              model: Message,
-                model: User, as: "follower"
-        },
+        include: [{ model: Post },{ model: Comment },{ model: Follower }, { model: Message }],
       });
       res.send(user);
     } catch (err) {

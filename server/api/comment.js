@@ -18,10 +18,8 @@ router.get("/", async (req, res, next) => {
 
       const comment = await Comment.findAll({
         where: {userId: req.params.id},
-        include: {
-          model: Post,
-                model: User,
-        },
+        include:
+         [{model: Post},{model: User}],
       });
       res.send(comment);
     } catch (err) {

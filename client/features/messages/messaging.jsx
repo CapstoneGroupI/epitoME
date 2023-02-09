@@ -31,26 +31,21 @@ const Messaging = () => {
     arr = messages.map(message => { return message.text });
     console.log('these are the messages', arr)
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(createMessageAsync({ text, userId }))
-        console.log("submitted")
-    } 
-
   return (
-    <div>
+    <div>  {messages.map(message => {
+        return(
                 <div id= "message" className="p-3 flex gap-5 mb-2.5">
                     <div id="messageInfo" className="flex flex-col color-grey ">
-                        <img className ="h-10 w-10 rounded-3xl object-cover" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="" />
+                        <img className ="h-10 w-10 rounded-3xl object-cover" src= {message.user.profilePic} alt="" />
                         <span>just now</span>
                     </div>
                     <div id="messagecontent" className="flex felx-col max-w-[80%] gap-2.5" >
-                        <p id="text" className="bg-[pink] pt-2.5 pb-2.5 pr-5 pl-5 rounded ">hello my name is x and i come from x and i like y</p>
+                        <p id="text" className="bg-[pink] pt-2.5 pb-2.5 pr-5 pl-5 rounded ">{message.text}</p>
                         {/* <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="" /> */}
                         </div>
 
                 </div>
- 
+        )})}
 </div>
   )
 }

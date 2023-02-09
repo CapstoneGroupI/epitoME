@@ -17,9 +17,9 @@ router.get("/", async (req, res, next) => {
     try {
       const follower = await Follower.findAll({
         where: {userId: req.params.id},
-        include: {
+        include: [{
                 model: User, as:'following'
-        },
+        }],
       });
       res.send(follower);
     } catch (err) {

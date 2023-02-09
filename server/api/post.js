@@ -6,7 +6,7 @@ const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 router.get("/", async (req, res, next) => {
     try {
       const post = await Post.findAll({
-        include: User, Comment 
+        include: [{ model: User }, { model: Comment }]
         });
       res.status(200).send(post);
     } catch (err) {
@@ -19,7 +19,7 @@ router.get("/", async (req, res, next) => {
     try {
 
       const post = await Post.findByPk(req.params.id,{
-        include: Comment, User,
+        include: [{ model: User }, { model: Comment }]
       });
       res.send(post);
     } catch (err) {

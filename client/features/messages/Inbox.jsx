@@ -28,16 +28,8 @@ const Inbox = () => {
     }, [userId])
 
     arr = messages.map(message => { return message.text });
-
-    arr = messages.map(message => { return message.text });
     console.log('these are the messages', arr)
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(createMessageAsync({ text, userId }))
-        dispatch(createMessageAsync({ text, userId }))
-        console.log("submitted")
-    }
 
     return (
         <div className="flex md:flex-row flex-col">
@@ -84,20 +76,6 @@ const Inbox = () => {
                     <div id="icons">(camera)(friend)(more)</div> 
                 </div>
                 <div id="scroll" className="overflow-scroll h-1/2"> 
-    <Messaging/>
-    <Messaging id = "owner" className = "row-reverse" />
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging />
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
     <Messaging/>
     <Input/>
     </div>
