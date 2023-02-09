@@ -34,13 +34,8 @@ router.get("/", async (req, res, next) => {
       // only users with token can view page
       const user = await User.findAll({
         where: {id: req.params.id},
-        include: {
-          model: Post,
-          model: Comment,
-            model: Follower,
-              model: Message,
-                model: User, as: "fellows"
-        },
+        // include: Post, Comment, Follower, Message, User
+        include: [ {model:Comment}, {model:Follower}, {model:Post}, {model:Message}]
       });
       res.send(user);
     } catch (err) {
@@ -48,15 +43,13 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-//GET route /api/users/:id/users
-router.get("/:id/users", async (req, res, next) => {
+//GET route /api/users/:id/followers
+router.get("/:id/followers", async (req, res, next) => {
   try {
     // only users with token can view page
     const users = await User.findAll({
       where: {id: req.params.id},
-      include: {
-        model: User, as: "fellows",
-      },
+      include: [{ model: User, as: 'following' }]
     });
     res.send(users);
   } catch (err) {

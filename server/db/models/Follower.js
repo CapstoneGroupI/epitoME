@@ -7,31 +7,16 @@ const Follower = db.define('Follower', {
         type: INTEGER,
         allowNull: false,
         primaryKey: true,
-        comment: 'null',
         autoIncrement: true,
       },
-      // userId: {
-      //   type: INTEGER(11),
-      //   allowNull: false,
-      //   comment: "null",
-      //   references: {
-      //     model: 'User',
-      //     key: 'id'
-      //   },
-      //   onUpdate: 'CASCADE',
-      //   onDelete: 'CASCADE',
-      // },
-      // followerId: {
-      //   type: INTEGER(11),
-      //   allowNull: false,
-      //   comment: "null",
-      //   references: {
-      //     model: 'User',
-      //     key: 'id'
-      //   },
-      //   onUpdate: 'CASCADE',
-      //   onDelete: 'CASCADE',
-      // }
+      userId: {
+        type: INTEGER,
+        allowNull: true,
+      },
+      followerId: {
+        type: INTEGER,
+        allowNull: true,
+      }
     })
 
     module.exports = Follower
