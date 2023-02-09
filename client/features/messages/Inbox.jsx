@@ -85,7 +85,7 @@ const Inbox = () => {
                     firstName lastName
                     <div id="icons">(camera)(friend)(more)</div> 
                 </div>
-                <div id="scroll" className="overflow-scroll h-1/2"> 
+                <div id="scroll" className="overflow-scroll scrollbar-hide h-1/2"> 
     <Messaging/>
     <Messaging id = "owner" className = "row-reverse" />
     <Messaging/>
