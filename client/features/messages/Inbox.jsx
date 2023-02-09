@@ -77,7 +77,7 @@ const Inbox = () => {
                     firstName lastName
                     <div id="icons">(camera)(friend)(more)</div> 
                 </div>
-                <div id="scroll" className="overflow-scroll h-5/6"> 
+                <div id="scroll" className="overflow-scroll scrollbar-hide h-5/6"> 
     <Messaging/>
     <Messaging/>
     </div>
