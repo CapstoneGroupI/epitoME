@@ -32,7 +32,6 @@
     "jsonwebtoken": "^9.0.0",
     "morgan": "^1.10.0",
     "pg": "^8.8.0",
-    "popup-chat-react": "^1.0.5",
     "react-bootstrap": "^2.7.0",
     "react-icons": "^4.7.1",
     "react-password-checklist": "^1.4.3",
