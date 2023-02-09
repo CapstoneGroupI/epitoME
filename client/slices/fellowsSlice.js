@@ -3,12 +3,25 @@ import axios from "axios";
 
 const initialState = []
 
-export const addFellow = createAsyncThunk(
+export const getFellow = createAsyncThunk(
+    "/api/allFollower",
+    async () => {
+        try{
+            const { data } = await axios.get(`/api/follower/`)
+            return data
+        } catch (err) {
+            console.log(err)
+        }
+    }
+)
+
+export const createFellow = createAsyncThunk(
     "/api/follower",
-    async ({ userId }) => {
+    async ({ userId, followerId }) => {
         try {
-            let { data } = await axios.post(`/api/users/${id}`, {
+            let { data } = await axios.post(`/api/follower/${id}`, {
                 userId,
+                followerId,
             });
             return data;
         } catch (err) {
@@ -23,10 +36,17 @@ const addFellowSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(addFellow.fulfilled, (state, action) => {
+        builder.addCase(createFellow.fulfilled, (state, action) => {
             return state.push(action.payload);
+        })
+        builder.addCase(getFellow.fulfilled, (state, action) => {
+            return action.payload;
         })
     },
 });
+
+export const selectFellows = (state) => {
+    return state.addFellow
+}
 
 export default addFellowSlice.reducer;

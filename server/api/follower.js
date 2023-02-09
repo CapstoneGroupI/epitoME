@@ -5,7 +5,9 @@ const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 //GET route /api/follower
 router.get("/", async (req, res, next) => {
     try {
-      const follower = await Follower.findAll();
+      const follower = await Follower.findAll({
+        include: [{model: User, as: 'following'}]
+      });
       res.status(200).send(follower);
     } catch (err) {
       next(err);

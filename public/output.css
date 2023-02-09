@@ -589,21 +589,6 @@ video {
   margin-right: auto;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -676,10 +661,6 @@ video {
   margin-bottom: 0.625rem;
 }
 
-.mb-2\.5 {
-  margin-bottom: 0.625rem;
-}
-
 .ml-4 {
   margin-left: 1rem;
 }
@@ -706,14 +687,6 @@ video {
 
 .ml-12 {
   margin-left: 3rem;
-}
-
-.mr-0 {
-  margin-right: 0px;
-}
-
-.mr-10 {
-  margin-right: 2.5rem;
 }
 
 .block {
@@ -828,6 +801,10 @@ video {
   width: 40%;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .w-4\/6 {
   width: 66.666667%;
 }
@@ -886,18 +863,6 @@ video {
 
 .w-96 {
   width: 24rem;
-}
-
-.w-52 {
-  width: 13rem;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .max-w-lg {
@@ -966,10 +931,6 @@ video {
 
 .justify-around {
   justify-content: space-around;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .gap-2\.5 {
@@ -1223,11 +1184,6 @@ video {
   padding-right: 2.5rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -1270,10 +1226,6 @@ video {
 
 .pl-4 {
   padding-left: 1rem;
-}
-
-.pr-0 {
-  padding-right: 0px;
 }
 
 .text-left {
@@ -1420,6 +1372,11 @@ video {
   color: rgb(160 178 198 / var(--tw-text-opacity));
 }
 
+.text-stone-400 {
+  --tw-text-opacity: 1;
+  color: rgb(168 162 158 / var(--tw-text-opacity));
+}
+
 .text-\[\#EBAF4C\] {
   --tw-text-opacity: 1;
   color: rgb(235 175 76 / var(--tw-text-opacity));
@@ -1463,11 +1420,6 @@ video {
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-.text-stone-400 {
-  --tw-text-opacity: 1;
-  color: rgb(168 162 158 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1675,6 +1627,11 @@ form div {
   color: rgb(254 205 211 / var(--tw-text-opacity));
 }
 
+.hover\:text-rose-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(253 164 175 / var(--tw-text-opacity));
+}
+
 .hover\:text-amber-300:hover {
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity));
@@ -1688,11 +1645,6 @@ form div {
 .hover\:text-\[\#EBAF4C\]:hover {
   --tw-text-opacity: 1;
   color: rgb(235 175 76 / var(--tw-text-opacity));
-}
-
-.hover\:text-rose-300:hover {
-  --tw-text-opacity: 1;
-  color: rgb(253 164 175 / var(--tw-text-opacity));
 }
 
 .focus\:border-l-4:focus {

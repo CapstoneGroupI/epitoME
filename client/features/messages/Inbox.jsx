@@ -10,10 +10,12 @@ import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
+import AddFellow from "../addFellow/addFellow.jsx";
+import { selectFellows, getFellow, createFellow } from "../../slices/fellowsSlice";
 
 
 const Inbox = () => {
-    
+
     const userId = useSelector((state) => state.auth.me.id)
 
     const user = useSelector(selectUsers)
@@ -27,16 +29,14 @@ const Inbox = () => {
     useEffect(() => {
         dispatch(getAllMessagesAsync())
         console.log(userId)
+        console.log('------------------------------------------')
     }, [userId])
 
-    arr = messages.map(message => { return message.text });
-
-    arr = messages.map(message => { return message.text });
-    console.log('these are the messages', arr)
+    arr = messages.map(message => { return message });
+    console.log('these are the messages', messages)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createMessageAsync({ text, userId }))
         dispatch(createMessageAsync({ text, userId }))
         console.log("submitted")
     }
@@ -69,6 +69,7 @@ const Inbox = () => {
                                 <img className=" border border-solid border-black object-cover p-3 rounded-full w-40 h-40" src={message.user.profilePic} />
                                 <section>
                                     <h1 className="text-[#a1a7b1] font-bold"> {message.user.firstName} {message.user.lastName} </h1>
+                                    <AddFellow/>
                                     <h3 className="text-[#a1a7b1]">{formattedDate}</h3>
                                     <h2 className="text-[#a1a7b1]">
                                         <div >{message.text}</div>
@@ -86,20 +87,6 @@ const Inbox = () => {
                     <div id="icons">(camera)(friend)(more)</div> 
                 </div>
                 <div id="scroll" className="overflow-scroll h-1/2"> 
-    <Messaging/>
-    <Messaging id = "owner" className = "row-reverse" />
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging />
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
     <Messaging/>
     <Input/>
     </div>
