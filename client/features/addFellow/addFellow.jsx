@@ -10,6 +10,8 @@ const AddFellow = () => {
 
     const userId = useSelector((state) => state.auth.me.id)
 
+    const followerId = 
+
     const fellows = useSelector(selectFellows)
 
     const dispatch = useDispatch()
@@ -22,13 +24,14 @@ const AddFellow = () => {
 
     let arr = []
 
-    arr = fellows.map(fellow => { return fellow });
-        console.log('these are the followers', fellows)
+    // arr = fellows.map(fellow => { return fellow });
+        console.log('these are the followers', fellows[1])
 
     const handleAddFellow = (e) => {
         e.preventDefault()
         dispatch(createFellow({userId, followerId}))
         // follower id is not defined!! (followerId = event.target.userId??)
+        console.log('hellooooooooo', e.target.userId)
         console.log('added')
     }
 

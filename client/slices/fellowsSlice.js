@@ -19,6 +19,7 @@ export const createFellow = createAsyncThunk(
     "/api/follower",
     async ({ userId, followerId }) => {
         try {
+            console.log(userId, followerId)
             let { data } = await axios.post(`/api/follower/${id}`, {
                 userId,
                 followerId,

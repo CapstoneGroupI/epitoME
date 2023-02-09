@@ -26,7 +26,7 @@ const { useRevalidator } = require('react-router-dom');
   Comment.belongsTo(Post);
   Comment.belongsTo(User);
   
-  Follower.belongsTo(User, {as: "following", foreignKey: 'followingId', sourceKey: 'userId'} );
+  Follower.belongsTo(User, {as: "followers", foreignKey: 'followerId', sourceKey: 'userId'} );
   // httplocalhost8080/api/follower/1/
   // follower = followingID = followingId# = sourceKey
 
