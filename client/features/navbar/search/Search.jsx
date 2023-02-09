@@ -41,7 +41,7 @@ useEffect(() => {
       <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">
         Showing results for <span className="font-white">'{searchTerm}'</span>
       </h2>
-      <Link to="/profile/:id">
+      <Link to={`/profile/${users.id}`}>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {filterUser(users).map((user) =>
           <div className="border-2 border-honey rounded shadow-md p-2 m-2 ml-12 w-4/5">
