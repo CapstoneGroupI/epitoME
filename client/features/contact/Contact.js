@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import About from "./About";
 
 const ContactForm = () => {
     return (
+        <div className="flex flex-col items-center">
             <div className="md:w-4/5 flex flex-col flex-wrap items-center justify-center my-12">
-                <div className="absolute top-40 bg-white mt-10 shadow-lg rounded py-12 lg:px-28 px-8">
+                <div className="bg-white mt-10 shadow-lg rounded py-12 lg:px-28 px-8">
                     <p className="md:text-3xl text-xl font-bold leading-7 text-center text-[#EBAF4C]">Contact Us!</p>
                     <div className="md:flex items-center mt-12">
                         <div className="md:w-72 flex flex-col">
@@ -38,6 +40,10 @@ const ContactForm = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                <About />
+            </div>
+        </div>
     );
 };
 
