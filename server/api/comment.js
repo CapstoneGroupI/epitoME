@@ -5,8 +5,10 @@ const { models: { Comment, Follower, Message, Post, User} } = require("../db");
 //GET route /api/comment
 router.get("/", async (req, res, next) => {
     try {
-      const comment = await Comment.findAll();
-      res.status(200).send(comment);
+      const comment = await Comment.findAll({
+        include: [{model:User}, {model:Post}]
+      });
+      res.send(comment);
     } catch (err) {
       next(err);
     }
@@ -18,8 +20,7 @@ router.get("/", async (req, res, next) => {
 
       const comment = await Comment.findAll({
         where: {userId: req.params.id},
-        include:
-         {model: Post, model: User},
+        include: [{model:User}, {model:Post}]
       });
       res.send(comment);
     } catch (err) {
