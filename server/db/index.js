@@ -7,7 +7,6 @@ const Post = require('./models/Post');
 const Comment = require('./models/Comment');
 const Follower = require('./models/Follower');
 const Message = require('./models/Message');
-const { useRevalidator } = require('react-router-dom');
 
 
 //associations could go here!

@@ -9,18 +9,6 @@ const Post = db.define('post', {
         allowNull: true,
         comment: 'null',
       },
-      n_likes: {
-        type: INTEGER,
-        allowNull: false,
-        defaultValue: '0',
-        comment: 'null',
-      },
-      n_comments: {
-        type: INTEGER,
-        allowNull: false,
-        defaultValue: '0',
-        comment: 'null',
-      },
     image: {
         type: TEXT
     },
