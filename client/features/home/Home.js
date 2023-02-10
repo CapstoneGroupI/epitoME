@@ -103,7 +103,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
           return (
             <motion.div
-              className="w-4/6 mx-auto"
+              className="w-3/6 mx-auto"
               initial={{ y: 50 }}
               whileInView={{ y: 0, transition: { duration: 0.5 } }}
               viewport={{ once: true }}
