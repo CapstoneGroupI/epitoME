@@ -7,6 +7,7 @@ import { FaStar } from "react-icons/fa";
 import { updatePostAsync } from "../../slices/singlePostSlice";
 import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
+import { motion } from "framer-motion";
 /**
  * COMPONENT
  */
@@ -15,7 +16,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
   const firstName = useSelector((state) => state.auth.me.firstName);
 
   const posts = useSelector(selectPosts);
-  const users = useSelector(selectUsers)
+  const users = useSelector(selectUsers);
 
   const dispatch = useDispatch();
 
@@ -86,10 +87,15 @@ const Home = ({ userId, isLoggedIn, props }) => {
           };
 
           return (
-            <div className="w-4/6 mx-auto">
+            <motion.div
+              className="w-4/6 mx-auto"
+              initial={{ y: 50 }}
+              whileInView={{ y: 0, transition: { duration: 0.5 } }}
+              viewport={{ once: true }}
+            >
               <div
                 key={post.id}
-                className="relative flex flex-col mx-auto w-4-6 max-w-lg m-10 bg-[#fff6f6] border-2 border-[#E68584] rounded-md shadow-lg shadow-[#913c3b]"
+                className="relative flex flex-col mt-10 mx-auto w-4/6 max-w-lg bg-[#fff6f6] border-2 border-[#E68584] rounded-md shadow-lg shadow-[#913c3b]"
               >
                 <div className="flex flex-row items-center justify-around">
                   <div className="flex flex-row items-center flex-wrap">
@@ -135,7 +141,9 @@ const Home = ({ userId, isLoggedIn, props }) => {
                           className="h-5 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:cursor-pointer"
                           value={ratingValue}
                           color={
-                            hoverValues[index] > starIndex ? "#ffc107" : "black"
+                            hoverValues[index] > starIndex
+                              ? "#ffc107"
+                              : "#fde68a"
                           }
                           onClick={() => handleUpdate(post.id, ratingValue)}
                           onMouseOver={() => handleMouseOver(ratingValue)}
@@ -146,33 +154,50 @@ const Home = ({ userId, isLoggedIn, props }) => {
                   </div>
                   <button
                     onClick={() => toggleCommentVisibility(index)}
-                    className="font-bold text-amber-300"
+                    className="font-bold text-amber-200"
                   >
                     Comments
                   </button>
                 </div>
-                {postCommentVisibility[index] && (
-                    <div className="">
-                     {post.Comments.map(comment => {
-                        return (
-                          <div className="p-5 flex flex-row">
-                        <h1 className=" font-bold">{users[0][comment.userId - 1].firstName} {users[0][comment.userId - 1].lastName} :  </h1>
-                        <p>{comment.text}</p>
-                        </div>
-                        )
-                      })}
-                     
-                    
-                    </div>
-                  )}
               </div>
-            </div>
+
+              {postCommentVisibility[index] && (
+                <motion.div
+                  className="relative flex flex-col p-3 mt-3 mx-auto w-4/6 max-w-lg bg-amber-50 border-2 border-amber-300 rounded-md shadow-lg shadow-[#913c3b]"
+                  initial={{ y: -10 }}
+                  whileInView={{ y: 0, transition: { duration: 0.5 } }}
+                  viewport={{ once: true }}
+                >
+                  {post.Comments.map((comment) => {
+                    return (
+                      <div className=" m-2 flex flex-row items-center">
+                        <img
+                          className=" w-7 rounded-full object-cover"
+                          src={users[0][comment.userId - 1].profilePic}
+                        ></img>
+                        <h1 className=" font-bold">
+                          {users[0][comment.userId - 1].firstName}{" "}
+                          {users[0][comment.userId - 1].lastName}
+                        </h1>
+                        <p className="ml-1">{comment.text}</p>
+                      </div>
+                    );
+                  })}
+                  <div className="flex flex-row justify-between">
+                    <input className=" w-4/6" placeholder="enter a comment" />
+                    <button className=" w-3/12 bg-[#E68584] text-amber-200 rounded-lg ">
+                      Add
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
           );
         })}
       </div>
     </div>
 
-// {/* <h1 className="text-red-500">{users[0][comment.userId - 1].firstName} {users[0][comment.userId - 1].lastName} : {comment.text}</h1> */}
+    // {/* <h1 className="text-red-500">{users[0][comment.userId - 1].firstName} {users[0][comment.userId - 1].lastName} : {comment.text}</h1> */}
 
     // {[...Array(5)].map((star, i) => {
     //   const ratingValue = i + 1;
