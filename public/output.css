@@ -441,6 +441,7 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -458,6 +459,7 @@ video {
 .relative {
   position: relative;
 }
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -485,14 +487,27 @@ video {
 .m-6 {
   margin: 1.5rem;
 }
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -510,6 +525,11 @@ video {
 .mt-1 {
   margin-top: 0.25rem;
 }
+
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
 .mr-10 {
   margin-right: 2.5rem;
 }
@@ -522,6 +542,19 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -555,6 +588,7 @@ video {
 .mb-2\.5 {
   margin-bottom: 0.625rem;
 }
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -570,9 +604,11 @@ video {
 .mr-6 {
   margin-right: 1.5rem;
 }
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
+
 .ml-12 {
   margin-left: 3rem;
 }
@@ -674,6 +710,11 @@ video {
 .w-2\/5 {
   width: 40%;
 }
+
+.w-80 {
+  width: 20rem;
+}
+
 .w-80 {
   width: 20rem;
 }
@@ -791,6 +832,7 @@ video {
 .justify-around {
   justify-content: space-around;
 }
+
 .gap-2\.5 {
   gap: 0.625rem;
 }
@@ -1014,6 +1056,7 @@ video {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
+
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -1047,6 +1090,7 @@ video {
 .pl-4 {
   padding-left: 1rem;
 }
+
 .text-left {
   text-align: left;
 }
@@ -1160,6 +1204,12 @@ video {
   --tw-text-opacity: 1;
   color: rgb(160 178 198 / var(--tw-text-opacity));
 }
+
+.text-stone-400 {
+  --tw-text-opacity: 1;
+  color: rgb(168 162 158 / var(--tw-text-opacity));
+}
+
 .text-stone-400 {
   --tw-text-opacity: 1;
   color: rgb(168 162 158 / var(--tw-text-opacity));
@@ -1394,6 +1444,12 @@ form div {
   --tw-text-opacity: 1;
   color: rgb(254 205 211 / var(--tw-text-opacity));
 }
+
+.hover\:text-rose-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(253 164 175 / var(--tw-text-opacity));
+}
+
 .hover\:text-rose-300:hover {
   --tw-text-opacity: 1;
   color: rgb(253 164 175 / var(--tw-text-opacity));

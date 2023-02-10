@@ -10,10 +10,12 @@ import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
+import AddFellow from "../addFellow/addFellow.jsx";
+import { selectFellows, getFellow, createFellow } from "../../slices/fellowsSlice";
 
 
 const Inbox = () => {
-    
+
     const userId = useSelector((state) => state.auth.me.id)
 
     const user = useSelector(selectUsers)
@@ -27,11 +29,17 @@ const Inbox = () => {
     useEffect(() => {
         dispatch(getAllMessagesAsync())
         console.log(userId)
+        console.log('------------------------------------------')
     }, [userId])
 
-    arr = messages.map(message => { return message.text });
-    console.log('these are the messages', arr)
+    arr = messages.map(message => { return message });
+    console.log('these are the arr', arr)
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createMessageAsync({ text, userId }))
+        console.log("submitted")
+    }
 
     return (
         <div className="flex md:flex-row flex-col">
@@ -43,7 +51,7 @@ const Inbox = () => {
                 <div id="message-preview-box" className="m-2 p-2 border-2 border-honey rounded-md">
                     <h1 className="font-bold text-3xl text-honey">All Messages ({messages.length})</h1>
 
-                    {/* <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {messages.map(message => {
+                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {messages.map(message => {
                         
                         let date = new Date(message.createdAt);
                         let formattedDate = date.toLocaleDateString("en-US", options);
@@ -61,6 +69,7 @@ const Inbox = () => {
                                 <img className=" border border-solid border-black object-cover p-3 rounded-full w-40 h-40" src={message.user.profilePic} />
                                 <section>
                                     <h1 className="text-[#a1a7b1] font-bold"> {message.user.firstName} {message.user.lastName} </h1>
+                                    <AddFellow followerId={message.userId}/>
                                     <h3 className="text-[#a1a7b1]">{formattedDate}</h3>
                                     <h2 className="text-[#a1a7b1]">
                                         <div >{message.text}</div>
@@ -69,7 +78,7 @@ const Inbox = () => {
                             </div>
                         )
                     })}
-                    </div> */}
+                    </div>
                 </div>
             </div>
             <div id="single-message-box" className="m-5 h-screen mt-8 w-3/5 border-2 border-[honey] shadow-md shadow-[#EBAF4C] rounded-md relative">
@@ -79,12 +88,11 @@ const Inbox = () => {
                 </div>
                 <div id="scroll" className="overflow-scroll scrollbar-hide h-5/6"> 
     <Messaging/>
-    <Messaging/>
-    </div>
     <Input/>
             </div>
 
 
+        </div>
         </div>
     );
 };

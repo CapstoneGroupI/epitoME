@@ -24,7 +24,7 @@ const store = configureStore({
   singleMessage: singleMessageReducer,
   addFellow: addFellowReducer
  },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default store;

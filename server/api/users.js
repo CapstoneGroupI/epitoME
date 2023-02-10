@@ -49,7 +49,7 @@ router.get("/:id/followers", async (req, res, next) => {
     // only users with token can view page
     const users = await User.findAll({
       where: {id: req.params.id},
-      include: [{ model: User, as: 'following' }]
+      include: [{ model: User, as: 'followers' }]
     });
     res.send(users);
   } catch (err) {
@@ -76,6 +76,12 @@ router.post("/", async (req, res, next) => {
     next(err);
   }
 });
+
+// router.post(":id/users", async (req, res, next) => {
+//   try {
+//     const addFellow = await User.
+//   }
+// })
 
 // PUT route /api/users/:id
 router.put("/:id", async (req, res, next) => {
