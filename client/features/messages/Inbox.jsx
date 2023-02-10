@@ -33,7 +33,7 @@ const Inbox = () => {
     }, [userId])
 
     arr = messages.map(message => { return message });
-    console.log('these are the messages', messages)
+    console.log('these are the arr', arr)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -69,7 +69,7 @@ const Inbox = () => {
                                 <img className=" border border-solid border-black object-cover p-3 rounded-full w-40 h-40" src={message.user.profilePic} />
                                 <section>
                                     <h1 className="text-[#a1a7b1] font-bold"> {message.user.firstName} {message.user.lastName} </h1>
-                                    <AddFellow/>
+                                    <AddFellow followerId={message.userId}/>
                                     <h3 className="text-[#a1a7b1]">{formattedDate}</h3>
                                     <h2 className="text-[#a1a7b1]">
                                         <div >{message.text}</div>

@@ -4,13 +4,15 @@ import { getFellow, createFellow } from '../../slices/fellowsSlice'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { selectFellows } from '../../slices/fellowsSlice'
+// import { useParams } from 'react-router-dom'
 
 
-const AddFellow = () => {
+const AddFellow = ({followerId}) => {
 
     const userId = useSelector((state) => state.auth.me.id)
 
-    const followerId = 
+    // const { followerId } = useParams()
+    console.log('testing', followerId)
 
     const fellows = useSelector(selectFellows)
 
@@ -18,8 +20,8 @@ const AddFellow = () => {
 
     useEffect(() => {
         dispatch(getFellow())
-        console.log(userId)
-        console.log('------------------------------------------')
+        // console.log(userId)
+        // console.log('------------------------------------------')
     }, [userId])
 
     let arr = []
@@ -31,7 +33,6 @@ const AddFellow = () => {
         e.preventDefault()
         dispatch(createFellow({userId, followerId}))
         // follower id is not defined!! (followerId = event.target.userId??)
-        console.log('hellooooooooo', e.target.userId)
         console.log('added')
     }
 

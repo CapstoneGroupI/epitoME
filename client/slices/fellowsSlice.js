@@ -20,7 +20,7 @@ export const createFellow = createAsyncThunk(
     async ({ userId, followerId }) => {
         try {
             console.log(userId, followerId)
-            let { data } = await axios.post(`/api/follower/${id}`, {
+            let { data } = await axios.post(`/api/follower`, {
                 userId,
                 followerId,
             });
@@ -38,7 +38,7 @@ const addFellowSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(createFellow.fulfilled, (state, action) => {
-            return state.push(action.payload);
+            return action.payload;
         })
         builder.addCase(getFellow.fulfilled, (state, action) => {
             return action.payload;

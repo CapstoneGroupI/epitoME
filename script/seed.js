@@ -375,8 +375,8 @@ async function seed() {
     }),
   ]);
 
-  const follower = await Promise.all([
-    Follower.create({})]);
+  // const follower = await Promise.all([
+  //   Follower.create({})]);
 
   // const createUserDatabase = (num) => {
   //   const arr = [];
