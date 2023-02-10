@@ -1688,6 +1688,11 @@ form div {
   background-color: rgb(230 111 109 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-\[\#e66f6d\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 111 109 / var(--tw-bg-opacity));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
