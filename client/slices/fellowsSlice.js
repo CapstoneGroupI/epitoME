@@ -5,12 +5,10 @@ const initialState = []
 
 export const addFellow = createAsyncThunk(
     "singleUser/addFellow",
-    async ({ firstName, lastName, userId}) => {
+    async ({ id, userId, followerId}) => {
         try {
             let { data } = await axios.get(`/api/users/${id}/users`, {
-                firstName,
-                lastName,
-                userId,
+                userId, followerId
             });
             return data;
         } catch (err) {
@@ -26,7 +24,7 @@ const addFellowSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(addFellow.fulfilled, (state, action) => {
-            return state.push(action.payload);
+            return action.payload;
         })
     },
 });
