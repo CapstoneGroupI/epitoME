@@ -8,21 +8,28 @@ import { updatePostAsync } from "../../slices/singlePostSlice";
 import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import { motion } from "framer-motion";
+import { createCommentAsync, getAllCommentsAsync, selectComments } from "../../slices/allCommentsSlice";
+import { Link } from "react-router-dom";
 /**
  * COMPONENT
  */
 const Home = ({ userId, isLoggedIn, props }) => {
   const username = useSelector((state) => state.auth.me.username);
   const firstName = useSelector((state) => state.auth.me.firstName);
+  const myId = useSelector((state) => state.auth.me.id)
+  const theComments = useSelector((state)=> state.comments)
+  console.log(theComments)
 
   const posts = useSelector(selectPosts);
   const users = useSelector(selectUsers);
+  
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllPostsAsync());
     dispatch(getAllUsersAsync());
+    dispatch(getAllCommentsAsync())
   }, []);
 
   const handleUpdate = (id, rating) => {
@@ -30,8 +37,16 @@ const Home = ({ userId, isLoggedIn, props }) => {
     dispatch(updatePostAsync({ id, rating }));
   };
 
+  const handleAddComment = (text, postId, userId) => {
+    console.log(text,postId,userId)
+    dispatch(createCommentAsync({text, postId, userId}))
+    dispatch(getAllCommentsAsync())
+  }
+
   const [hoverValues, setHoverValues] = useState([]);
   const [postCommentVisibility, setPostCommentVisibility] = useState([]);
+  const [currentComment, setCurrentComment] = useState('')
+
 
   useEffect(() => {
     setHoverValues(posts.map(() => undefined));
@@ -99,27 +114,27 @@ const Home = ({ userId, isLoggedIn, props }) => {
               >
                 <div className="flex flex-row items-center justify-around">
                   <div className="flex flex-row items-center flex-wrap">
-                    <img
+                    <Link to={`/profile/${post.user.id}`}><img
                       className="object-cover p-5 rounded-full w-40 h-40"
                       src={post.user.profilePic}
-                    />
+                    /></Link>
                     <div className=" m-2">
-                      <h1 className="font-bold  text-[#E68584]">
+                    <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-[#E68584] hover:text-[#e66f6d]">
                         {post.user.firstName} {post.user.lastName}
-                      </h1>
-                      <h1 className="font-bold  text-black text-sm">
+                      </h1></Link>
+                      <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-amber-300 text-sm hover:text-[#FFC200]">
                         @ {post.user.username}
-                      </h1>
+                      </h1></Link>
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm m-2 text-black">
+                    <h3 className="font-bold text-sm m-2 text-amber-300">
                       {formattedDate}
                     </h3>
                   </div>
                 </div>
                 <div className="w-10/12 h-0.5 mx-auto rounded-lg bg-[#E68584]" />
-                <div className="mx-auto m-5 w-10/12">{post.text}</div>
+                <div className="mx-auto m-5 w-10/12 font-semibold text-neutral-600">{post.text}</div>
                 <img
                   className="rounded mx-auto m-5 w-10/12"
                   src={post.image}
@@ -154,7 +169,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
                   </div>
                   <button
                     onClick={() => toggleCommentVisibility(index)}
-                    className="font-bold text-amber-200"
+                    className="font-bold text-amber-200 hover:text-amber-300"
                   >
                     Comments
                   </button>
@@ -168,27 +183,30 @@ const Home = ({ userId, isLoggedIn, props }) => {
                   whileInView={{ y: 0, transition: { duration: 0.5 } }}
                   viewport={{ once: true }}
                 >
-                  {post.Comments.map((comment) => {
+                  {theComments.map((comment) => {
+                    if(comment.postId === post.id){
                     return (
                       <div className=" m-2 flex flex-row items-center">
                         <img
                           className=" w-7 rounded-full object-cover"
                           src={users[0][comment.userId - 1].profilePic}
                         ></img>
-                        <h1 className=" font-bold">
+                        <Link to={`/profile/${comment.userId}`} ><h1 className=" ml-1 font-bold text-[#E68584] hover:text-[#e66f6d] ">
                           {users[0][comment.userId - 1].firstName}{" "}
                           {users[0][comment.userId - 1].lastName}
-                        </h1>
-                        <p className="ml-1">{comment.text}</p>
+                        </h1></Link>
+                        <p className="ml-1 text-neutral-600">{comment.text}</p>
                       </div>
-                    );
+                    )};
                   })}
-                  <div className="flex flex-row justify-between">
-                    <input className=" w-4/6" placeholder="enter a comment" />
-                    <button className=" w-3/12 bg-[#E68584] text-amber-200 rounded-lg ">
+                  
+                  <div className="flex flex-row justify-between my-2">
+                    <input onChange={(e)=> setCurrentComment(e.target.value)} className=" w-4/6 bg-[#fff6f6] border-2 rounded-lg border-[#E68584] ml-1 " placeholder="Enter a comment" />
+                    <button onClick={()=>handleAddComment(currentComment, post.id, myId)} className=" w-3/12 bg-[#E68584] text-amber-200 rounded-lg mr-1 font-bold hover:text-amber-300 hover:bg-[#e66f6d]">
                       Add
                     </button>
                   </div>
+                  
                 </motion.div>
               )}
             </motion.div>
@@ -196,6 +214,14 @@ const Home = ({ userId, isLoggedIn, props }) => {
         })}
       </div>
     </div>
+
+// {/* <form id='addCampusForm' onSubmit={handleSubmit}>
+//         <label id='addCampusLabel'>Add Campus -</label>
+//         <input className='addCampusInput' type={'text'} onChange={e=> setName(e.target.value)} placeholder='Campus Name'></input>
+//         <input className='addCampusInput' type={'text'} onChange={e=> setAddress(e.target.value)} placeholder='Address'></input>
+//         <input className='addCampusInput' type={'text'} onChange={e=> setDescription(e.target.value)} placeholder='Description'></input>
+//         <button id='addCampusSubmitButton' type='submit'>Submit</button>
+//     </form> */}
 
     // {/* <h1 className="text-red-500">{users[0][comment.userId - 1].firstName} {users[0][comment.userId - 1].lastName} : {comment.text}</h1> */}
 

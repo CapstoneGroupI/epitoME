@@ -17,10 +17,11 @@ export const getAllCommentsAsync = createAsyncThunk(
 //POST - create a comment
 export const createCommentAsync = createAsyncThunk(
     "post/createComment",
-    async ({ text }) => {
+    async (commentObject) => {
+      const {text , postId, userId} = commentObject
       try {
         const { data } = await axios.post(
-          `/api/comment`, { text },
+          `/api/comment`, { text, postId, userId },
         );
         return data;
       } catch (err) {
