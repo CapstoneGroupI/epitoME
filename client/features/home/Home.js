@@ -57,7 +57,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
   return (
     <div className="">
-      <div className="">
+      <div className="w-3/4 mx-auto">
         {posts.map((post, index) => {
           let date = new Date(post.createdAt);
           let options = {
@@ -110,7 +110,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
             >
               <div
                 key={post.id}
-                className="relative flex flex-col mt-10 mx-auto w-4/6 max-w-lg bg-[#fff6f6] border-2 border-[#E68584] rounded-md shadow-lg shadow-[#913c3b]"
+                className="relative flex flex-col mt-10 mx-auto w-auto max-w-lg bg-[#fff6f6] border-2 border-[#E68584] rounded-md shadow-lg shadow-[#913c3b]"
               >
                 <div className="flex flex-row items-center justify-around">
                   <div className="flex flex-row items-center flex-wrap">
