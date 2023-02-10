@@ -1,14 +1,15 @@
 import React from 'react'
-import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllMessagesAsync } from "../../slices/allMessageSlice";
 import { selectMessages } from "../../slices/allMessageSlice";
 import { createMessageAsync } from "../../slices/allMessageSlice";
 import { selectUsers } from "../../slices/allUsersSlice";
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Messaging = () => {
-
+    const [sharedMessages, setSharedMessages ] = useState([])
+ 
     const localMessages = localStorage.getItem("messages")
 
     const userId = useSelector((state) => state.auth.me.id)
@@ -19,22 +20,17 @@ const Messaging = () => {
 
     const messages = useSelector(selectMessages)
 
-    let arr = []
-
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllMessagesAsync())
-        console.log(userId)
-    }, [userId])
-
-    arr = messages.map(message => { return message.text });
-    console.log('these are the messages', arr)
+      dispatch(getAllMessagesAsync())
+      console.log(userId)
+  }, [userId])
 
   return (
     <div>  {messages.map(message => {
         return(
-                <div id= "message" className="p-3 flex gap-5 mb-2.5">
+                <div id= "message" className="p-3 flex gap-5 mb-2.5"> 
                     <div id="messageInfo" className="flex flex-col color-grey ">
                         <img className ="h-10 w-10 rounded-3xl object-cover" src= {message.user.profilePic} alt="" />
                         <span>just now</span>
