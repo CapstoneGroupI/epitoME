@@ -25,9 +25,7 @@ const Message = require('./models/Message');
   Comment.belongsTo(Post);
   Comment.belongsTo(User);
   
-  Follower.belongsTo(User, {as: "following", foreignKey: 'followingId', sourceKey: 'userId'} );
-  // httplocalhost8080/api/follower/1/
-  // follower = followingID = followingId# = sourceKey
+  Follower.belongsTo(User, {as: "followers", foreignKey: 'followerId', sourceKey: 'userId'} );
 
 
 module.exports = {
