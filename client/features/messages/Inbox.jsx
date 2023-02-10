@@ -51,7 +51,7 @@ const Inbox = () => {
                 <div id="message-preview-box" className="m-2 p-2 border-2 border-honey rounded-md">
                     <h1 className="font-bold text-3xl text-honey">All Messages ({messages.length})</h1>
 
-                    {/* <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {messages.map(message => {
+                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {messages.map(message => {
                         
                         let date = new Date(message.createdAt);
                         let formattedDate = date.toLocaleDateString("en-US", options);
@@ -78,7 +78,7 @@ const Inbox = () => {
                             </div>
                         )
                     })}
-                    </div> */}
+                    </div>
                 </div>
             </div>
             <div id="single-message-box" className="m-5 h-screen mt-8 w-3/5 border-2 border-[honey] shadow-md shadow-[#EBAF4C] rounded-md relative">
@@ -92,6 +92,7 @@ const Inbox = () => {
             </div>
 
 
+        </div>
         </div>
     );
 };

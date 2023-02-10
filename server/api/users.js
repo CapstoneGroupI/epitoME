@@ -49,7 +49,7 @@ router.get("/:id/followers", async (req, res, next) => {
     // only users with token can view page
     const users = await User.findAll({
       where: {id: req.params.id},
-      include: [{ model: User, as: 'following' }]
+      include: [{ model: User, as: 'followers' }]
     });
     res.send(users);
   } catch (err) {
