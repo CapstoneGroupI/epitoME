@@ -178,7 +178,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
               {postCommentVisibility[index] && (
                 <motion.div
-                  className="relative flex flex-col p-3 mt-3 mx-auto w-4/6 max-w-lg bg-amber-50 border-2 border-amber-300 rounded-md shadow-lg shadow-[#913c3b]"
+                  className="relative flex flex-col p-3 mt-3 mx-auto w-auto max-w-lg bg-amber-50 border-2 border-amber-300 rounded-md shadow-lg shadow-[#913c3b]"
                   initial={{ y: -10 }}
                   whileInView={{ y: 0, transition: { duration: 0.5 } }}
                   viewport={{ once: true }}
