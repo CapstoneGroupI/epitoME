@@ -11,23 +11,23 @@ const AddFellow = ({followerId}) => {
 
     const userId = useSelector((state) => state.auth.me.id)
 
-    // const { followerId } = useParams()
     console.log('testing', followerId)
 
     const fellows = useSelector(selectFellows)
+    console.log('helloooooooooo', fellows)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getFellow())
-        // console.log(userId)
+        // console.log('TESTING123', userId, firstName, lastName)
         // console.log('------------------------------------------')
     }, [userId])
 
     let arr = []
 
     // arr = fellows.map(fellow => { return fellow });
-        console.log('these are the followers', fellows[1])
+        console.log('these are the arr', arr)
 
     const handleAddFellow = (e) => {
         e.preventDefault()
@@ -39,7 +39,7 @@ const AddFellow = ({followerId}) => {
 
   return (
     <div>
-        <button onClick={handleAddFellow}>(+)</button>
+        <button onClick={handleAddFellow}>(Add Fellow)</button>
     </div>
   )
 }
