@@ -10,11 +10,12 @@ import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
-import Localstoragetest from "./localstoragetest.jsx";
+import AddFellow from "../addFellow/addFellow.jsx";
+import { selectFellows, getFellow, createFellow } from "../../slices/fellowsSlice";
 
 
 const Inbox = () => {
-    
+
     const userId = useSelector((state) => state.auth.me.id)
 
     const user = useSelector(selectUsers)
@@ -25,9 +26,14 @@ const Inbox = () => {
 
     const dispatch = useDispatch();
 
-    arr = messages.map(message => { return message.text });
-    console.log('these are the messages', arr)
+    arr = messages.map(message => { return message });
+    console.log('these are the arr', arr)
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createMessageAsync({ text, userId }))
+        console.log("submitted")
+    }
 
     return (
         <div className="flex md:flex-row flex-col">
@@ -57,6 +63,7 @@ const Inbox = () => {
                                 <img className=" border border-solid border-black object-cover p-3 rounded-full w-20 h-20" src={message.user.profilePic} />
                                 <section>
                                     <h1 className="text-[#a1a7b1] font-bold"> {message.user.firstName} {message.user.lastName} </h1>
+                                    <AddFellow followerId={message.userId}/>
                                     <h3 className="text-[#a1a7b1]">{formattedDate}</h3>
                                     <h2 className="text-[#a1a7b1]">
                                         <div >{message.text}</div>
@@ -66,10 +73,6 @@ const Inbox = () => {
                         )
                     })}
                     </div>
-                </div>
-                <div id="new-message" className="m-2 p-2 border-2 border-honey rounded-md flex justify-around text-honey text-2x1" >
-                    <button>create</button>
-                    <button>delete</button>
                 </div>
             </div>
             <div id="single-message-box" className="m-5 h-screen mt-8 w-3/5 border-2 border-[honey] shadow-md shadow-[#EBAF4C] rounded-md relative">
@@ -89,6 +92,7 @@ const Inbox = () => {
 
 
         </div>
+        
     );
 };
 

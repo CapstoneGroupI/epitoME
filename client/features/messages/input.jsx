@@ -23,7 +23,7 @@ const input = () =>{
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllMessagesAsync())
+        // dispatch(getAllMessagesAsync())
         console.log(userId)
     }, [userId])
 
