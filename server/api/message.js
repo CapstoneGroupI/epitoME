@@ -62,3 +62,18 @@ router.get("/", async (req, res, next) => {
       next(error)
     }
   })
+
+  //GET route /api/message/user/:id MESSAGE(s) of a specific user
+  router.get("/user/:id", async (req, res, next) => {
+    try {
+      const messages = await Message.findAll({
+        where: {
+          userId: req.params.id,
+        },
+        include: [{ model: User }]
+      })
+    res.send(messages)
+  } catch (err) {
+    next(err);
+  }
+  })

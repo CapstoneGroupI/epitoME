@@ -27,8 +27,8 @@ const input = () =>{
         console.log(userId)
     }, [userId])
 
-    arr = messages.map(message => { return message.text });
-    console.log('these are the messages', arr)
+    // arr = messages.map(message => { return message });
+    // console.log('these are the messages', arr)
 
     const handleSubmit = (e) => {
         e.preventDefault();

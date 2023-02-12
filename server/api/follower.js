@@ -29,7 +29,7 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-   //POST route /api/follower/id
+   //POST route /api/follower
   router.post("/", async (req, res, next) => {
     try{
         const myFollower = await Follower.create(req.body)

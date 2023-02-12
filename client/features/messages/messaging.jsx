@@ -30,7 +30,7 @@ const Messaging = () => {
   return (
     <div>  {messages.map(message => {
         return(
-                <div id= "message" className="p-3 flex gap-5 mb-2.5"> 
+                <div key={message.id} id= "message" className="p-3 flex gap-5 mb-2.5"> 
                     <div id="messageInfo" className="flex flex-col color-grey ">
                         <img className ="h-10 w-10 rounded-3xl object-cover" src= {message.user.profilePic} alt="" />
                         <span>just now</span>
