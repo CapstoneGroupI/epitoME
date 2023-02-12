@@ -17,7 +17,6 @@ router.get("/", async (req, res, next) => {
   //GET route /api/message/:id
   router.get("/:id", async (req, res, next) => {
     try {
-
       const message = await Message.findByPk(req.params.id,{
         include: [{ model: User }],
       });
