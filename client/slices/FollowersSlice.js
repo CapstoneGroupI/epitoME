@@ -3,9 +3,33 @@ import axios from "axios";
 
 const initialState = []
 
+<<<<<<< HEAD
 export const Follow = createAsyncThunk(
     "singleUser/Follow",
     async ({ firstName, lastName, userId}) => {
+=======
+<<<<<<< HEAD:client/slices/FollowersSlice.js
+export const Follow = createAsyncThunk(
+    "singleUser/Follow",
+    async ({ firstName, lastName, userId}) => {
+=======
+export const getFellow = createAsyncThunk(
+    "/api/allFollower",
+    async () => {
+        try{
+            const { data } = await axios.get(`/api/follower/`)
+            return data
+        } catch (err) {
+            console.log(err)
+        }
+    }
+)
+
+export const createFellow = createAsyncThunk(
+    "/api/follower",
+    async ({ userId, followerId }) => {
+>>>>>>> 820185224d87e554e57848c79a01a7e75d92b682:client/slices/fellowsSlice.js
+>>>>>>> a75c9bdb820e4a0fe52df61563ee36d660809a51
         try {
             console.log(userId, followerId)
             let { data } = await axios.post(`/api/follower`, {
