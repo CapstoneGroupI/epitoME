@@ -6,6 +6,7 @@ import { selectPosts } from "../../slices/allPostSlice";
 import { useSelector } from "react-redux";
 import { getAllPostsAsync } from "../../slices/allPostSlice";
 import { useNavigate } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 const CreatePost = () => {
     const [text, setText] = useState("")
@@ -38,7 +39,7 @@ let arr = []
 
     return (
     <>
-        <form className="flex md:flex-row justify-center flex-col">
+        <form className="flex md:flex-row justify-center flex-col h-screen">
                 <div id="post-preview-box" className="m-2 p-2 border-2 border-[#EBAF4C] rounded-md">
                     <h1 className="center font-bold text-3xl text-[#EBAF4C] text-center">Create A Post</h1>
                     <div id= "create-post-box" className="flex flex-col m-5 w-full md:w-5/5 h-5/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] mt-8 rounded-md">
@@ -52,6 +53,7 @@ let arr = []
                         </div>
                         </div>
                         </form>
+                       <div> < Footer /> </div>
                         </>
     )
 }
