@@ -22,7 +22,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
   const posts = useSelector(selectPosts);
   const users = useSelector(selectUsers);
-  
+  console.log("these are the posts", posts)
 
   const dispatch = useDispatch();
 
@@ -217,44 +217,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
       </div>
     </div>
 
-// {/* <form id='addCampusForm' onSubmit={handleSubmit}>
-//         <label id='addCampusLabel'>Add Campus -</label>
-//         <input className='addCampusInput' type={'text'} onChange={e=> setName(e.target.value)} placeholder='Campus Name'></input>
-//         <input className='addCampusInput' type={'text'} onChange={e=> setAddress(e.target.value)} placeholder='Address'></input>
-//         <input className='addCampusInput' type={'text'} onChange={e=> setDescription(e.target.value)} placeholder='Description'></input>
-//         <button id='addCampusSubmitButton' type='submit'>Submit</button>
-//     </form> */}
 
-    // {/* <h1 className="text-red-500">{users[0][comment.userId - 1].firstName} {users[0][comment.userId - 1].lastName} : {comment.text}</h1> */}
-
-    // {[...Array(5)].map((star, i) => {
-    //   const ratingValue = i + 1;
-
-    //   return (
-    //     <label>
-    //       <input
-    //         className=" hidden "
-    //         type="radio"
-    //         name="rating"
-    //         value={ratingValue}
-    //         onClick={() => dispatch(updatePostAsync(post.id, ratingValue))}
-
-    //       />
-    //       <FaStar
-    //         color={
-    //           ratingValue <= post.rating ? "#ffc107" : "#e4e5e9"
-    //         }
-    //         className=" cursor-pointer"
-    //       />
-    //     </label>
-    //   );
-    // })}
-
-    // {/* <button onClick={() => handleUpdate(post.id, 1)}><FaStar className="hover:text-amber-300 "/></button>
-    // <button onClick={() => handleUpdate(post.id, 2)}><FaStar className="hover:text-amber-300"/></button>
-    // <button onClick={() => handleUpdate(post.id, 3)}><FaStar className="hover:text-amber-300"/></button>
-    // <button onClick={() => handleUpdate(post.id, 4)}><FaStar className="hover:text-amber-300"/></button>
-    // <button onClick={() => handleUpdate(post.id, 5)}><FaStar className="hover:text-amber-300"/></button> */}
   );
 };
 
