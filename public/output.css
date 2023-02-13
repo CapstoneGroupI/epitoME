@@ -617,6 +617,11 @@ video {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -715,6 +720,14 @@ video {
 
 .ml-12 {
   margin-left: 3rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .block {
@@ -1170,6 +1183,11 @@ video {
   background-color: transparent;
 }
 
+.bg-amber-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1480,7 +1498,9 @@ video {
 }
 
 .text-amber-300 {
+.text-amber-300 {
   --tw-text-opacity: 1;
+  color: rgb(252 211 77 / var(--tw-text-opacity));
   color: rgb(252 211 77 / var(--tw-text-opacity));
 }
 
@@ -1631,7 +1651,8 @@ form div {
   display: inline-block;
 }
 
-#owner{
+.owner{
+  display: flex;
   flex-direction: row-reverse;
 }
 
@@ -1704,6 +1725,11 @@ form div {
   background-color: rgb(214 211 209 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-\[\#e66f6d\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 111 109 / var(--tw-bg-opacity));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1732,6 +1758,16 @@ form div {
 .hover\:text-\[\#EBAF4C\]:hover {
   --tw-text-opacity: 1;
   color: rgb(235 175 76 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#e66f6d\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(230 111 109 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#FFC200\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 194 0 / var(--tw-text-opacity));
 }
 
 .focus\:border-l-4:focus {

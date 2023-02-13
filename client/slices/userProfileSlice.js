@@ -6,6 +6,7 @@ const initialState = {};
 
 export const getSingleProfile = createAsyncThunk("singleUser", async (id) => {
     try {
+
         const { data } = await axios.get(`/api/users/${id}`, {
             headers: { authorization: token },
         });

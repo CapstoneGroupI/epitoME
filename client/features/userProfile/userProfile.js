@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleProfile } from "../../slices/userProfileSlice";
-import { addFellow } from "../../slices/fellowsSlice";
+import { createFellow } from "../../slices/fellowsSlice";
 // import PropTypes from 'prop-types'
 
 
@@ -23,9 +23,9 @@ export const UserProfile = (props) => {
 
   const dispatch = useDispatch();
 
-  const handleAddFellow = (userId) => {
+  const handleCreateFellow = (userId) => {
     if (isLoggedIn && userId) {
-        dispatch(addFellow({ userId, firstName, lastName }));
+        dispatch(createFellow({ userId, firstName, lastName }));
     }
   }
 
@@ -45,7 +45,7 @@ export const UserProfile = (props) => {
               <button id="messageFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2 mb-6">Message</button> 
               <button id="addFriend" 
                     onClick={() =>
-                        handleAddFellow(
+                        handleCreateFellow(
                             userId,
                             firstName,
                             lastName

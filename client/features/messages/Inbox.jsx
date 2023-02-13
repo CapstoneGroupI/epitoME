@@ -10,48 +10,41 @@ import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
+import AddFellow from "../addFellow/addFellow.jsx";
+import { selectFellows, getFellow, createFellow } from "../../slices/fellowsSlice";
 
 
 const Inbox = () => {
-    
-    const userId = useSelector((state) => state.auth.me.id)
+    const [clickedUser, setClickedUser] = useState({});
 
-    const user = useSelector(selectUsers)
+    const userId = useSelector((state) => state.auth.me.id)
+    console.log("this is the current userId", userId)
 
     const messages = useSelector(selectMessages)
 
+    const filteredMessages= messages.filter(message => message.userId !== userId);
+    console.log("these are the filtered messages", filteredMessages)
+
     let arr = []
 
-    const dispatch = useDispatch();
+    arr = messages.map(message => { return message });
+    console.log('these are the arr', arr)
 
-    useEffect(() => {
-        dispatch(getAllMessagesAsync())
-        console.log(userId)
-    }, [userId])
-
-    arr = messages.map(message => { return message.text });
-
-    arr = messages.map(message => { return message.text });
-    console.log('these are the messages', arr)
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(createMessageAsync({ text, userId }))
-        dispatch(createMessageAsync({ text, userId }))
-        console.log("submitted")
+    const handleMessageClick = (user) => {
+        setClickedUser(user);
     }
 
     return (
         <div className="flex md:flex-row flex-col">
-            <div id="all-messages-box" className="flex flex-col m-5 w-full md:w-2/5 h-4/5 border-2 border-honey shadow-md shadow-honey mt-8 rounded-md">
+            <div id="all-messages-box" className="flex flex-col m-5 w-full md:w-2/5 h-3/5 border-2 border-honey shadow-md shadow-honey mt-8 rounded-md">
                 <div className="flex flex-row justify-between">
                     <input placeholder="Search messages..." className="m-2 p-2 border-b-2 border-honey"></input>
                     <button className="text-honey mr-2">Filter</button>
                 </div>
                 <div id="message-preview-box" className="m-2 p-2 border-2 border-honey rounded-md">
-                    <h1 className="font-bold text-3xl text-honey">All Messages (3)</h1>
+                    <h1 className="font-bold text-3xl text-honey">All Messages ({messages.length})</h1>
 
-                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {messages.map(message => {
+                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {filteredMessages.map(message => {
                         
                         let date = new Date(message.createdAt);
                         let formattedDate = date.toLocaleDateString("en-US", options);
@@ -65,10 +58,11 @@ const Inbox = () => {
 
                         return (
                         
-                            <div className="border border-black">
-                                <img className=" border border-solid border-black object-cover p-3 rounded-full w-40 h-40" src={message.user.profilePic} />
+                            <div key={message.id} id = "all Messages" className="border border-black hover:cursor-pointer" onClick={() => handleMessageClick(message.user)}>
+                                <img className=" border border-solid border-black object-cover p-3 rounded-full w-20 h-20" src={message.user.profilePic} />
                                 <section>
                                     <h1 className="text-[#a1a7b1] font-bold"> {message.user.firstName} {message.user.lastName} </h1>
+                                    <AddFellow followerId={message.userId}/>
                                     <h3 className="text-[#a1a7b1]">{formattedDate}</h3>
                                     <h2 className="text-[#a1a7b1]">
                                         <div >{message.text}</div>
@@ -80,34 +74,26 @@ const Inbox = () => {
                     </div>
                 </div>
             </div>
-            <div id="single-message-box" className="m-5 mt-8 w-3/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] rounded-md relative">
+            <div id="single-message-box" className="m-5 h-screen mt-8 w-3/5 border-2 border-[honey] shadow-md shadow-[#EBAF4C] rounded-md relative">
             <div id="talking-to" className= "flex border border-black bg-[#E68584] items-center justify-between p-2">
-                    firstName lastName
-                    <div id="icons">(camera)(friend)(more)</div> 
+            {clickedUser.firstName} {clickedUser.lastName}
+                    <div id="icons">
+                        <button>📸</button>
+                        <button>🤝</button>
+                        <button>more</button>
+                        </div> 
                 </div>
-                <div id="scroll" className="overflow-scroll h-1/2"> 
-    <Messaging/>
-    <Messaging id = "owner" className = "row-reverse" />
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
+                <div id="scroll" className="overflow-scroll scrollbar-hide h-5/6"> 
     <Messaging />
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Messaging className= "row-reverse"/>
-    <Messaging/>
-    <Input/>
     </div>
+    <Input/>
             </div>
 
 
         </div>
+        
     );
 };
 
-export default Inbox;
+
+export default Inbox
