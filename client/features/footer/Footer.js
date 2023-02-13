@@ -29,11 +29,12 @@ const Footer = () => {
       <div className="md:flex md:justify-between md:items-center sm:px-12 px-4  py-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
         <img src="https://i.ibb.co/fFMPkH6/epitomewhite.png" className="object-scale-down h-48 w-96 object-left"></img>
         <div className="footerText">
-          <h3>USEFUL LINKS</h3>
-          <ul><a href="/home">Home</a> </ul>
-          <ul><a href="/messages">Messages</a> </ul>
-          <ul><a href="/VIP">VIP</a> </ul>
-          <ul><a href="/profile">Profile</a> </ul>
+          <h3>ABOUT</h3>
+          <ul><a href="/home">Our Story</a> </ul>
+          <ul><a href="/messages">Team</a> </ul>
+          <ul><a href="/VIP">Blog</a> </ul>
+          <ul><a href="/VIP">Support</a> </ul>
+
         </div>
         <div className="footerText">
           <h3>USEFUL LINKS</h3>
@@ -43,43 +44,19 @@ const Footer = () => {
           <ul><a href="/profile">Profile</a> </ul>
         </div>
         <div className="footerText">
-          <h3>USEFUL LINKS</h3>
-          <ul><a href="/home">Home</a> </ul>
-          <ul><a href="/messages">Messages</a> </ul>
-          <ul><a href="/VIP">VIP</a> </ul>
-          <ul><a href="/profile">Profile</a> </ul>
+          <h3>LEGAL</h3>
+          <ul><a href="/home">Terms & Conditions</a> </ul>
+          <ul><a href="/messages">Privacy Policy</a> </ul>
+          <ul><a href="/VIP">Terms of Use</a> </ul>
+          <ul><a href="/VIP">FAQs</a> </ul>
         </div>
       </div>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
-
-        <div className="footerText">
-          <h3>USEFUL LINKS</h3>
-          <ul><a href="/home">Home</a> </ul>
-          <ul><a href="/messages">Messages</a> </ul>
-          <ul><a href="/VIP">VIP</a> </ul>
-          <ul><a href="/profile">Profile</a> </ul>
-        </div>
-        <div className="footerText">
-          <h3>USEFUL LINKS</h3>
-          <ul><a href="/home">Home</a> </ul>
-          <ul><a href="/messages">Messages</a> </ul>
-          <ul><a href="/VIP">VIP</a> </ul>
-          <ul><a href="/profile">Profile</a> </ul>
-        </div>
-        <div className="footerText">
-          <h3>USEFUL LINKS</h3>
-          <ul><a href="/home">Home</a> </ul>
-          <ul><a href="/messages">Messages</a> </ul>
-          <ul><a href="/VIP">VIP</a> </ul>
-          <ul><a href="/profile">Profile</a> </ul>
-        </div>
-      </div> */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
       text-center pt-2 text-white text-sm pb-8"
       >
         <span>© 2023 epitoME All rights reserved.</span>
-        <span>Terms · Privacy Policy</span>
+        <span>Powered by Team I</span>
         <span> <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a> <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a> <a href="https://twitter.com/"><ion-icon name="logo-twitter"> </ion-icon></a> <a href="https://github.com/CapstoneGroupI/epitoME"><ion-icon name="logo-github"></ion-icon></a> </span>
       </div>
     </footer>
