@@ -10,7 +10,7 @@ const Post = db.define('post', {
         comment: 'null',
       },
     image: {
-        type: TEXT
+        type: STRING,
     },
     rating: {
       type: ARRAY(INTEGER),
