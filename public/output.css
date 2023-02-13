@@ -709,10 +709,6 @@ video {
   display: flex;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-auto {
   height: auto;
 }
@@ -757,8 +753,8 @@ video {
   height: 1.25rem;
 }
 
-.h-4\/5 {
-  height: 80%;
+.h-20 {
+  height: 5rem;
 }
 
 .h-5\/6 {
@@ -843,6 +839,10 @@ video {
 
 .w-3\/12 {
   width: 25%;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .w-3\/5 {
@@ -1453,11 +1453,6 @@ video {
   color: rgb(253 230 138 / var(--tw-text-opacity));
 }
 
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
 .text-stone-300 {
   --tw-text-opacity: 1;
   color: rgb(214 211 209 / var(--tw-text-opacity));
@@ -1614,7 +1609,8 @@ form div {
   display: inline-block;
 }
 
-#owner{
+.owner{
+  display: flex;
   flex-direction: row-reverse;
 }
 
