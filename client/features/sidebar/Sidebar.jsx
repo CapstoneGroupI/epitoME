@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Home from "../home/Home";
+import { getFellow, selectFellows } from "../../slices/fellowsSlice";
 
 export default function Sidebar() {
-return (
+return(
   <>
     <div className="flex border-2 border-salmon justify-center md:float-right shadow-xl shadow-rose-200 m-8 rounded-xl md:w-64">
       <div className="flex flex-col h-64 overflow:auto md:h-screen p-3">
@@ -29,9 +31,9 @@ return (
          </div>
          <div to="" className="text-salmon text-xl font-bold mt-6">Followers (0)</div>
         </div>
-       </div>
       </div>
-    </div>
-  </>
-);
+      </div>
+      </div>
+    </>
+  );
 }

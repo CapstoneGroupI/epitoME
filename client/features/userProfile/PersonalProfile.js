@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+<<<<<<< HEAD
 import { addFellow } from "../../slices/FollowersSlice";
+=======
+import { createFellow } from "../../slices/fellowsSlice";
+>>>>>>> 820185224d87e554e57848c79a01a7e75d92b682
 
 
 export const PersonalProfile = () => {
@@ -22,7 +26,7 @@ export const PersonalProfile = () => {
 
   const handleAddFellow = (userId) => {
     if (isLoggedIn && userId) {
-        dispatch(addFellow({ userId, firstName, lastName }));
+        dispatch(createFellow({ userId, firstName, lastName }));
     }
   }
 

@@ -25,7 +25,8 @@ form div {
   display: inline-block;
 }
 
-#owner{
+.owner{
+  display: flex;
   flex-direction: row-reverse;
   
 }
