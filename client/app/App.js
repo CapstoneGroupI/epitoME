@@ -28,7 +28,6 @@ const App = () => {
         <AppRoutes />
         </>
       )}
-      < Footer />
     </div>
   );
 };

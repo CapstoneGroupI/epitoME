@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Footer from "../footer/Footer";
 
 const Boost = () => {
     return(
+        <div>
         <div className="text-center w-4/5 m-10 rounded-md p-8">
             <div className="text-salmon text-6xl font-bold m-30">So you want a higher rating?</div>
             <div className="text-salmon text-4xl font-bold">Considering becoming a better person?</div>
@@ -45,6 +47,8 @@ const Boost = () => {
                 </div>
             </div>
 
+        </div>
+        < Footer />
         </div>
     );
 };

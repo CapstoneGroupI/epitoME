@@ -12,6 +12,7 @@ import Messaging from "./messaging.jsx";
 import Input from "./input.jsx";
 import AddFellow from "../addFellow/addFellow.jsx";
 import { selectFellows, getFellow, createFellow } from "../../slices/fellowsSlice";
+import Footer from "../footer/Footer";
 
 
 const Inbox = () => {
@@ -35,6 +36,7 @@ const Inbox = () => {
     }
 
     return (
+        <div>
         <div className="flex md:flex-row flex-col">
             <div id="all-messages-box" className="flex flex-col m-5 w-full md:w-2/5 h-3/5 border-2 border-honey shadow-md shadow-honey mt-8 rounded-md">
                 <div className="flex flex-row justify-between">
@@ -89,6 +91,9 @@ const Inbox = () => {
     <Input/>
             </div>
 
+
+        </div>
+        <div>< Footer /> </div>
 
         </div>
         

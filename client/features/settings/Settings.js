@@ -8,6 +8,7 @@ import Email from "./Email";
 import Notifications from "./Notifications";
 import PrivacySecurity from "./PrivacySecurity";
 import { useNavigate } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 const Settings = () => {
     const [type, setType] = useState("")
@@ -42,6 +43,7 @@ const Settings = () => {
             <PrivacySecurity /> ) }
             </div>
          </div>
+         <div> < Footer /> </div>
      </div>
     );
 };
