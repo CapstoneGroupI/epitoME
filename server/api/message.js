@@ -17,7 +17,6 @@ router.get("/", async (req, res, next) => {
   //GET route /api/message/:id
   router.get("/:id", async (req, res, next) => {
     try {
-
       const message = await Message.findByPk(req.params.id,{
         include: [{ model: User }],
       });
@@ -61,4 +60,19 @@ router.get("/", async (req, res, next) => {
     } catch (error){
       next(error)
     }
+  })
+
+  //GET route /api/message/user/:id MESSAGE(s) of a specific user
+  router.get("/user/:id", async (req, res, next) => {
+    try {
+      const messages = await Message.findAll({
+        where: {
+          userId: req.params.id,
+        },
+        include: [{ model: User }]
+      })
+    res.send(messages)
+  } catch (err) {
+    next(err);
+  }
   })

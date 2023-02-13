@@ -6,7 +6,7 @@ import AppRoutes from './AppRoutes.js';
 import LoginForm from '../features/auth/LoginForm.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { me } from './store';
-
+import Footer from '../features/footer/Footer.js';
 
 const App = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);

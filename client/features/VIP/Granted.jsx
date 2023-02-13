@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 const Granted = () => {
     return(
+        <>
         <div className="w-full flex flex-col items-center md:w-7/12 m-8">
                 <div id="titleBox" className="text-center w-full m-10 rounded-md shadow-lg shadow-honey p-8">
                     <h1 className="text-honey text-3xl font-bold">Congrats! You have been granted VIP status!</h1>
@@ -36,6 +38,8 @@ const Granted = () => {
                     </div>
             </div>
             </div>
+            <div> < Footer /> </div>
+            </>
     );
 };
 
