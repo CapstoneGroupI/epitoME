@@ -35,6 +35,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
   const handleUpdate = (id, rating) => {
     console.log("this is rating --------------", id, rating);
     dispatch(updatePostAsync({ id, rating }));
+    dispatch(getAllPostsAsync())
   };
 
   const handleAddComment = (text, postId, userId) => {
@@ -103,6 +104,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
           return (
             <motion.div
+            key={post.id}
               className="w-4/6 mx-auto"
               initial={{ y: 50 }}
               whileInView={{ y: 0, transition: { duration: 0.5 } }}
