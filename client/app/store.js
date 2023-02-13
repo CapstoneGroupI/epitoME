@@ -9,7 +9,7 @@ import commentsReducer from '../slices/allCommentsSlice';
 import singleCommentReducer from '../slices/singleCommentSlice';
 import messagesReducer from '../slices/allMessageSlice';
 import singleMessageReducer from '../slices/allMessageSlice'
-import addFellowReducer from '../slices/FollowersSlice';
+import addFellowReducer from '../slices/fellowsSlice'
 
 
 const store = configureStore({

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleProfile } from "../../slices/userProfileSlice";
-import { Follow } from "../../slices/FollowersSlice";
+import { getFellow } from "../../slices/fellowsSlice";
 import { selectUsers } from "../../slices/allUsersSlice";
 import { useNavigate } from "react-router-dom";
 // import PropTypes from 'prop-types'
@@ -23,9 +23,9 @@ export const UserProfile = (props) => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.userId); // id or userId ??
   const userId = useSelector((state) => state.auth.me.userId); // id or userId ??
 
-  const handleFollow = (userId) => {
+  const handleAddFellow = (userId) => {
     if (isLoggedIn && userId) {
-        dispatch(Follow({ userId }));
+        dispatch(getFellow({ userId }));
     }
   }
 

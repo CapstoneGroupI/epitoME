@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 /* eslint-disable no-unused-vars */
-=======
->>>>>>> a75c9bdb820e4a0fe52df61563ee36d660809a51
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { getFellow, createFellow } from '../../slices/fellowsSlice'
