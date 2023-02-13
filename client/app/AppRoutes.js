@@ -10,10 +10,13 @@ import Dashboard from '../features/dashboard/Dashboard';
 import VIP from '../features/VIP/VIP.jsx';
 import Boost from '../features/boost/Boost.jsx';
 import Inbox from '../features/messages/Inbox.jsx';
-import ContactForm from '../features/contact/Contact.jsx';
+import ContactForm from '../features/contact/Contact';
 import Search from '../features/navbar/search/Search.jsx';
 import CreatePost from '../features/post/createPost';
 import Settings from '../features/settings/Settings';
+import PersonalProfile from '../features/userProfile/PersonalProfile';
+import Localstoragetest from '../features/messages/localstoragetest.jsx';
+
 
 /**
  * COMPONENT
@@ -33,7 +36,7 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/*" element={<Dashboard />} />
           <Route to="/home" element={<Dashboard />} />
-          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/profile" element={<PersonalProfile />} />
           <Route path="/VIP" element={<VIP />} />
           <Route path="/boost" element={<Boost />} />
           <Route path="/messages" element={<Inbox />} />
@@ -41,6 +44,8 @@ const AppRoutes = () => {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/create" element = {<CreatePost/>}/>
           <Route path="/settings" element={<Settings />}/>
+          <Route path="/profile/:id" element={<UserProfile />} />
+          <Route path="/localstoragetest" element={<Localstoragetest/>} />
         </Routes>
       ) : (
         <Routes>

@@ -17,15 +17,15 @@ const Message = require('./models/Message');
   User.hasMany(Message)
   User.hasMany(Follower)
 
-  Follower.belongsTo(User);
-
   Message.belongsTo(User);
-
+  
   Post.hasMany(Comment);
   Post.belongsTo(User);
-
+  
   Comment.belongsTo(Post);
   Comment.belongsTo(User);
+  
+  Follower.belongsTo(User, {as: "followers", foreignKey: 'followerId', sourceKey: 'userId'} );
 
 
 module.exports = {

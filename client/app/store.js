@@ -9,6 +9,7 @@ import commentsReducer from '../slices/allCommentsSlice';
 import singleCommentReducer from '../slices/singleCommentSlice';
 import messagesReducer from '../slices/allMessageSlice';
 import singleMessageReducer from '../slices/allMessageSlice'
+import addFellowReducer from '../slices/FollowersSlice';
 
 
 const store = configureStore({
@@ -20,9 +21,10 @@ const store = configureStore({
   comments: commentsReducer,
   singleComment: singleCommentReducer,
   messages: messagesReducer,
-  singleMessage: singleMessageReducer
+  singleMessage: singleMessageReducer,
+  addFellow: addFellowReducer
  },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default store;

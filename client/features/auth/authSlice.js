@@ -36,10 +36,21 @@ export const me = createAsyncThunk('auth/me', async () => {
 export const authenticate = createAsyncThunk(
   'auth/authenticate',
   async ({ username, password, method }, thunkAPI) => {
+      // messages from localStorage if !messages
+    const messages = window.localStorage.getItem("messages")
     try {
-      const res = await axios.post(`/auth/${method}`, { username, password });
+      if(!messages) {
+        const res= await axios.post(`auth/${method}`, {
+          username, password
+        })
+        console.log("response data", res);
+        window.localStorage.setItem(TOKEN, res.data.token)
+      thunkAPI.dispatch(me())
+    }else{
+      const res = await axios.post(`/auth/${method}`, { username, password }, messages);
       window.localStorage.setItem(TOKEN, res.data.token);
       thunkAPI.dispatch(me());
+    }
     } catch (err) {
       if (err.response.data) {
         return thunkAPI.rejectWithValue(err.response.data);
@@ -61,6 +72,7 @@ export const authSlice = createSlice({
   },
   reducers: {
     logout(state, action) {
+      window.localStorage.removeItem("messages")
       window.localStorage.removeItem(TOKEN);
       state.me = {};
       state.error = null;

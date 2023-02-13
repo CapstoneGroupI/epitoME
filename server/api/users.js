@@ -7,20 +7,21 @@ router.get("/", async (req, res, next) => {
     try {
       // only users with a token will be able to see the users
       const users = await User.findAll({
-        attributes: [
-          "id",
-          "username",
-          "email",
-          "firstName",
-          "lastName",
-          "birthday",
-          "city",
-          "state",
-          "profilePic",
-          "isAdmin",
-          "rating",
-          "pronouns"
-        ],
+        include: [ {model:Comment}, {model:Follower}, {model:Post}, {model:Message}],
+          attributes: [
+            "id",
+            "username",
+            "email",
+            "firstName",
+            "lastName",
+            "birthday",
+            "city",
+            "state",
+            "profilePic",
+            "isAdmin",
+            "rating",
+            "pronouns"
+          ],
       });
       res.status(200).send(users);
     } catch (err) {
@@ -34,18 +35,28 @@ router.get("/", async (req, res, next) => {
       // only users with token can view page
       const user = await User.findAll({
         where: {id: req.params.id},
-        include: {
-          model: Post,
-          model: Comment,
-            model: Follower,
-              model: Message,
-        },
+        // include: Post, Comment, Follower, Message, User
+        include: [ {model:Comment}, {model:Follower}, {model:Post}, {model:Message}]
       });
       res.send(user);
     } catch (err) {
       next(err);
     }
   });
+
+//GET route /api/users/:id/followers
+router.get("/:id/followers", async (req, res, next) => {
+  try {
+    // only users with token can view page
+    const users = await User.findAll({
+      where: {id: req.params.id},
+      include: [{ model: User, as: 'followers' }]
+    });
+    res.send(users);
+  } catch (err) {
+    next(err);
+  }
+});
 
   // POST route /api/users
 router.post("/", async (req, res, next) => {
@@ -66,6 +77,12 @@ router.post("/", async (req, res, next) => {
     next(err);
   }
 });
+
+// router.post(":id/users", async (req, res, next) => {
+//   try {
+//     const addFellow = await User.
+//   }
+// })
 
 // PUT route /api/users/:id
 router.put("/:id", async (req, res, next) => {

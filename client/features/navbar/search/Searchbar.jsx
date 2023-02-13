@@ -12,9 +12,8 @@ const Searchbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Search(searchTerm)
-    // await dispatch(sortBySearch(value.toLowerCase()));
     navigate(`/search/${searchTerm}`);
+    setSearchTerm("");
   };
 
   return (
