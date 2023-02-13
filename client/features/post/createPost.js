@@ -9,8 +9,9 @@ import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
     const [text, setText] = useState("")
-    const [file, setFile] = useState(null);
+    const [image, setImage] = useState(null);
     const userId = useSelector((state) => state.auth.me.id)
+    const imagePreview = image ? URL.createObjectURL(image) : null;
    
     
 let arr = []
@@ -27,10 +28,11 @@ let arr = []
       console.log("these are the posts", arr )
       
     const handleSubmit = (e) => {
+        console.log(text,image,userId)
         e.preventDefault();
-        dispatch(createPostAsync({text, userId}))
+        dispatch(createPostAsync({text, image, userId}))
         console.log("submitted")
-        Navigate("/home")
+        // Navigate("/home")
     }
     
 
@@ -42,7 +44,8 @@ let arr = []
                     <div id= "create-post-box" className="flex flex-col m-5 w-full md:w-5/5 h-5/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] mt-8 rounded-md">
                 <div className="flex flex-row justify-between">
                     <input type="text" placeholder="Your Text Here..." className="m-2 p-2 border-b-2 border-[#EBAF4C]" onChange = {(e) =>setText(e.target.value)}></input>
-                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                <img src={imagePreview} alt="" />
+                    <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                     <button className="text-[#EBAF4C] font-bold mr-2" onClick={handleSubmit}>SUBMIT</button>
                     
                 </div>

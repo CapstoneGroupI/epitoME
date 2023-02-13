@@ -323,19 +323,17 @@ async function seed() {
 
   const post = await Promise.all([
     Post.create({
-      text: "I love posting",
-      image:
-        "https://www.livinginhawaii.com/wp-content/uploads/2019/01/ftp7/18509322244_ddf6e3213b_o.jpg",
+      text: "Who knows how to get to the Green Day concert",
       userId: 4,
     }),
     Post.create({
-      text: "Hawaii is cool",
+      text: "I on ",
       userId: 3,
     }),
     Post.create({
-      text: "My dog loves peanutbutter",
+      text: "Hawaii was Beautiful",
       image:
-        "https://www.livinginhawaii.com/wp-content/uploads/2019/01/ftp7/18509322244_ddf6e3213b_o.jpg",
+        "public/hawaii.jpg",
       userId: 2,
     }),
     Post.create({
