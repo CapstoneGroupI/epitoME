@@ -347,103 +347,103 @@ async function seed() {
     Post.create({
       text: "Happy birthday to me!",
       image:
-        "https://images.pond5.com/number-23-top-cake-twenty-footage-085133301_prevstill.jpeg",
+        "public/birthday23.jpg",
       userId: 4,
     }),
     Post.create({
       text: "It's pretty cold today",
       image:
-        "https://dottech.org/wp-content/uploads/2012/09/frozen_cars_in_romania.jpg",
+        "public/frozen.jpg",
       userId: 2,
     }),
     Post.create({
       text: "It's pretty hot today",
       image:
-        "https://img.buzzfeed.com/buzzfeed-static/static/2019-03/19/17/asset/buzzfeed-prod-web-06/sub-buzz-19452-1553031822-1.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto",
+        "public/melted.jpg",
       userId: 1,
     }),
     Post.create({
       text: "Masterpiece!",
       image:
-        "https://marigoldcoloradosprings.com/wp-content/uploads/2020/05/Creme-Brulee.png",
+        "public/brulee.jpg",
       userId: 2,
     }),
     Post.create({
       text: "Dieting sucks =(",
       image:
-        "https://images.squarespace-cdn.com/content/v1/58af2ca246c3c4b688c26034/1534380269861-ROYNSTIV5LWND9JUZUSN/IMG_0121.JPG",
+        "public/salad.jpg",
       userId: 3,
     }),
     Post.create({
       text: "My new doggo!!",
       image:
-        "https://a-z-animals.com/media/2022/07/Meet-Top-9-Prettiest-Cutest-Dog-Breeds-Poster-Image.jpg",
+        "public/doggo.jpg",
       userId: 4,
     }),
     Post.create({
       text: "Ran 10 miles today!",
       image:
-        "https://preview.redd.it/d3ncf133hrx41.jpg?auto=webp&s=2ce8300bd80f8b169ecf85945a80c3e5552c820e",
+        "public/10miles.jpg",
       userId: 4,
     }),
     Post.create({
       text: "Meet Garfield",
       image:
-        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2020%2F07%2F20%2Forange-cats-1070960066-1-2000.jpg",
+        "public/garfield.jpg",
       userId: 1,
     }),
     Post.create({
       text: "R.I.P",
       image:
-        "https://cdn.mos.cms.futurecdn.net/Xk63uudefpEpXrxZN3csEf.jpg",
+        "public/rip.jpg",
       userId: 3,
     }),
     Post.create({
       text: "I found a wierd fruit in my garden, should I cook it and eat it?",
       image:
-        "https://s.hdnux.com/photos/60/23/30/12662288/4/rawImage.jpg",
+        "public/boom.jpg",
       userId: 2,
     }),
     Post.create({
       text: "Bro I think I'm being watched...",
       image:
-        "https://c8.alamy.com/zooms/9/f8dfd7f35a98496f8dcb0632b408009f/w6rf3g.jpg",
+        "public/eyes.jpg",
       userId: 2,
     }),
     Post.create({
       text: "'Here comes the sun' - George Harrison",
       image:
-        "https://www.lovethispic.com/uploaded_images/178715-Beautiful-Sunset.jpg",
+        "public/sun.jpg",
       userId: 4,
     }),
     Post.create({
       text: "Go Chiefs Go!",
       image:
-        "https://www.si.com/.image/c_limit%2Ccs_srgb%2Ch_1200%2Cq_auto:good%2Cw_1200/MTk1ODU2NzU1NDU5NDk5NDg5/chiefs-super-bowl.png",
+        "public/chiefs.jpg",
       userId: 4,
     }),
     Post.create({
       text: "Visiting Montgomery, AL!",
       image:
-        "https://thumbs.dreamstime.com/b/city-montgomery-sign-near-court-square-fountain-alabama-usa-june-historic-marker-next-to-downtown-188835714.jpg",
+        "public/montgomery.jpg",
       userId: 1,
     }),
     Post.create({
       text: "Visiting the aquarium Chatanooga, TN!",
       image:
-        "https://assets.simpleviewinc.com/simpleview/image/upload/crm/chattanooga/TNAq_Buildings_FB77E716-94C2-42ED-B2809B3E86F9FA33_5a8da4c2-055f-477a-bfaf7c796c3bfbfd.jpg",
+        "public/chattanooga.jpg",
       userId: 2,
     }),
     Post.create({
       text: "Kern County Museum in Bakersfield!",
       image:
-        "https://media-cdn.tripadvisor.com/media/photo-s/09/55/2b/0d/kern-county-museum.jpg",
+        "public/bakersfield.jpg",
       userId: 3,
     }),
     Post.create({
       text: "NYC BAYBEEE",
       image:
-        "https://www.welcome-to-times-square.com/wp-content/uploads/2022/03/istockphoto-523513953-612x612-1.jpg",
+        "public/nyc.jpg",
       userId: 4,
     }),
   ]);
