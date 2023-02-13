@@ -1,38 +1,3 @@
-// import React from 'react'
-// import { Link } from 'react-router-dom';
-
-
-// const Footer = () => {
-//     return (
-//         <div>
-//             <section id="footer" className='bg-red-500 md:px-28'>
-//                 <div className='conmtainer flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0'>
-//                     <h2 className='md:text-4xl font-bold leading-tight text-center text-2xl text-white md:max-w-xl md:text-left'>
-//                         Need to speak with an expert
-//                         </h2>
-//                     <div className='flex justify-center md:justify-start pt-6'>
-//                         <Link 
-//                         className='p-1 px-6 pt-2 text-red-500 rounded-full bg-white shadow-2xl hover:bg-gray-300 govver:text-black'>
-//                             Contact Us
-//                             </Link>
-//                     </div>
-//                 </div>
-//             </section>
-//             {/* background */}
-//         <div>
-//             {}
-//         <div>
-//             <div></div>
-//             <div></div>
-//             <div></div>
-//         </div>
-//         </div>
-//         </div>
-//     )
-// }
-
-// export default Footer;
-
 import React from "react";
 
 
@@ -61,22 +26,61 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
-                
-                <div className="footerText">
-                <h3>USEFUL LINKS</h3>
-                <ul><a href="/home">Home</a> </ul>
-                <ul><a href="/messages">Messages</a> </ul>
-                <ul><a href="/VIP">VIP</a> </ul>
-                <ul><a href="/profile">Profile</a> </ul>
-                </div>
-            </div>
+      <div className="md:flex md:justify-between md:items-center sm:px-12 px-4  py-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
+        <img src="https://i.ibb.co/fFMPkH6/epitomewhite.png" className="object-scale-down h-48 w-96 object-left"></img>
+        <div className="footerText">
+          <h3>USEFUL LINKS</h3>
+          <ul><a href="/home">Home</a> </ul>
+          <ul><a href="/messages">Messages</a> </ul>
+          <ul><a href="/VIP">VIP</a> </ul>
+          <ul><a href="/profile">Profile</a> </ul>
+        </div>
+        <div className="footerText">
+          <h3>USEFUL LINKS</h3>
+          <ul><a href="/home">Home</a> </ul>
+          <ul><a href="/messages">Messages</a> </ul>
+          <ul><a href="/VIP">VIP</a> </ul>
+          <ul><a href="/profile">Profile</a> </ul>
+        </div>
+        <div className="footerText">
+          <h3>USEFUL LINKS</h3>
+          <ul><a href="/home">Home</a> </ul>
+          <ul><a href="/messages">Messages</a> </ul>
+          <ul><a href="/VIP">VIP</a> </ul>
+          <ul><a href="/profile">Profile</a> </ul>
+        </div>
+      </div>
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
+
+        <div className="footerText">
+          <h3>USEFUL LINKS</h3>
+          <ul><a href="/home">Home</a> </ul>
+          <ul><a href="/messages">Messages</a> </ul>
+          <ul><a href="/VIP">VIP</a> </ul>
+          <ul><a href="/profile">Profile</a> </ul>
+        </div>
+        <div className="footerText">
+          <h3>USEFUL LINKS</h3>
+          <ul><a href="/home">Home</a> </ul>
+          <ul><a href="/messages">Messages</a> </ul>
+          <ul><a href="/VIP">VIP</a> </ul>
+          <ul><a href="/profile">Profile</a> </ul>
+        </div>
+        <div className="footerText">
+          <h3>USEFUL LINKS</h3>
+          <ul><a href="/home">Home</a> </ul>
+          <ul><a href="/messages">Messages</a> </ul>
+          <ul><a href="/VIP">VIP</a> </ul>
+          <ul><a href="/profile">Profile</a> </ul>
+        </div>
+      </div> */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
       text-center pt-2 text-white text-sm pb-8"
       >
         <span>© 2023 epitoME All rights reserved.</span>
         <span>Terms · Privacy Policy</span>
+        <span> <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a> <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a> <a href="https://twitter.com/"><ion-icon name="logo-twitter"> </ion-icon></a> <a href="https://github.com/CapstoneGroupI/epitoME"><ion-icon name="logo-github"></ion-icon></a> </span>
       </div>
     </footer>
   );
