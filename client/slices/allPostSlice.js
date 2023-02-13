@@ -16,18 +16,30 @@ export const getAllPostsAsync = createAsyncThunk(
 
 //POST - create a message
 export const createPostAsync = createAsyncThunk(
-    "post/createPost",
-    async ({ text, image, userId }) => {
+  "post/createPost",
+  async ({ text, image, userId }, { rejectWithValue }) => {
+    console.log()
       try {
-        const { data } = await axios.post(
-          `/api/post`, { text, image , userId},
-        );
-        return data;
+          const formData = new FormData();
+          formData.append("text", text);
+          formData.append("image", image, image.name);
+          formData.append("userId", userId);
+          const { data } = await axios.post(
+              "/api/post",
+              formData,
+              {
+                  headers: {
+                      "Content-Type": "multipart/form-data",
+                  },
+              }
+          );
+          return data;
       } catch (err) {
-        console.log(err);
+          console.log(err);
+          return rejectWithValue(err.response.data);
       }
-    }
-  );
+  }
+);
 
 //DELETE - delete post
 export const deletePostAsync = createAsyncThunk(

@@ -28,10 +28,11 @@ let arr = []
       console.log("these are the posts", arr )
       
     const handleSubmit = (e) => {
+        console.log(text,image,userId)
         e.preventDefault();
         dispatch(createPostAsync({text, image, userId}))
         console.log("submitted")
-        Navigate("/home")
+        // Navigate("/home")
     }
     
 

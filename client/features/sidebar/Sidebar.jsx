@@ -34,21 +34,21 @@ export default function Sidebar() {
               <h2 className="text-xl text-[#E68584] font-bold font-serif mt-10">
                 Notifications:
               </h2>
-              <div to="" className="text-[#E68584] mt-10">
-                Following (0)
+              <div to="" className="text-[#E68584] mt-10 content-center">
+                <div className="space-between">Following (0)</div>
                 <ul>
                   {/* wrap in link */}
                   {fellowsArray.map((fellow) => {
                     return (
                       <>
-                        <li key={fellow.id}>
-                          {fellow.followers.firstName} {fellow.followers.lastName}
+                        <li key={fellow.id} className="flex text-xl border-2 border-[#E68584] justify-center w-7/5 p-4 m-2 rounded-md shadow-lg">
+                          <div className="p-2">{fellow.followers.firstName} {fellow.followers.lastName}</div>
+                          <div className="text-[green] text-sm p-3 align-middle">Online</div>
                         </li>
                       </>
                     );
                   })}
                 </ul>
-                {/* <li>{fellows.firstName} {lastName}</li> */}
               </div>
             </div>
           </div>
