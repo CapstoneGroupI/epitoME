@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addFellow } from "../../slices/fellowsSlice";
+import { addFellow } from "../../slices/FollowersSlice";
 
 
 export const PersonalProfile = () => {
