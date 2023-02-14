@@ -17,7 +17,7 @@ const About = () => {
                 <img src="https://media.licdn.com/dms/image/C4E03AQFicE_679c67g/profile-displayphoto-shrink_800_800/0/1563983597235?e=1681344000&v=beta&t=Ox_QZa8zd9EgFHhgcQFx1Q5vXFRwHu8u56cGejCSm2Q" className="rounded-full m-2 border border-salmon"></img>
                 <hr></hr>
                 <h1 className="text-stone-500 text-3xl mt-2">David Zeng</h1>
-                <p className="text-stone-400 mt-2">David David David David David David David David David David David David David David David David David David David David David David David David David </p>
+                <p className="text-stone-400 mt-2">With so many programming languages and softwares that are available (and many that have yet to be invented!), there is never a shortage of things to learn and create. My interest in continuing down this journey of building my knowledge of all things programming is super exciting!  </p>
                 <a href="https://www.linkedin.com/in/davidzeng-hello/" className="mt-2 underline text-salmon hover:text-rose-300 font-bold">David's LinkedIn</a>
             </div>
             <div className="flex flex-col w-80 border-2 border-salmon rounded shadow-md text-center p-4 my-2 mx-4">
