@@ -23,6 +23,19 @@ const Inbox = () => {
 
     const messages = useSelector(selectMessages)
 
+    const lastMessages = Object.values(messages.reduce((acc, message) => {
+        if (message.userId !== userId) {
+          const { user, ...rest } = message;
+          if (!acc[user.id] || acc[user.id].createdAt < message.createdAt) {
+            acc[user.id] = { user, ...rest };
+          }
+        }
+        return acc;
+      }, {}));
+      
+
+      console.log("these are the last messages", lastMessages)
+
     const filteredMessages= messages.filter(message => message.userId !== userId);
     console.log("these are the filtered messages", filteredMessages)
 
@@ -44,9 +57,9 @@ const Inbox = () => {
                     <button className="text-honey mr-2">Filter</button>
                 </div>
                 <div id="message-preview-box" className="m-2 p-2 border-2 border-honey rounded-md">
-                    <h1 className="font-bold text-3xl text-honey">All Messages ({messages.length})</h1>
+                    <h1 className="font-bold text-3xl text-honey">New Messages ({messages.length - filteredMessages.length})</h1>
 
-                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {filteredMessages.map(message => {
+                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {lastMessages.reverse().map(message => {
                         
                         let date = new Date(message.createdAt);
                         let formattedDate = date.toLocaleDateString("en-US", options);
@@ -67,7 +80,6 @@ const Inbox = () => {
                                     <AddFellow followerId={message.userId}/>
                                     <h3 className="text-[#a1a7b1]">{formattedDate}</h3>
                                     <h2 className="text-[#a1a7b1]">
-                                        <div >{message.text}</div>
                                     </h2>
                                 </section>
                             </div>
@@ -78,7 +90,7 @@ const Inbox = () => {
             </div>
             <div id="single-message-box" className="m-5 h-screen mt-8 w-3/5 border-2 border-[honey] shadow-md shadow-[#EBAF4C] rounded-md relative">
             <div id="talking-to" className= "flex border border-black bg-[#E68584] items-center justify-between p-2">
-            {clickedUser.firstName} {clickedUser.lastName}
+            Now chatting with: {clickedUser.firstName} {clickedUser.lastName}
                     <div id="icons">
                         <button>📸</button>
                         <button>🤝</button>
@@ -86,7 +98,7 @@ const Inbox = () => {
                         </div> 
                 </div>
                 <div id="scroll" className="overflow-scroll scrollbar-hide h-5/6"> 
-    <Messaging />
+    <Messaging clickedUser={clickedUser}/>
     </div>
     <Input/>
             </div>
