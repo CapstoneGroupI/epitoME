@@ -116,7 +116,7 @@ const User = db.define('user', {
     defaultValue: false
   },
   profilePic: {
-    type: STRING,
+    type: TEXT,
     allowNull: true,
     defaultValue: 'https://t3.ftcdn.net/jpg/01/65/63/94/360_F_165639425_kRh61s497pV7IOPAjwjme1btB8ICkV0L.jpg',
     comment: 'null',
