@@ -69,6 +69,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
             minute: "2-digit",
           };
           function getAvg(post) {
+            if(!post.rating) return 0
             const total = post.rating.reduce((acc, c) => acc + c, 0);
             return total / post.rating.length;
           }
@@ -118,16 +119,16 @@ const Home = ({ userId, isLoggedIn, props }) => {
               >
                 <div className="flex flex-row items-center justify-around">
                   <div className="flex flex-row items-center flex-wrap">
-                    <Link to={`/profile/${post.user.id}`}><img
+                  <Link to={`/profile/${post.user?.id}`}><img
                       className="object-cover p-5 rounded-full w-40 h-40"
-                      src={post.user.profilePic}
+                      src={post.user?.profilePic}
                     /></Link>
                     <div className=" m-2">
-                    <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-[#E68584] hover:text-[#e66f6d]">
-                        {post.user.firstName} {post.user.lastName}
+                    <Link to={`/profile/${post.user?.id}`}><h1 className="font-bold  text-[#E68584] hover:text-[#e66f6d]">
+                        {post.user?.firstName} {post.user?.lastName}
                       </h1></Link>
-                      <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-amber-300 text-sm hover:text-[#FFC200]">
-                        @ {post.user.username}
+                      <Link to={`/profile/${post.user?.id}`}><h1 className="font-bold  text-amber-300 text-sm hover:text-[#FFC200]">
+                        @ {post.user?.username}
                       </h1></Link>
                     </div>
                   </div>

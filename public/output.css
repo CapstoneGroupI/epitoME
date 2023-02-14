@@ -593,6 +593,16 @@ video {
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -681,6 +691,10 @@ video {
   margin-bottom: 0.625rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -707,6 +721,10 @@ video {
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -773,6 +791,10 @@ video {
   height: 83.333333%;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -795,6 +817,10 @@ video {
 
 .h-24 {
   height: 6rem;
+}
+
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .w-full {
@@ -865,6 +891,14 @@ video {
   width: 2.5rem;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-1\/6 {
+  width: 16.666667%;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -903,6 +937,10 @@ video {
 
 .max-w-\[80\%\] {
   max-width: 80%;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .flex-1 {
@@ -1174,6 +1212,11 @@ video {
   background-color: rgb(255 192 203 / var(--tw-bg-opacity));
 }
 
+.bg-amber-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
+}
+
 .bg-honey {
   --tw-bg-opacity: 1;
   background-color: rgb(235 175 76 / var(--tw-bg-opacity));
@@ -1229,6 +1272,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .py-2 {
@@ -1748,6 +1795,11 @@ form div {
 .hover\:bg-honey:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(235 175 76 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#db6a68\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 106 104 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-stone-300:hover {
