@@ -65,6 +65,7 @@ async function seed() {
       lastName: "Hightower",
       pronouns: "she/her",
       city: "Bakersfield",
+      description: "i like chili cheese dogs",
       state: "CA",
       isAdmin: true,
       rating: 5.0,
