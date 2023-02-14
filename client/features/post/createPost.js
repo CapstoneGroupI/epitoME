@@ -6,6 +6,7 @@ import { selectPosts } from "../../slices/allPostSlice";
 import { useSelector } from "react-redux";
 import { getAllPostsAsync } from "../../slices/allPostSlice";
 import { useNavigate } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 const CreatePost = () => {
   const [text, setText] = useState("");
@@ -43,7 +44,8 @@ const CreatePost = () => {
     }
 
   return (
-    <>
+    <div>
+        <div className="h-screen">
       <form className="flex my-10 ">
         <div
           id="post-preview-box"
@@ -92,7 +94,9 @@ const CreatePost = () => {
           </div>
         </div>
       </form>
-    </>
+      </div>
+      <div className="mt-10"> < Footer /> </div>
+    </div>
   );
 };
 

@@ -344,6 +344,108 @@ async function seed() {
       text: "Lets go on vacation",
       userId: 1,
     }),
+    Post.create({
+      text: "Happy birthday to me!",
+      image:
+        "public/birthday23.jpg",
+      userId: 4,
+    }),
+    Post.create({
+      text: "It's pretty cold today",
+      image:
+        "public/frozen.jpg",
+      userId: 2,
+    }),
+    Post.create({
+      text: "It's pretty hot today",
+      image:
+        "public/melted.jpg",
+      userId: 1,
+    }),
+    Post.create({
+      text: "Masterpiece!",
+      image:
+        "public/brulee.jpg",
+      userId: 2,
+    }),
+    Post.create({
+      text: "Dieting sucks =(",
+      image:
+        "public/salad.jpg",
+      userId: 3,
+    }),
+    Post.create({
+      text: "My new doggo!!",
+      image:
+        "public/doggo.jpg",
+      userId: 4,
+    }),
+    Post.create({
+      text: "Ran 10 miles today!",
+      image:
+        "public/10miles.jpg",
+      userId: 4,
+    }),
+    Post.create({
+      text: "Meet Garfield",
+      image:
+        "public/garfield.jpg",
+      userId: 1,
+    }),
+    Post.create({
+      text: "R.I.P",
+      image:
+        "public/rip.jpg",
+      userId: 3,
+    }),
+    Post.create({
+      text: "I found a wierd fruit in my garden, should I cook it and eat it?",
+      image:
+        "public/boom.jpg",
+      userId: 2,
+    }),
+    Post.create({
+      text: "Bro I think I'm being watched...",
+      image:
+        "public/eyes.jpg",
+      userId: 2,
+    }),
+    Post.create({
+      text: "'Here comes the sun' - George Harrison",
+      image:
+        "public/sun.jpg",
+      userId: 4,
+    }),
+    Post.create({
+      text: "Go Chiefs Go!",
+      image:
+        "public/chiefs.jpg",
+      userId: 4,
+    }),
+    Post.create({
+      text: "Visiting Montgomery, AL!",
+      image:
+        "public/montgomery.jpg",
+      userId: 1,
+    }),
+    Post.create({
+      text: "Visiting the aquarium Chatanooga, TN!",
+      image:
+        "public/chattanooga.jpg",
+      userId: 2,
+    }),
+    Post.create({
+      text: "Kern County Museum in Bakersfield!",
+      image:
+        "public/bakersfield.jpg",
+      userId: 3,
+    }),
+    Post.create({
+      text: "NYC BAYBEEE",
+      image:
+        "public/nyc.jpg",
+      userId: 4,
+    }),
   ]);
 
   const comment = await Promise.all([
@@ -372,6 +474,34 @@ async function seed() {
     Message.create({
       text: "Whats up",
       userId: 2,
+    }),
+    Message.create({
+      text: "Hey",
+      userId: 3,
+    }),
+    Message.create({
+      text: "What's up?",
+      userId: 4,
+    }),
+    Message.create({
+      text: "You free tomorrow?",
+      userId: 3,
+    }),
+    Message.create({
+      text: "Yeah",
+      userId: 4,
+    }),
+    Message.create({
+      text: "Wanna go grab dinner",
+      userId: 3,
+    }),
+    Message.create({
+      text: "No",
+      userId: 4,
+    }),
+    Message.create({
+      text: "=(",
+      userId: 3,
     }),
   ]);
 
