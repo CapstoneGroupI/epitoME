@@ -48,7 +48,8 @@ const Boost = () => {
             </div>
 
         </div>
-        < Footer />
+        <div className="h-screen"></div>
+        <div>< Footer /></div>
         </div>
     );
 };
