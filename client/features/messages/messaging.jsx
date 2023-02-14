@@ -53,15 +53,16 @@ const Messaging = ({ clickedUser }) => {
     <div>
       {clickedUser && filteredMessages.map(message => {
         return (
-          <div key={message.id} id="message" className="p-3 flex gap-5 mb-2.5">
+          <div key={message?.id} id="message" className="p-3 flex gap-5 mb-2.5">
             <div id="messageInfo" className="flex flex-col color-grey ">
-              <img className="h-10 w-10 rounded-3xl object-cover" src={message.user.profilePic} alt="" />
+              <img className="h-10 w-10 rounded-3xl object-cover" src={message.user?.profilePic} alt="" />
+              {console.log("this is prp------------",message.user?.profilePic)}
               
               {/* <span>{new Date(message.timestamp).toLocaleString()}</span> */}
-              <span>{message.user.firstName}</span>
+              <span>{message.user?.firstName}</span>
             </div>
             <div id="messagecontent" className="flex felx-col max-w-[80%] gap-2.5" >
-              <p id="text" className="bg-[pink] pt-2.5 pb-2.5 pr-5 pl-5 rounded ">{message.text}</p>
+              <p id="text" className="bg-[pink] pt-2.5 pb-2.5 pr-5 pl-5 rounded ">{message?.text}</p>
               {/* <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="" /> */}
               </div>
           </div>
