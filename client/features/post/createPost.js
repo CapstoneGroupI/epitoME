@@ -39,20 +39,21 @@ let arr = []
 
     return (
     <>
-        <form className="flex md:flex-row justify-center flex-col h-screen">
-                <div id="post-preview-box" className="m-2 p-2 border-2 border-[#EBAF4C] rounded-md">
-                    <h1 className="center font-bold text-3xl text-[#EBAF4C] text-center">Create A Post</h1>
-                    <div id= "create-post-box" className="flex flex-col m-5 w-full md:w-5/5 h-5/5 border-2 border-[#EBAF4C] shadow-md shadow-[#EBAF4C] mt-8 rounded-md">
-                <div className="flex flex-row justify-between">
-                    <input type="text" placeholder="Your Text Here..." className="m-2 p-2 border-b-2 border-[#EBAF4C]" onChange = {(e) =>setText(e.target.value)}></input>
+        <div className="flex md:flex-row justify-center flex-col h-3/5 m-10">
+                <div id="post-preview-box" className="m-2 p-2 border-2 border-honey rounded-md w-3/5">
+                    <h1 className="center font-bold text-3xl text-honey text-center">Create A Post</h1>
+                    <div id= "create-post-box" className="flex flex-col m-5 items-center border-2 border-honey shadow-md shadow-honey mt-8 rounded-md">
+                <div className="flex flex-col justify-between">
+                    <input type="text" placeholder="Your Text Here..." className="m-2 p-2 border-b-2 border-honey" onChange = {(e) =>setText(e.target.value)}></input>
                 <img src={imagePreview} alt="" />
-                    <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-                    <button className="text-[#EBAF4C] font-bold mr-2" onClick={handleSubmit}>SUBMIT</button>
+                    <input className="mt-4" type="file" onChange={(e) => setImage(e.target.files[0])} />
+                    <button className="text-honey font-bold rounded mr-2 my-5 border-2 border-honey py-4 hover:bg-honey hover:text-white" onClick={handleSubmit}>SUBMIT</button>
                     
                 </div>
                         </div>
                         </div>
-                        </form>
+                        </div>
+                        <div className="h-screen"></div>
                        <div> < Footer /> </div>
                         </>
     )

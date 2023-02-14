@@ -17,7 +17,7 @@ const VIP = () => {
     return(
         <div>
         {isHighRated ? (
-            <Locked />
+            <Granted />
         ) : (
             <Locked />
         )}

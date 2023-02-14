@@ -1,11 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useSelector } from "react-redux";
+import { getFellow, selectFellows } from "../../slices/fellowsSlice";
+import { Link } from "react-router-dom";
+import Home from "../home/Home";
 
 export default function Sidebar() {
 return(
   <>
     <div className="flex border-2 border-salmon justify-center md:float-right shadow-xl shadow-rose-200 m-8 rounded-xl md:w-64">
-      <div className="flex flex-col h-64 overflow:auto md:h-screen p-3">
+      <div className="flex flex-col h-64 overflow-scroll md:h-full p-3">
        <div className="space-y-3 items-center">
         <div className="flex flex-col items-center md:p-4">
          <h2 className="text-xl text-salmon font-bold font-serif">YOUR RATING:</h2>
@@ -25,7 +29,9 @@ return(
             <p className="border-b hover:bg-stone-50 mt-2">Andrew Spencer <span className="font-thin">replied to your post: "lets gooo..."</span></p>
             <p className="text-center text-2xl">...</p>
          </div>
-         <div to="" className="text-salmon text-xl font-bold mt-6">Followers (0)</div>
+         <div to="" className="text-salmon text-xl font-bold mt-6">Followers (0)
+         </div>
+         <div className="space-between">Following (0)</div>
         </div>
       </div>
       </div>
