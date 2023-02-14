@@ -25,7 +25,7 @@ let arr = []
         dispatch(getAllPostsAsync())
     },[userId])
 
-    arr = posts.map(post => {return post.text});
+    arr = posts.map(post => {return post});
       console.log("these are the posts", arr )
       
     const handleSubmit = (e) => {
