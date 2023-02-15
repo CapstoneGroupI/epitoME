@@ -56,10 +56,10 @@ const Inbox = () => {
                     <input placeholder="Search messages..." className="m-2 p-2 border-b-2 border-honey"></input>
                     <button className="text-honey mr-2">Filter</button>
                 </div>
-                <div id="message-preview-box" className="m-2 p-2 border-2 border-honey rounded-md">
+                <div id="message-preview-box" className="m-2 p-2 rounded-md">
                     <h1 className="font-bold text-3xl text-honey">New Messages ({messages.length - filteredMessages.length})</h1>
 
-                    <div id="single-message-preview" className="overflow-auto shadow-sm shadow-honey ml-2 mr-2 rounded-md p-2"> {lastMessages.reverse().map(message => {
+                    <div id="single-message-preview" className="overflow-auto  ml-2 mr-2 rounded-md p-2"> {lastMessages.reverse().map(message => {
                         
                         let date = new Date(message.createdAt);
                         let formattedDate = date.toLocaleDateString("en-US", options);
@@ -73,8 +73,8 @@ const Inbox = () => {
 
                         return (
                         
-                            <div key={message.id} id = "all Messages" className="border border-black hover:cursor-pointer" onClick={() => handleMessageClick(message.user)}>
-                                <img className=" border border-solid border-black object-cover p-3 rounded-full w-20 h-20" src={message.user.profilePic} />
+                            <div key={message.id} id = "all Messages" className=" my-2 hover:cursor-pointer" onClick={() => handleMessageClick(message.user)}>
+                                <img className="object-cover p-3 rounded-full w-32 h-32" src={message.user.profilePic} />
                                 <section>
                                     <h1 className="text-[#a1a7b1] font-bold"> {message.user.firstName} {message.user.lastName} </h1>
                                     <AddFellow followerId={message.userId}/>
