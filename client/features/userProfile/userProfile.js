@@ -32,7 +32,7 @@ export const UserProfile = (props) => {
   return (
     <div id="userProfile">
           <div id="profileContainer" className="flex flex-col md:flex-row bg-[white] w-3/5 m-10 rounded-md shadow-lg shadow-[#EBAF4C] p-4 relative">
-            <img src={profilePic} className="h-72 w-72 rounded-full border-2 border-[#EBAF4C] shadow-lg shadow-stone" />
+            <img src={profilePic} className="h-72 w-72 object-cover rounded-full border-2 border-[#EBAF4C] shadow-lg shadow-stone" />
             <div id="detailsContainer" className="flex flex-col ml-5">
                 <h1 className="text-[#EBAF4C] text-3xl font-bold">{firstName} {lastName} <span className="text-[#EBAF4C] text-sm"> {pronouns}</span></h1>
           <div id="userInfoContainer" className="flex flex-col">
