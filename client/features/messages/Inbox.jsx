@@ -9,7 +9,6 @@ import { useState } from "react";
 import { selectUsers } from "../../slices/allUsersSlice";
 import { getAllUsersAsync } from "../../slices/allUsersSlice";
 import Messaging from "./messaging.jsx";
-import Input from "./input.jsx";
 import AddFellow from "../addFellow/addFellow.jsx";
 import { selectFellows, getFellow, createFellow } from "../../slices/fellowsSlice";
 import Footer from "../footer/Footer";
@@ -100,7 +99,6 @@ const Inbox = () => {
                 <div id="scroll" className="overflow-scroll scrollbar-hide h-5/6"> 
     <Messaging clickedUser={clickedUser}/>
     </div>
-    <Input/>
             </div>
 
 
