@@ -43,7 +43,7 @@ const AddFellow = ({followerId}) => {
 
   return (
     <div>
-        <button onClick={handleAddFellow}>{isFollowing ? 'following' : 'add fellow'}</button>
+        <button className="text-white border-2 border-white bg-[#EBAF4C] p-1 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2" onClick={handleAddFellow}>{isFollowing ? 'following' : 'Following'}</button>
     </div>
   )
 }
