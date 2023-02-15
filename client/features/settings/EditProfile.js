@@ -23,6 +23,19 @@ const EditProfile = () => {
             <input className=" border-b-2 border-honey mt-0 m-2 p-2 ml-4" placeholder="type here..."></input>
             </div>
         </div>
+        <div id="name-settings" className="flex flex-row items-center w-full">
+            <div className="flex flex-col w-1/2">
+            <label className="font-bold text-stone-500 m-2 mb-0 p-2">City</label>
+            <input className=" border-b-2 border-honey mt-0 m-2 p-2 mr-4" placeholder="type here..."></input>
+            </div>
+            <div className="flex flex-col w-1/2">
+            <label className="font-bold text-stone-500 m-2 mb-0 p-2">State</label>
+            <input className=" border-b-2 border-honey mt-0 m-2 p-2 ml-4" placeholder="type here..."></input>
+            </div>
+        </div>
+        <label className="font-bold text-stone-500 m-2 mb-0 p-2">Bio</label>
+            <input className=" border-b-2 border-honey w-2/5 mt-0 m-2 p-2" placeholder="something about you..."></input>
+            
     </div>
     );
 };
