@@ -29,7 +29,7 @@ export default function Sidebar() {
   return (
     <>
       <div className="flex border-2 border-salmon justify-center md:float-right shadow-xl shadow-rose-200 m-8 rounded-xl md:w-64">
-        <div className="flex flex-col h-64 overflow:auto md:h-screen p-3 w-auto">
+        <div className="flex flex-col h-64 overflow-scroll md:h-full p-3 w-auto">
           <div className="space-y-3 items-center">
             <div className="flex flex-col items-center md:p-4">
               <h2 className="text-xl text-[#E68584] font-bold font-serif">
