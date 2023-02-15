@@ -15,12 +15,14 @@ const VIP = () => {
     }, []);
 
     return(
-        <div className ="mx-auto">
+        <div>
+        <div className = "flex flex-col items-center" >
         {isHighRated ? (
-            <Granted />
+            <Granted/>
         ) : (
-            <Locked />
+            <Locked/>
         )}
+        </div>
         </div>
     );
 };
