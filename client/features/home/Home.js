@@ -141,7 +141,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
                 <div className="w-10/12 h-0.5 mx-auto rounded-lg bg-[#E68584]" />
                 <div className="mx-auto m-5 w-10/12 font-semibold text-neutral-600">{post.text}</div>
                 <img
-                  className="rounded mx-auto m-5 w-10/12"
+                  className="rounded-lg mx-auto m-5 w-10/12"
                   src={post.image ? post.image.slice(7) : null}
                 ></img>
                 <div className="flex justify-end p-5">
