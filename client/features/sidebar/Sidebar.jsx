@@ -9,7 +9,7 @@ export default function Sidebar() {
 
   const fellows = useSelector(selectFellows);
 
-  // const { followerId, userId, firstName, lastName } = fellows;
+  const { followerId, userId, firstName, lastName } = fellows;
 
   const fellowsArray = Object.values(fellows);
   console.log('asasasasasasasas', fellowsArray)
@@ -68,7 +68,7 @@ export default function Sidebar() {
             </div>
           </div>
           </div>
-    </div>
-    </>
-  );
-}
+          </div>
+      </>
+    );
+  }
