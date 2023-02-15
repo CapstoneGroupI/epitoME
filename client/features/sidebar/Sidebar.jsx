@@ -9,7 +9,7 @@ export default function Sidebar() {
 return(
   <>
     <div className="flex border-2 border-salmon justify-center md:float-right shadow-xl shadow-rose-200 m-8 rounded-xl md:w-64">
-      <div className="flex flex-col h-64 overflow-scroll md:h-full p-3">
+      <div className="flex flex-col h-64 overflow-hidden md:h-full p-3">
        <div className="space-y-3 items-center">
         <div className="flex flex-col items-center md:p-4">
          <h2 className="text-xl text-salmon font-bold font-serif">YOUR RATING:</h2>

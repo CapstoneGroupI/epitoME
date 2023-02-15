@@ -603,6 +603,11 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -1077,6 +1082,10 @@ video {
   overflow: auto;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-scroll {
   overflow: scroll;
 }
@@ -1205,6 +1214,29 @@ video {
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
+.border-\[amber-300\] {
+  border-color: amber-300;
+}
+
+.border-amber-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 191 36 / var(--tw-border-opacity));
+}
+
+.border-\[amber-400\] {
+  border-color: amber-400;
+}
+
+.border-\[salmon\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(250 128 114 / var(--tw-border-opacity));
+}
+
+.border-red-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(252 165 165 / var(--tw-border-opacity));
+}
+
 .bg-\[\#EBAF4C\] {
   --tw-bg-opacity: 1;
   background-color: rgb(235 175 76 / var(--tw-bg-opacity));
@@ -1271,6 +1303,31 @@ video {
 .bg-salmon {
   --tw-bg-opacity: 1;
   background-color: rgb(230 133 132 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#a1a7b1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 167 177 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#b1b0a1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 176 161 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#fffc9d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 252 157 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#fffee8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 254 232 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#fffff7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 247 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -1715,6 +1772,21 @@ video {
 
 .shadow-rose-200 {
   --tw-shadow-color: #fecdd3;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-amber-300 {
+  --tw-shadow-color: #fcd34d;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-amber-400 {
+  --tw-shadow-color: #fbbf24;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-salmon {
+  --tw-shadow-color: #E68584;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
