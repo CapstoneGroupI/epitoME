@@ -831,6 +831,10 @@ video {
   height: 6rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .max-h-screen {
   max-height: 100vh;
 }
@@ -941,6 +945,14 @@ video {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .max-w-lg {
@@ -1186,6 +1198,11 @@ video {
 
 .border-\[honey\] {
   border-color: honey;
+}
+
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .bg-\[\#EBAF4C\] {
