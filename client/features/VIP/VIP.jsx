@@ -15,7 +15,7 @@ const VIP = () => {
     }, []);
 
     return(
-        <div>
+        <div className ="mx-auto">
         {isHighRated ? (
             <Granted />
         ) : (

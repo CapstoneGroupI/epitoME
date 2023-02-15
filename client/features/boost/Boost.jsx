@@ -2,7 +2,7 @@ import React from "react";
 
 const Boost = () => {
     return(
-        <div className="block bg-[#FDEDEC] text-center w-3/5 m-10 rounded-md shadow-lg shadow-[] p-8">
+        <div className="block bg-[#FDEDEC] mx-auto text-center w-3/5 m-10 rounded-md shadow-lg shadow-[] p-8">
         <div className="visibility:hidden hover:visible text-[red] text-6xl font-bold m-30 p-10">Be a better person...</div>
         <div className="text-[purple] text-2xl font-bold p-10">If you wanted to boost your rating (who doesn't want that VIP status?!), look no further! Check out some boosting options below:</div>
         <div className="text-3xl">
