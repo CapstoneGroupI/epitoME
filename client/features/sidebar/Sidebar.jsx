@@ -48,7 +48,7 @@ export default function Sidebar() {
                   <p className="border-b hover:bg-stone-50 mt-2">Andrew Spencer <span className="font-thin">replied to your post: "lets gooo..."</span></p>
                   <p className="text-center text-2xl">...</p>
               </div>
-       <div to="" className="text-salmon text-xl font-bold mt-6">Followers (0)</div>
+       <div to="" className="text-salmon text-xl font-bold mt-6">Followers (7)</div>
               <div to="" className="text-[#E68584] mt-10 content-center">
                 <div className="space-between">Following (0)</div>
                 <ul>

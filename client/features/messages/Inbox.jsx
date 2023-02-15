@@ -100,8 +100,6 @@ const Inbox = () => {
     <Messaging clickedUser={clickedUser}/>
     </div>
             </div>
-
-
         </div>
         <div>< Footer /> </div>
 
