@@ -22,17 +22,10 @@ useEffect(() => {
   const filterUser = (users) => {
     return searchTerm && users[0] ? users[0].filter((user) => {
     return user.firstName?.toLowerCase() === searchTerm?.toLowerCase()
-    }) : users;
+    }) : users
     };
 
-  console.log(filterUser(users))
-
-  const handleFollow = () => {
-    console.log("user followed")
-  }
-
   const handleMessage = () => {
-    console.log("sending message to user")
     navigate(`/messages`);
   }
 
@@ -46,7 +39,7 @@ useEffect(() => {
           <div className="border-2 border-honey rounded shadow-md p-2 m-2 ml-12 w-4/5">
           <Link to={`/profile/${user.id}`}>
             <div className="flex justify-between flex-wrap w-full">
-            <img src={user.profilePic} className="h-24 w-24 rounded-full border-2 border-honey"></img>
+            <img src={user.profilePic} className="h-24 w-24 rounded-full border-2 border-honey object-cover"></img>
             <div className="flex flex-col flex-1">
               <h1 className="font-bold text-3xl text-honey mt-2 ml-4">{user.firstName} {user.lastName}</h1>
               <h3 className="text-stone-500 text-base font-bold ml-4"> @{user.username}</h3>
@@ -55,14 +48,14 @@ useEffect(() => {
               <div className="flex flex-col">
                 <h1 className="font-bold text-xl text-honey mr-2 mt-2">Rating: {user.rating}</h1>
                 <div className="flex flex-row">
-                <button onClick={handleFollow} className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2 pl-4 pr-4">Follow</button>
+                <button className="text-white border-2 border-white bg-[#EBAF4C] p-2 rounded-md m-2 pl-4 pr-4">Following</button>
                 <button onClick={handleMessage} className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2">Message</button>
                 </div>
               </div>
             </div>
             </Link>
           </div>
-        )};
+        )}
       </div>
     </div>
   );
