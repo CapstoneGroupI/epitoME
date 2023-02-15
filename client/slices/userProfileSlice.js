@@ -6,7 +6,6 @@ const initialState = {};
 
 export const getSingleProfile = createAsyncThunk("singleUser", async (id) => {
     try {
-
         const { data } = await axios.get(`/api/users/${id.id}`)
         return data;
     } catch (err) {
@@ -53,9 +52,9 @@ const singleProfileSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getSingleProfile.fulfilled, (state, action) => {
-            return action.payload;
-        });
+        builder.addCase(getSingleProfile.fulfilled, (state, action) =>  
+            state = action.payload
+        );
         builder.addCase(editSingleUser.fulfilled, (state, action) => {
             return action.payload;
         });

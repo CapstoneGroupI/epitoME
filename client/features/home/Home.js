@@ -193,7 +193,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
                     return (
                       <div className=" m-2 flex flex-row items-center">
                         <img
-                          className=" w-7 rounded-full object-cover"
+                          className=" h-7 w-7 rounded-full object-cover"
                           src={users[0][comment.userId - 1].profilePic}
                         ></img>
                         <Link to={`/profile/${comment.userId}`} ><h1 className=" ml-1 font-bold text-[#E68584] hover:text-[#e66f6d] ">

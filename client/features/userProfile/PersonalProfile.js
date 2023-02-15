@@ -15,16 +15,10 @@ export const PersonalProfile = () => {
   const birthday = useSelector((state) => state.auth.me.birthday);
   const profilePic = useSelector((state) => state.auth.me.profilePic);
   const username = useSelector((state) => state.auth.me.username);
-  const isLoggedIn = useSelector((state) => !!state.auth.me.userId); // id or userId ??
-  const userId = useSelector((state) => state.auth.me.userId); // id or userId ??
+  const isLoggedIn = useSelector((state) => !!state.auth.me.id); // id or userId ??
+  const userId = useSelector((state) => state.auth.me.id); // id or userId ??
 
   const dispatch = useDispatch();
-
-  const handleAddFellow = (userId) => {
-    if (isLoggedIn && userId) {
-        dispatch(createFellow({ userId, firstName, lastName }));
-    }
-  }
 
   return (
     <div id="PersonalProfile">
