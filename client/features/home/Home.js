@@ -58,7 +58,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
   return (
     <div className="">
-      <div className="w-5/6 mx-auto">
+      <div className="w-full">
         {posts.map((post, index) => {
           let date = new Date(post.createdAt);
           let options = {
@@ -69,6 +69,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
             minute: "2-digit",
           };
           function getAvg(post) {
+            if(!post.rating) return 0
             const total = post.rating.reduce((acc, c) => acc + c, 0);
             return total / post.rating.length;
           }
@@ -107,27 +108,27 @@ const Home = ({ userId, isLoggedIn, props }) => {
           return (
             <motion.div
             key={post.id}
-              className="w-4/6 mx-auto"
+              className="w-full"
               initial={{ y: 50 }}
               whileInView={{ y: 0, transition: { duration: 0.5 } }}
               viewport={{ once: true }}
             >
               <div
                 key={post.id}
-                className="relative flex flex-col mt-10 mx-auto w-auto max-w-lg bg-[#fff6f6] border-2 border-[#E68584] rounded-md shadow-lg shadow-[#913c3b]"
+                className="relative flex flex-col w-4/6 ml-16 mt-16 m-10 bg-[#fff6f6] border-2 border-salmon rounded-md shadow-lg shadow-[#913c3b]"
               >
                 <div className="flex flex-row items-center justify-around">
                   <div className="flex flex-row items-center flex-wrap">
-                    <Link to={`/profile/${post.user.id}`}><img
+                  <Link to={`/profile/${post.user?.id}`}><img
                       className="object-cover p-5 rounded-full w-40 h-40"
-                      src={post.user.profilePic}
+                      src={post.user?.profilePic}
                     /></Link>
                     <div className=" m-2">
-                    <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-[#E68584] hover:text-[#e66f6d]">
+                    <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-salmon hover:text-[#e66f6d]">
                         {post.user.firstName} {post.user.lastName}
                       </h1></Link>
-                      <Link to={`/profile/${post.user.id}`}><h1 className="font-bold  text-amber-300 text-sm hover:text-[#FFC200]">
-                        @ {post.user.username}
+                      <Link to={`/profile/${post.user?.id}`}><h1 className="font-bold  text-amber-300 text-sm hover:text-[#FFC200]">
+                        @ {post.user?.username}
                       </h1></Link>
                     </div>
                   </div>
@@ -137,19 +138,19 @@ const Home = ({ userId, isLoggedIn, props }) => {
                     </h3>
                   </div>
                 </div>
-                <div className="w-10/12 h-0.5 mx-auto rounded-lg bg-[#E68584]" />
+                <div className="w-10/12 h-0.5 mx-auto rounded-lg bg-salmon" />
                 <div className="mx-auto m-5 w-10/12 font-semibold text-neutral-600">{post.text}</div>
                 <img
                   className="rounded mx-auto m-5 w-10/12"
                   src={post.image ? post.image.slice(7) : null}
                 ></img>
                 <div className="flex justify-end p-5">
-                  <div className=" font-bold text-[#E68584]">
+                  <div className=" font-bold text-salmon">
                     {average.toFixed(2)}
                   </div>
                 </div>
 
-                <div className="h-10 bg-[#E68584] flex items-center justify-around">
+                <div className="h-10 bg-salmon flex items-center justify-around">
                   <div className="flex justify-around w-2/12">
                     {stars.map((_, starIndex) => {
                       let ratingValue = starIndex + 1;
@@ -182,7 +183,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
 
               {postCommentVisibility[index] && (
                 <motion.div
-                  className="relative flex flex-col p-3 mt-3 mx-auto w-auto max-w-lg bg-amber-50 border-2 border-amber-300 rounded-md shadow-lg shadow-[#913c3b]"
+                  className="relative flex flex-col p-3 mt-3 w-5/6 bg-amber-50 border-2 border-amber-300 rounded-md shadow-lg shadow-[#913c3b]"
                   initial={{ y: -10 }}
                   whileInView={{ y: 0, transition: { duration: 0.5 } }}
                   viewport={{ once: true }}
@@ -195,7 +196,7 @@ const Home = ({ userId, isLoggedIn, props }) => {
                           className=" w-7 rounded-full object-cover"
                           src={users[0][comment.userId - 1].profilePic}
                         ></img>
-                        <Link to={`/profile/${comment.userId}`} ><h1 className=" ml-1 font-bold text-[#E68584] hover:text-[#e66f6d] ">
+                        <Link to={`/profile/${comment.userId}`} ><h1 className=" ml-1 font-bold text-salmon hover:text-[#e66f6d] ">
                           {users[0][comment.userId - 1].firstName}{" "}
                           {users[0][comment.userId - 1].lastName}
                         </h1></Link>
@@ -205,8 +206,8 @@ const Home = ({ userId, isLoggedIn, props }) => {
                   })}
                   
                   <div className="flex flex-row justify-between my-2">
-                    <input onChange={(e)=> setCurrentComment(e.target.value)} className=" w-4/6 bg-[#fff6f6] border-2 rounded-lg border-[#E68584] ml-1 " placeholder="Enter a comment" />
-                    <button onClick={()=>handleAddComment(currentComment, post.id, myId)} className=" w-3/12 bg-[#E68584] text-amber-200 rounded-lg mr-1 font-bold hover:text-amber-300 hover:bg-[#e66f6d]">
+                    <input onChange={(e)=> setCurrentComment(e.target.value)} className=" w-4/6 bg-[#fff6f6] border-2 rounded-lg border-salmon ml-1 " placeholder="Enter a comment" />
+                    <button onClick={()=>handleAddComment(currentComment, post.id, myId)} className=" w-3/12 bg-salmon text-amber-200 rounded-lg mr-1 font-bold hover:text-amber-300 hover:bg-[#e66f6d]">
                       Add
                     </button>
                   </div>

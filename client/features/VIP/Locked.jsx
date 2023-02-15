@@ -11,6 +11,7 @@ const Locked = () => {
             <h2 className="text-white text-3xl">Just a regular pleb? Want to boost your rating?</h2>
             <Link to="/boost" className="text-white text-3xl font-bold underline">Click here!</Link>
     </div>
+    <div className="h-screen"></div>
     <div> < Footer /> </div>
     </>
     );

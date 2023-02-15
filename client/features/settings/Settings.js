@@ -43,6 +43,7 @@ const Settings = () => {
             <PrivacySecurity /> ) }
             </div>
          </div>
+         <div className="h-96"></div>
          <div> < Footer /> </div>
      </div>
     );

@@ -593,6 +593,16 @@ video {
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -657,6 +667,14 @@ video {
   margin-right: 0.25rem;
 }
 
+.ml-16 {
+  margin-left: 4rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -679,6 +697,10 @@ video {
 
 .mb-2\.5 {
   margin-bottom: 0.625rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .ml-4 {
@@ -707,6 +729,10 @@ video {
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -773,6 +799,10 @@ video {
   height: 83.333333%;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -825,10 +855,6 @@ video {
   width: 24rem;
 }
 
-.w-5\/6 {
-  width: 83.333333%;
-}
-
 .w-4\/6 {
   width: 66.666667%;
 }
@@ -843,6 +869,10 @@ video {
 
 .w-2\/12 {
   width: 16.666667%;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .w-7 {
@@ -863,6 +893,14 @@ video {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-1\/6 {
+  width: 16.666667%;
 }
 
 .w-12 {
@@ -897,12 +935,12 @@ video {
   width: 6rem;
 }
 
-.max-w-lg {
-  max-width: 32rem;
-}
-
 .max-w-\[80\%\] {
   max-width: 80%;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .flex-1 {
@@ -1164,6 +1202,11 @@ video {
   background-color: rgb(255 246 246 / var(--tw-bg-opacity));
 }
 
+.bg-salmon {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 133 132 / var(--tw-bg-opacity));
+}
+
 .bg-amber-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 251 235 / var(--tw-bg-opacity));
@@ -1172,6 +1215,11 @@ video {
 .bg-\[pink\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 192 203 / var(--tw-bg-opacity));
+}
+
+.bg-amber-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
 }
 
 .bg-honey {
@@ -1229,6 +1277,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .py-2 {
@@ -1656,6 +1708,7 @@ video {
 body {
   font-family: sans-serif;
   width: 100%;
+  min-height: 100%;
 }
 
 a {
@@ -1748,6 +1801,11 @@ form div {
 .hover\:bg-honey:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(235 175 76 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#db6a68\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 106 104 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-stone-300:hover {
@@ -1941,8 +1999,8 @@ form div {
     display: flex;
   }
 
-  .md\:h-screen {
-    height: 100vh;
+  .md\:h-full {
+    height: 100%;
   }
 
   .md\:w-7\/12 {
