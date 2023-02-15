@@ -35,7 +35,7 @@ export default function Sidebar() {
               <h2 className="text-xl text-[#E68584] font-bold font-serif">
                 YOUR RATING:
               </h2>
-              <p className="text-amber-400">★ ★ ★ ★ ★</p>
+              <p className="text-amber-400 text-3xl">★ ★ ★ ★ ★</p>
               <h2 className="text-xl text-[#E68584] font-bold font-serif mt-10">
                 Notifications:
               </h2>
