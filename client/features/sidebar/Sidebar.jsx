@@ -4,21 +4,15 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Home from "../home/Home";
 import { getFellow, selectFellows } from "../../slices/fellowsSlice";
-import { useDispatch } from "react-redux";
 
 export default function Sidebar() {
 
   const fellows = useSelector(selectFellows);
-  const dispatch = useDispatch()
 
   const { followerId, userId, firstName, lastName } = fellows;
 
   const fellowsArray = Object.values(fellows);
   console.log('asasasasasasasas', fellowsArray)
-
-  useEffect(()=>{
-    dispatch(getFellow)
-  },[fellows])
 
   let array = []
 
@@ -29,7 +23,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="flex border-2 border-[#E68584] justify-center md:float-right shadow-xl shadow-rose-200 m-8 rounded-xl">
+      <div className="flex border-2 border-salmon justify-center md:float-right shadow-xl shadow-rose-200 m-8 rounded-xl md:w-64">
         <div className="flex flex-col h-64 overflow:auto md:h-screen p-3 w-auto">
           <div className="space-y-3 items-center">
             <div className="flex flex-col items-center md:p-4">

@@ -21,10 +21,13 @@ import Footer from "../footer/Footer";
 const Inbox = () => {
   const [clickedUser, setClickedUser] = useState({});
 
+  const dispatch = useDispatch()
+
   const userId = useSelector((state) => state.auth.me.id);
   console.log("this is the current userId", userId);
 
   const messages = useSelector(selectMessages);
+
 
   const lastMessages = Object.values(
     messages.reduce((acc, message) => {
