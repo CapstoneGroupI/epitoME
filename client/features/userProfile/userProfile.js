@@ -10,18 +10,6 @@ import { selectSingleUser } from "../../slices/userProfileSlice";
 
 
 export const UserProfile = () => {
-  // const firstName = useSelector((state) => state.auth.me.firstName);
-  // const lastName = useSelector((state) => state.auth.me.lastName);
-  // const bio = useSelector((state) => state.auth.me.description);
-  // const city = useSelector((state) => state.auth.me.city);
-  // const state = useSelector((state) => state.auth.me.state);
-  // const rating = useSelector((state) => state.auth.me.rating);
-  // const pronouns = useSelector((state) => state.auth.me.pronouns);
-  // const birthday = useSelector((state) => state.auth.me.birthday);
-  // const profilePic = useSelector((state) => state.auth.me.profilePic);
-  // const username = useSelector((state) => state.auth.me.username);
-  const isLoggedIn = useSelector((state) => !!state.auth.me.userId); // id or userId ??
-  const userId = useSelector((state) => state.auth.me.userId); // id or userId ??
 
   const params = useParams()
 
@@ -30,11 +18,6 @@ export const UserProfile = () => {
 
   const dispatch = useDispatch();
 
-  const handleCreateFellow = (userId) => {
-    if (isLoggedIn && userId) {
-        dispatch(createFellow({ userId, firstName, lastName }));
-    }
-  }
 
   useEffect(() => {
     dispatch(getSingleProfile(params))
@@ -43,7 +26,7 @@ export const UserProfile = () => {
   return (
     <div key={users[0]} id="userProfile">
           <div id="profileContainer" className="flex flex-col md:flex-row bg-[white] w-3/5 m-10 rounded-md shadow-lg shadow-[#EBAF4C] p-4 relative">
-            <img src={users[0]?.profilePic} className="h-72 w-72 rounded-full border-2 border-[#EBAF4C] shadow-lg shadow-stone" />
+            <img src={users[0]?.profilePic} className="h-72 w-72 rounded-full object-cover border-2 border-[#EBAF4C] shadow-lg shadow-stone" />
             <div id="detailsContainer" className="flex flex-col ml-5">
                 <h1 className="text-[#EBAF4C] text-3xl font-bold">{users[0]?.firstName} {users[0]?.lastName} <span className="text-[#EBAF4C] text-sm"> {users[0]?.pronouns}</span></h1>
           <div id="userInfoContainer" className="flex flex-col">
@@ -55,12 +38,6 @@ export const UserProfile = () => {
             <div className="flex flex-row absolute bottom-0">
               <button id="messageFriend" className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2 mb-6">Message</button> 
               <button id="addFriend" 
-                    onClick={() =>
-                        handleCreateFellow(
-                            userId,
-                            firstName,
-                            lastName
-                            )} 
                     className="text-white border-2 border-white bg-[#EBAF4C] p-2 hover:bg-white hover:text-[#EBAF4C] hover:border-[#EBAF4C] rounded-md m-2 mb-6">Add Fellow</button>
             </div>
               </div>

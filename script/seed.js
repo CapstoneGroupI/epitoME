@@ -261,19 +261,6 @@ async function seed() {
       }),
       User.create({
         id: 18,
-        username: "DonaldMAGA",
-        password: "123",
-        email: "DonaldTrump@gmail.com",
-        firstName: "Donald",
-        lastName: "Trump",
-        pronouns: "he/him",
-        city: "New York City",
-        state: "NY",
-        isAdmin: false,
-        profilePic: "https://pbs.twimg.com/media/Erao8GsVEAIB3ZJ.jpg",
-      }),
-      User.create({
-        id: 19,
         username: "FloydMayweather",
         password: "123",
         email: "FloydMayweather@gmail.com",
@@ -287,7 +274,7 @@ async function seed() {
           "https://img.olympicchannel.com/images/image/private/f_auto/t_1-1_300/primary/xzikbu9gm4ferp7j4ann",
       }),
       User.create({
-        id: 20,
+        id: 19,
         username: "SerenaWilliams",
         password: "123",
         email: "SerenaWilliams@gmail.com",
@@ -301,21 +288,7 @@ async function seed() {
           "https://ca-times.brightspotcdn.com/dims4/default/ef756cf/2147483647/strip/true/crop/1728x1152+160+0/resize/2000x1333!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F43%2F98%2Fd1cf186ffdf2fe215346bba89750%2Fla-1467409250-snap-photo",
       }),
       User.create({
-        id: 21,
-        username: "Yeezy",
-        password: "123",
-        email: "KanyeWest@gmail.com",
-        firstName: "Kanye",
-        lastName: "West",
-        pronouns: "he/him",
-        city: "Atlanta",
-        state: "GA",
-        isAdmin: false,
-        profilePic:
-          "https://pagesix.com/wp-content/uploads/sites/3/2021/10/kanye-name-change.jpg?quality=75&strip=all&w=618&h=410&crop=1",
-      }),
-      User.create({
-        id: 22,
+        id: 20,
         username: "TeslaRules",
         password: "123",
         email: "elonMusk@gmail.com",
@@ -329,7 +302,7 @@ async function seed() {
           "https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-1240408699_524643_a4gklo.jpg",
       }),
       User.create({
-        id: 23,
+        id: 21,
         username: "MicrosoftRules",
         password: "123",
         email: "BillGates@gmail.com",
@@ -347,143 +320,143 @@ async function seed() {
   const post = await Promise.all([
     Post.create({
       text: "Who knows how to get to the Green Day concert",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "I on ",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Hawaii was Beautiful",
       image:
         "public/hawaii.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Loving life",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Lets go on vacation",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Happy birthday to me!",
       image:
         "public/birthday23.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "It's pretty cold today",
       image:
         "public/frozen.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "It's pretty hot today",
       image:
         "public/melted.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Masterpiece!",
       image:
         "public/brulee.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Dieting sucks =(",
       image:
         "public/salad.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "My new doggo!!",
       image:
         "public/doggo.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Ran 10 miles today!",
       image:
         "public/10miles.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Meet Garfield",
       image:
         "public/garfield.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "R.I.P",
       image:
         "public/rip.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "I found a wierd fruit in my garden, should I cook it and eat it?",
       image:
         "public/boom.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Bro I think I'm being watched...",
       image:
         "public/eyes.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "'Here comes the sun' - George Harrison",
       image:
         "public/sun.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Go Chiefs Go!",
       image:
         "public/chiefs.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Visiting Montgomery, AL!",
       image:
         "public/montgomery.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Visiting the aquarium Chatanooga, TN!",
       image:
         "public/chattanooga.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "Kern County Museum in Bakersfield!",
       image:
         "public/bakersfield.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
       text: "NYC BAYBEEE",
       image:
         "public/nyc.jpg",
-      userId: Math.floor(Math.random() * 23) + 1,
+      userId: Math.floor(Math.random() * 21) + 1,
     }),
   ]);
 
   const comment = await Promise.all([
     Comment.create({
-      text: "this is such a good post",
+      text: "Do you need a lift? i'm omw there now",
       postId: 1,
-      userId: 1,
+      userId: 15,
     }),
     Comment.create({
-      text: "I love crossiants",
+      text: "Dang I couldn't get tickets in time. take pics!",
       postId: 1,
-      userId: 2,
+      userId: 17,
     }),
     Comment.create({
-      text: "great job",
+      text: "OMG I LOVE YOU",
       postId: 2,
       userId: 3,
     }),
