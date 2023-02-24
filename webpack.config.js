@@ -8,6 +8,9 @@ module.exports = {
   },
   context: __dirname,
   devtool: 'source-map',
+  stats: {
+    warnings: false
+  },
   module: {
     rules: [
       {
