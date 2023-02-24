@@ -60,7 +60,7 @@ async function seed() {
     User.create({
       id: 4,
       username: "cupofjoey",
-      password: "321",
+      password: "table20",
       email: "sightower@gmail.com",
       birthday: "11-15-1999",
       profilePic: "https://www.linkpicture.com/q/IMG_3839.jpg",
@@ -323,7 +323,9 @@ async function seed() {
       userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
-      text: "I on ",
+      text: "Pre-gaming at the Green Day concert!!!!",
+      image: 
+      "public/kiddancing.gif",
       userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
@@ -353,9 +355,9 @@ async function seed() {
       userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({
-      text: "It's pretty hot today",
+      text: "Who wants to boost my RATING?????!??!?! <3",
       image:
-        "public/melted.jpg",
+        "public/jigglyblink.gif",
       userId: Math.floor(Math.random() * 21) + 1,
     }),
     Post.create({

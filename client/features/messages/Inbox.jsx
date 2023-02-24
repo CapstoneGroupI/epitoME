@@ -97,7 +97,7 @@ const Inbox = () => {
                   <div
                     key={message.id}
                     id="all Messages"
-                    className=" my-3 hover:cursor-pointer  rounded-lg bg-[#fff6f6] border-red-300 border-2"
+                    className=" my-3 hover:cursor-pointer  rounded-lg bg-[#fff6f6] border-2 border-salmon"
                     onClick={() => handleMessageClick(message.user)}
                   >
                     <img
@@ -121,11 +121,11 @@ const Inbox = () => {
         </div>
         <div
           id="single-message-box"
-          className="m-5 h-screen mt-8 w-3/5 border-2 border-[salmon] shadow-md shadow-[#EBAF4C] rounded-md relative"
+          className="m-5 h-11/12 mt-8 w-3/5 border-2 border-salmon shadow-xl shadow-rose-200 rounded-md relative"
         >
           <div
             id="talking-to"
-            className="flex border border-black bg-[#E68584] items-center justify-between p-2"
+            className="flex bg-salmon items-center justify-between p-2"
           >
             Now chatting with: {clickedUser.firstName} {clickedUser.lastName}
             <div id="icons">
@@ -139,6 +139,7 @@ const Inbox = () => {
           </div>
         </div>
       </div>
+      <div className="h-96"></div>
       <div>
         <Footer />{" "}
       </div>

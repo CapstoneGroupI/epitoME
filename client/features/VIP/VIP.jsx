@@ -15,12 +15,14 @@ const VIP = () => {
     }, []);
 
     return(
-        <div className ="mx-auto">
+        <div>
+        <div>
         {isHighRated ? (
-            <Granted />
+            <Granted/>
         ) : (
-            <Locked />
+            <Locked/>
         )}
+        </div>
         </div>
     );
 };
